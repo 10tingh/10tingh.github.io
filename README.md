@@ -11,8 +11,8 @@ Personal job-search site for Tyler Entingh — static HTML/CSS, hosted free on G
 - `assets/favicon.svg` — the "TE" roundel mark used as the browser tab icon
 
 Experience is filled in from `Tyler_Entingh_Senior_Product_Designer_Resume.pdf`, which is also linked as
-the "Download résumé" button. Sections still marked `Add project` / `add link` in `index.html` are
-placeholders — swap in real case studies and your LinkedIn URL when ready.
+the "Download résumé" button. The Work section's cards, still marked `Add project` in `index.html`, are
+the only remaining placeholders — swap in real case studies when ready.
 
 To update the résumé: replace `Tyler_Entingh_Senior_Product_Designer_Resume.pdf` with the new file (same
 name), or update the "Download résumé" link's `href` in `index.html` if you rename it.
