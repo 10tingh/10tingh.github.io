@@ -1,8 +1,8 @@
-# tylerentingh.github.io
+# 10tingh.github.io
 
 Personal job-search site for Tyler Entingh — static HTML/CSS, hosted free on GitHub Pages.
 
-**Live at:** https://tylerentingh.github.io/
+**Live at:** https://10tingh.github.io/
 
 ## Editing
 
