@@ -1,0 +1,43 @@
+# tylerentingh.github.io
+
+Personal job-search site for Tyler Entingh — static HTML/CSS, hosted free on GitHub Pages.
+
+**Live at:** https://tylerentingh.github.io/
+
+## Editing
+
+- `index.html` — all page content and sections (About, Experience, Work, Contact)
+- `assets/style.css` — design system (colors, type, layout), matching `Tyler-Entingh-Brand-Standards.html`
+- `assets/favicon.svg` — the "TE" roundel mark used as the browser tab icon
+
+Sections still marked `Add dates & details` / `Add project` / `add link` in `index.html` are placeholders —
+swap in real resume bullets, case studies, and your LinkedIn URL when ready.
+
+To add a downloadable résumé: drop a `resume.pdf` file in this folder (same name the "Download résumé"
+button already links to).
+
+## Publishing changes
+
+Any push to `main` redeploys the live site automatically (usually within a minute or two) via GitHub Pages.
+
+```bash
+git add .
+git commit -m "Update resume section"
+git push
+```
+
+## Local preview
+
+Just open `index.html` directly in a browser — no build step needed. For a local server (so relative
+paths behave exactly like production):
+
+```bash
+python -m http.server 8000
+# then visit http://localhost:8000
+```
+
+## Custom domain later
+
+If you buy `tylerentingh.com`, add a `CNAME` file to the repo root containing just the domain, point the
+domain's DNS at GitHub Pages (A records to GitHub's IPs, or a CNAME record to `tylerentingh.github.io`),
+then set the custom domain in the repo's Settings → Pages.

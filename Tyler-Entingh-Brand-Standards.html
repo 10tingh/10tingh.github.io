@@ -1,0 +1,846 @@
+<title>Entingh Brand Standards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:      #FFFFFF;
+    --paper-2:    #FAF3E7;
+    --paper-3:    #F1E1BF;
+    --ink:        #33210F;
+    --ink-soft:   #5C4530;
+    --rust:       #B84A28;
+    --rust-dark:  #7A2E1C;
+    --gold:       #D69A3C;
+    --gold-dark:  #A6721F;
+    --line:       rgba(51,33,15,.16);
+    --line-soft:  rgba(51,33,15,.10);
+    --shadow-sm:  0 1px 2px rgba(51,33,15,.05), 0 6px 16px -12px rgba(51,33,15,.16);
+
+    --radius:     18px;
+    --radius-sm:  10px;
+    --radius-pill:999px;
+
+    --f-display:  'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --f-body:     'Nunito', 'Segoe UI', system-ui, sans-serif;
+    --f-mono:     'Space Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:16px;
+    line-height:1.6;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+
+  img{max-width:100%;}
+  h1,h2,h3,h4{text-wrap:balance; margin:0; font-weight:600;}
+  p{margin:0;}
+
+  ::selection{background:var(--rust); color:#fff;}
+
+  a{color:var(--rust-dark);}
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 28px 120px;
+  }
+
+  /* ---------- top index bar ---------- */
+  .indexbar{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,.92);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .indexbar-inner{
+    max-width:920px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  .indexbar-mark{
+    font-family:var(--f-display); font-weight:700; font-size:1.05rem;
+    letter-spacing:.01em;
+  }
+  .indexbar-nav{
+    display:flex; gap:18px; flex-wrap:wrap;
+    font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .indexbar-nav a{color:var(--ink-soft); text-decoration:none; border-bottom:1px solid transparent;}
+  .indexbar-nav a:hover, .indexbar-nav a:focus-visible{color:var(--rust-dark); border-bottom-color:var(--rust);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outline-offset:3px;}
+
+  /* ---------- cover ---------- */
+  .cover{padding:76px 28px 0;}
+  .cover-inner{max-width:920px; margin:0 auto;}
+  .eyebrow{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--rust-dark);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--rust); display:inline-block;}
+  .cover h1{
+    font-family:var(--f-display);
+    font-weight:900;
+    font-size:clamp(3rem, 9vw, 6.4rem);
+    line-height:.94;
+    margin-top:18px;
+    color:var(--ink);
+  }
+  .cover .position{
+    font-family:var(--f-display); font-style:italic; font-weight:600;
+    font-size:clamp(1.2rem, 2.6vw, 1.7rem);
+    color:var(--rust-dark);
+    margin-top:14px;
+    max-width:34ch;
+  }
+  .cover-meta{
+    margin-top:40px; display:flex; gap:28px; flex-wrap:wrap;
+    font-family:var(--f-mono); font-size:.78rem; color:var(--ink-soft);
+  }
+  .cover-meta strong{color:var(--ink); font-weight:700;}
+  .cover-wave{margin:52px -28px 0; width:calc(100% + 56px); line-height:0; overflow:hidden;}
+  .cover-wave svg{display:block; width:100%; height:auto; overflow:hidden;}
+
+  /* ---------- plate scaffolding ---------- */
+  .plate{
+    padding:64px 0 8px;
+    border-bottom:1px solid var(--line-soft);
+    scroll-margin-top:80px;
+  }
+  .plate:last-of-type{border-bottom:none;}
+  .plate-head{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:20px 26px;
+    align-items:baseline;
+    margin-bottom:34px;
+  }
+  .plate-num{
+    font-family:var(--f-display); font-weight:600; font-style:italic;
+    font-size:clamp(2.6rem, 6vw, 4.2rem);
+    color:var(--rust);
+    opacity:.24;
+    line-height:1;
+  }
+  .plate-title-group .kicker{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--rust-dark); display:block; margin-bottom:6px;
+  }
+  .plate-title-group h2{
+    font-family:var(--f-display); font-weight:600;
+    font-size:clamp(1.7rem, 4vw, 2.5rem);
+  }
+  .plate-intro{
+    max-width:64ch;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    margin-bottom:30px;
+  }
+  .plate-intro strong{color:var(--ink);}
+
+  .subhead{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft);
+    border-top:1px solid var(--line-soft); padding-top:8px; margin:36px 0 16px;
+  }
+  .subhead:first-of-type{margin-top:0;}
+
+  /* ---------- foundation: pillars ---------- */
+  .pillars{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:8px;
+  }
+  .pillar{
+    background:var(--paper-2); padding:24px; border-radius:var(--radius);
+    border:1px solid var(--line-soft);
+  }
+  .pillar-num{font-family:var(--f-mono); font-size:.72rem; color:var(--rust-dark); letter-spacing:.08em;}
+  .pillar h3{font-family:var(--f-display); font-size:1.3rem; margin:8px 0 8px; font-weight:600;}
+  .pillar p{color:var(--ink-soft); font-size:.95rem; margin-bottom:12px;}
+  .proof{
+    font-family:var(--f-mono); font-size:.7rem; color:var(--ink);
+    background:#fff; display:inline-block; padding:7px 12px;
+    border-radius:var(--radius-pill); border:1px solid var(--line-soft);
+  }
+  @media (max-width:640px){ .pillars{grid-template-columns:1fr;} }
+
+  /* ---------- color plate ---------- */
+  .swatchgrid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:36px;
+  }
+  .swatch{
+    border:1px solid var(--line-soft); background:#fff; border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow-sm);
+  }
+  .swatch-fill{height:88px; border-bottom:1px solid var(--line-soft);}
+  .swatch-info{padding:14px 16px;}
+  .swatch-name{font-family:var(--f-display); font-weight:600; font-size:1.05rem;}
+  .swatch-role{font-family:var(--f-mono); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; color:var(--rust-dark); margin-top:3px; display:block;}
+  .swatch-codes{font-family:var(--f-mono); font-size:.7rem; color:var(--ink-soft); margin-top:9px; font-variant-numeric:tabular-nums;}
+  @media (max-width:640px){ .swatchgrid{grid-template-columns:repeat(2,1fr);} }
+
+  .tablewrap{overflow-x:auto; margin-bottom:8px;}
+  table{border-collapse:collapse; width:100%; font-size:.88rem;}
+  th,td{
+    text-align:left; padding:11px 14px; border-bottom:1px solid var(--line-soft);
+    font-variant-numeric:tabular-nums; white-space:nowrap;
+  }
+  th{
+    font-family:var(--f-mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-soft); border-bottom:1px solid var(--ink);
+  }
+  td.sample{font-family:var(--f-display); font-weight:700; border-radius:var(--radius-sm);}
+  .tag{
+    font-family:var(--f-mono); font-size:.64rem; letter-spacing:.02em; font-weight:700;
+    padding:4px 11px; border-radius:var(--radius-pill); display:inline-block;
+  }
+  .tag.aaa{background:#E9F1DF; color:#3E5C2A;}
+  .tag.aa{background:#F9EAD3; color:var(--gold-dark);}
+  .tag.large{background:#F7E3D8; color:var(--rust-dark);}
+  .tag.fail{background:#F7E3D8; color:var(--rust-dark);}
+
+  .rulecard{
+    border:1px solid var(--line-soft); background:var(--paper-2); border-radius:var(--radius);
+    padding:22px 24px; margin-top:20px;
+  }
+  .rulecard .subhead{border-top:none; margin:0 0 10px; padding-top:0;}
+  .rulecard ul{margin:0; padding-left:18px; font-size:.92rem; color:var(--ink-soft);}
+  .rulecard li{margin-bottom:6px;}
+  .rulecard li strong{color:var(--ink);}
+
+  /* ---------- typography plate ---------- */
+  .specimen{
+    border:1px solid var(--line-soft); margin-bottom:20px; background:#fff;
+    border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm);
+  }
+  .specimen-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;
+    padding:12px 20px; border-bottom:1px solid var(--line-soft); background:var(--paper-2);
+  }
+  .specimen-head .name{font-family:var(--f-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--rust-dark);}
+  .specimen-head .role{font-family:var(--f-mono); font-size:.72rem; color:var(--ink-soft);}
+  .specimen-body{padding:28px 22px;}
+  .glyphs-display{font-family:var(--f-display); font-weight:600; font-size:clamp(2.4rem,6vw,4.6rem); line-height:1; color:var(--ink); text-wrap:balance;}
+  .glyphs-sub{font-family:var(--f-display); font-style:italic; font-weight:400; font-size:1.3rem; color:var(--rust-dark); margin-top:10px;}
+  .glyphs-alpha{font-family:var(--f-display); font-size:1.1rem; color:var(--ink-soft); margin-top:14px; letter-spacing:.02em; word-break:break-word;}
+  .body-para{font-family:var(--f-body); font-size:1.05rem; max-width:58ch; color:var(--ink);}
+  .body-para + .body-para{margin-top:10px;}
+  .weights-row{display:flex; gap:22px; margin-top:16px; flex-wrap:wrap;}
+  .weights-row span{font-family:var(--f-body); font-size:1.4rem;}
+  .mono-lines{font-family:var(--f-mono); font-size:.92rem; color:var(--ink); line-height:2;}
+  .mono-lines .lbl{color:var(--ink-soft); display:inline-block; width:150px;}
+
+  .scale-table td.role{font-family:var(--f-body); font-weight:700;}
+
+  /* ---------- mark plate ---------- */
+  .markgrid{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;}
+  .markbox{
+    border:1px solid var(--line-soft); background:#fff; padding:36px 24px; border-radius:var(--radius);
+    display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; box-shadow:var(--shadow-sm);
+  }
+  .markbox .cap{font-family:var(--f-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft);}
+  .roundel{
+    position:relative; width:150px; height:150px; border-radius:50%;
+    background:repeating-linear-gradient(115deg,
+      var(--ink) 0 10px, var(--rust) 10px 20px, var(--gold) 20px 30px, var(--paper-3) 30px 40px);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .roundel::after{
+    content:""; position:absolute; inset:14px; border-radius:50%; background:#fff;
+  }
+  .roundel span{
+    position:relative; z-index:1; font-family:var(--f-display); font-weight:700;
+    font-size:2.2rem; color:var(--ink);
+  }
+  .wordmark-demo{font-family:var(--f-display); font-weight:600; font-size:2.1rem; color:var(--ink);}
+  .wordmark-demo .rule{width:100%; height:2px; background:var(--rust); margin-top:10px; border-radius:2px;}
+  @media (max-width:640px){ .markgrid{grid-template-columns:1fr;} }
+
+  /* ---------- motifs plate ---------- */
+  .wave-showcase{
+    border:1px solid var(--line-soft); border-radius:var(--radius); overflow:hidden;
+    background:#fff; margin-bottom:20px; box-shadow:var(--shadow-sm);
+  }
+  .wave-showcase .stage{padding:0; overflow:hidden;}
+  .wave-showcase svg{display:block; width:100%; height:auto; overflow:hidden;}
+  .wave-showcase .lbl{
+    padding:10px 20px; font-family:var(--f-mono); font-size:.66rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-soft); border-top:1px solid var(--line-soft); background:var(--paper-2);
+  }
+  .motifgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:8px;}
+  .motif{
+    border:1px solid var(--line-soft); background:#fff; aspect-ratio:1; position:relative;
+    overflow:hidden; border-radius:var(--radius); box-shadow:var(--shadow-sm);
+  }
+  .motif .lbl{
+    position:absolute; left:0; right:0; bottom:0; padding:6px 8px;
+    font-family:var(--f-mono); font-size:.6rem; letter-spacing:.04em; text-transform:uppercase;
+    background:#fff; border-top:1px solid var(--line-soft); color:var(--ink-soft);
+  }
+  .m-diagonal{
+    background:repeating-linear-gradient(115deg,
+      var(--ink) 0 12px, var(--rust) 12px 24px, var(--gold) 24px 36px, var(--paper-3) 36px 48px);
+  }
+  .m-stack{
+    background:linear-gradient(to bottom,
+      var(--ink) 0 25%, var(--rust) 25% 50%, var(--gold) 50% 75%, var(--paper-3) 75% 100%);
+  }
+  .m-halftone{background-image:radial-gradient(var(--ink) 1.6px, transparent 1.8px); background-size:9px 9px; background-color:var(--paper-2);}
+  .m-rules{background:#fff;}
+  .m-rules::before, .m-rules::after{content:""; position:absolute; left:16%; right:16%; background:var(--ink); border-radius:2px;}
+  .m-rules::before{top:38%; height:8px;}
+  .m-rules::after{top:56%; height:2px;}
+  @media (max-width:640px){ .motifgrid{grid-template-columns:repeat(2,1fr);} }
+
+  /* ---------- applications plate ---------- */
+  .appgrid{display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;}
+  .app{
+    border:1px solid var(--line-soft); background:#fff; border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow-sm);
+  }
+  .app-cap{
+    font-family:var(--f-mono); font-size:.66rem; letter-spacing:.06em; text-transform:uppercase;
+    padding:9px 16px; color:var(--ink-soft); border-top:1px solid var(--line-soft); background:var(--paper-2);
+  }
+  .app-stage{padding:22px;}
+  @media (max-width:700px){ .appgrid{grid-template-columns:1fr;} }
+
+  .mock-header{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;}
+  .mock-header .name{font-family:var(--f-display); font-weight:700; font-size:1.5rem;}
+  .mock-header .title{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--rust-dark);}
+  .mock-header .contact{font-family:var(--f-mono); font-size:.68rem; color:var(--ink-soft); text-align:right; line-height:1.8;}
+
+  .mock-hero{background:var(--ink); color:#fff; padding:22px;}
+  .mock-hero .nav{font-family:var(--f-mono); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--paper-3); margin-bottom:18px; display:flex; gap:14px;}
+  .mock-hero h4{font-family:var(--f-display); font-weight:600; font-size:1.5rem; color:#fff; line-height:1.15;}
+  .mock-hero .cta{
+    display:inline-block; margin-top:16px; font-family:var(--f-mono); font-size:.68rem;
+    letter-spacing:.06em; text-transform:uppercase; background:var(--rust); color:#fff;
+    padding:8px 14px; border-radius:var(--radius-pill);
+  }
+
+  .mock-card{
+    background:var(--rust-dark); color:#fff; padding:22px; aspect-ratio:1.75; position:relative;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .mock-card .top{display:flex; justify-content:space-between; align-items:flex-start;}
+  .mock-card .roundel-sm{
+    width:38px; height:38px; border-radius:50%; background:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--f-display); font-weight:700; font-size:.85rem; color:var(--ink);
+  }
+  .mock-card .name{font-family:var(--f-display); font-weight:600; font-size:1.15rem;}
+  .mock-card .role{font-family:var(--f-mono); font-size:.62rem; color:var(--paper-3); margin-top:2px;}
+  .mock-card .contact{font-family:var(--f-mono); font-size:.6rem; color:var(--paper-3); line-height:1.7;}
+
+  .mock-banner{background:linear-gradient(100deg, var(--gold) 0%, var(--rust) 100%); padding:26px 22px; color:#fff;}
+  .mock-banner h4{font-family:var(--f-display); font-weight:700; font-size:1.35rem;}
+  .mock-banner p{font-family:var(--f-mono); font-size:.68rem; margin-top:6px; letter-spacing:.04em;}
+
+  .mock-sig{font-family:var(--f-body); font-size:.85rem; padding:6px 0;}
+  .mock-sig .name{font-family:var(--f-display); font-weight:700; font-size:1.15rem; color:var(--ink);}
+  .mock-sig .role{color:var(--rust-dark); font-size:.82rem; margin:2px 0 8px;}
+  .mock-sig .divider{width:56px; height:2px; background:var(--rust); margin:10px 0; border-radius:2px;}
+  .mock-sig .line{color:var(--ink-soft); font-size:.8rem;}
+
+  /* ---------- rules plate (do/dont) ---------- */
+  .dodont{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .dodont-col{background:#fff; padding:24px; border-radius:var(--radius); border:1px solid var(--line-soft); box-shadow:var(--shadow-sm);}
+  .dodont-col h4{font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px;}
+  .dodont-col.do h4{color:#3E5C2A;}
+  .dodont-col.dont h4{color:var(--rust-dark);}
+  .dodont-col ul{margin:0; padding-left:0; list-style:none;}
+  .dodont-col li{
+    font-size:.92rem; color:var(--ink-soft); padding-left:22px; position:relative; margin-bottom:12px; line-height:1.5;
+  }
+  .dodont-col li::before{position:absolute; left:0; font-family:var(--f-mono); font-weight:700;}
+  .dodont-col.do li::before{content:"+"; color:#3E5C2A;}
+  .dodont-col.dont li::before{content:"×"; color:var(--rust-dark);}
+  @media (max-width:640px){ .dodont{grid-template-columns:1fr;} }
+
+  /* ---------- colophon ---------- */
+  .colophon{
+    padding:40px 0 0; margin-top:40px;
+    font-family:var(--f-mono); font-size:.72rem; color:var(--ink-soft);
+    display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+</style>
+
+<div class="indexbar">
+  <div class="indexbar-inner">
+    <div class="indexbar-mark">TE / Brand Standards</div>
+    <nav class="indexbar-nav">
+      <a href="#foundation">01 Foundation</a>
+      <a href="#color">02 Color</a>
+      <a href="#type">03 Type</a>
+      <a href="#mark">04 Mark</a>
+      <a href="#motifs">05 Motifs</a>
+      <a href="#applications">06 Applications</a>
+      <a href="#rules">07 Rules</a>
+    </nav>
+  </div>
+</div>
+
+<header class="cover">
+  <div class="cover-inner">
+    <p class="eyebrow">Personal Brand Standards · Vol. I · 2026</p>
+    <h1>Tyler<br>Entingh</h1>
+    <p class="position">Product design leadership, built for the strategy table too.</p>
+    <div class="cover-meta">
+      <span><strong>Based</strong> — Chicago, IL</span>
+      <span><strong>Web</strong> — tylerentingh.com</span>
+      <span><strong>Mail</strong> — tyler.entingh@gmail.com</span>
+      <span><strong>Issued for</strong> — resume, portfolio site &amp; job search collateral</span>
+    </div>
+  </div>
+  <div class="cover-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 340" preserveAspectRatio="none">
+      <path d="M -160 130 L 30 130 C 160 130 200 260 350 260 C 500 260 540 70 700 70 C 860 70 900 220 1170 220 L 1380 220"
+            fill="none" stroke="var(--ink)" stroke-width="38" stroke-linecap="butt"/>
+      <path d="M -160 130 L 30 130 C 160 130 200 260 350 260 C 500 260 540 70 700 70 C 860 70 900 220 1170 220 L 1380 220"
+            fill="none" stroke="var(--rust)" stroke-width="38" stroke-linecap="butt" transform="translate(0,30)"/>
+      <path d="M -160 130 L 30 130 C 160 130 200 260 350 260 C 500 260 540 70 700 70 C 860 70 900 220 1170 220 L 1380 220"
+            fill="none" stroke="var(--gold)" stroke-width="38" stroke-linecap="butt" transform="translate(0,60)"/>
+      <path d="M -160 130 L 30 130 C 160 130 200 260 350 260 C 500 260 540 70 700 70 C 860 70 900 220 1170 220 L 1380 220"
+            fill="none" stroke="var(--paper-3)" stroke-width="38" stroke-linecap="butt" transform="translate(0,90)"/>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 01 FOUNDATION -->
+  <section class="plate" id="foundation">
+    <div class="plate-head">
+      <div class="plate-num">01</div>
+      <div class="plate-title-group">
+        <span class="kicker">Positioning &amp; voice</span>
+        <h2>Foundation</h2>
+      </div>
+    </div>
+    <p class="plate-intro">
+      Eight-plus years running the full design process — research through pixel-perfect,
+      accessible delivery — followed by two spent on the business side of design: sourcing
+      clients, shaping strategy, closing the gap between what a product team can build and
+      what an organization actually needs. This brand has to read as credible in <strong>both</strong>
+      rooms at once. Warm and specific instead of another cold SaaS-portfolio blue —
+      1970s harvest tones and rounded exaggerated serifs, set against plenty of open white
+      so it reads current instead of vintage.
+    </p>
+
+    <div class="subhead">Voice pillars</div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-num">01 / Systems-minded</span>
+        <h3>Builds the shared language, not just the screen.</h3>
+        <p>Turns scattered UI decisions into a system everyone can point to — and defends it after launch.</p>
+        <span class="proof">Proof — led the brand refresh &amp; design system rollout, Strata Decision Technology</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">02 / Plainspoken teacher</span>
+        <h3>Makes the process legible to the whole room.</h3>
+        <p>Years spent turning product design into curriculum means the explanation is never the weak link.</p>
+        <span class="proof">Proof — Senior Lead Instructor, Flatiron School; Design Program Lead, U.S. Army Software Factory</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">03 / Accessible by default</span>
+        <h3>Treats WCAG as a baseline, not a checkbox.</h3>
+        <p>Accessibility gets built in at the wireframe, not patched on before ship.</p>
+        <span class="proof">Proof — WCAG-standard curricula, training materials &amp; enterprise SaaS products</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">04 / Strategic operator</span>
+        <h3>Comfortable from wireframe to client pipeline.</h3>
+        <p>Reads a market and a Figma file with the same fluency.</p>
+        <span class="proof">Proof — Director of Strategic Development, SeeSaw Labs; UX Strategist, Slide UX</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COLOR -->
+  <section class="plate" id="color">
+    <div class="plate-head">
+      <div class="plate-num">02</div>
+      <div class="plate-title-group">
+        <span class="kicker">Palette</span>
+        <h2>Color</h2>
+      </div>
+    </div>
+    <p class="plate-intro">
+      Named like the paint chips they're descended from — harvest gold, burnt clay, brick —
+      four warm tones lifted from 1970s print and textile work, set against plenty of open
+      white instead of a tinted page. Warm and tactile without tipping into pastiche.
+    </p>
+
+    <div class="swatchgrid">
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--paper); border-bottom-color:var(--line);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Paperwhite</span>
+          <span class="swatch-role">Ground</span>
+          <div class="swatch-codes">#FFFFFF<br>rgb(255, 255, 255)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--paper-2);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Manila</span>
+          <span class="swatch-role">Panel fill</span>
+          <div class="swatch-codes">#FAF3E7<br>rgb(250, 243, 231)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--paper-3);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Sand</span>
+          <span class="swatch-role">Ribbon tint / accent fill</span>
+          <div class="swatch-codes">#F1E1BF<br>rgb(241, 225, 191)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--ink);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Espresso</span>
+          <span class="swatch-role">Ink / text</span>
+          <div class="swatch-codes">#33210F<br>rgb(51, 33, 15)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--ink-soft);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Cocoa</span>
+          <span class="swatch-role">Secondary text</span>
+          <div class="swatch-codes">#5C4530<br>rgb(92, 69, 48)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--rust);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Burnt Clay</span>
+          <span class="swatch-role">Primary accent</span>
+          <div class="swatch-codes">#B84A28<br>rgb(184, 74, 40)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--rust-dark);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Brick</span>
+          <span class="swatch-role">Deep accent / panels</span>
+          <div class="swatch-codes">#7A2E1C<br>rgb(122, 46, 28)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--gold);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Harvest Gold</span>
+          <span class="swatch-role">Secondary accent</span>
+          <div class="swatch-codes">#D69A3C<br>rgb(214, 154, 60)</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--gold-dark);"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">Ochre</span>
+          <span class="swatch-role">Gold, deepened for text</span>
+          <div class="swatch-codes">#A6721F<br>rgb(166, 114, 31)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Accessible pairings (WCAG 2.1 contrast, measured on Paperwhite)</div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Text</th><th>On</th><th>Sample</th><th>Ratio</th><th>Rating</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Espresso</td><td>Paperwhite</td><td class="sample" style="color:var(--ink); background:var(--paper);">Aa</td><td>15.4:1</td><td><span class="tag aaa">AAA — body text</span></td></tr>
+          <tr><td>Cocoa</td><td>Paperwhite</td><td class="sample" style="color:var(--ink-soft); background:var(--paper);">Aa</td><td>8.9:1</td><td><span class="tag aaa">AAA — body text</span></td></tr>
+          <tr><td>Paperwhite</td><td>Espresso</td><td class="sample" style="color:var(--paper); background:var(--ink);">Aa</td><td>15.4:1</td><td><span class="tag aaa">AAA — reversed panels</span></td></tr>
+          <tr><td>Paperwhite</td><td>Brick</td><td class="sample" style="color:var(--paper); background:var(--rust-dark);">Aa</td><td>9.4:1</td><td><span class="tag aaa">AAA — reversed panels</span></td></tr>
+          <tr><td>Espresso</td><td>Harvest Gold</td><td class="sample" style="color:var(--ink); background:var(--gold);">Aa</td><td>6.3:1</td><td><span class="tag aa">AA — dark text on gold fills</span></td></tr>
+          <tr><td>Burnt Clay</td><td>Paperwhite</td><td class="sample" style="color:var(--rust); background:var(--paper);">Aa</td><td>5.2:1</td><td><span class="tag aaa">AA — clears body text too</span></td></tr>
+          <tr><td>Ochre</td><td>Paperwhite</td><td class="sample" style="color:var(--gold-dark); background:var(--paper); font-size:1.2em;">Aa</td><td>4.2:1</td><td><span class="tag large">AA · large / bold text only</span></td></tr>
+          <tr><td>Harvest Gold</td><td>Paperwhite</td><td class="sample" style="color:var(--gold); background:var(--paper);">Aa</td><td>2.5:1</td><td><span class="tag fail">Fails — fill only, never text</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rulecard">
+      <div class="subhead">How to use it</div>
+      <ul>
+        <li><strong>Espresso and Cocoa carry every paragraph.</strong> The safest defaults, at any size.</li>
+        <li><strong>Burnt Clay clears full AA on white (5.2:1).</strong> It's the one accent cleared for body-weight text, not just headlines — moving off a cream ground earned this.</li>
+        <li><strong>Ochre and Harvest Gold stay display-only.</strong> 24px+/bold, or as a fill with Espresso set on top.</li>
+        <li><strong>Paperwhite is the ground, full stop.</strong> Manila and Sand step in for panels and the wave motif — never for the whole page.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 03 TYPE -->
+  <section class="plate" id="type">
+    <div class="plate-head">
+      <div class="plate-num">03</div>
+      <div class="plate-title-group">
+        <span class="kicker">Typography</span>
+        <h2>Type</h2>
+      </div>
+    </div>
+    <p class="plate-intro">
+      Three roles, three jobs: a display serif for anything the reader should <em>feel</em>,
+      a rounded sans for anything they need to read at length or act on, and a mono for
+      anything measured or catalogued — labels, dates, specs.
+    </p>
+
+    <div class="specimen">
+      <div class="specimen-head"><span class="name">Fraunces</span><span class="role">Display — headlines, name, pull quotes</span></div>
+      <div class="specimen-body">
+        <div class="glyphs-display">Aa Gg Qg</div>
+        <div class="glyphs-sub">Product design, built for the strategy table.</div>
+        <div class="glyphs-alpha">ABCDEFGHIJKLM abcdefghijklm 1234567890</div>
+        <div class="weights-row">
+          <span style="font-weight:300; font-style:italic;">Light italic</span>
+          <span style="font-weight:600;">Semibold</span>
+          <span style="font-weight:900;">Black</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="specimen">
+      <div class="specimen-head"><span class="name">Nunito</span><span class="role">Body — paragraphs, UI copy, captions</span></div>
+      <div class="specimen-body">
+        <p class="body-para">Eight-plus years of user-centered design across SaaS, education, and defense — from research and wireframes through WCAG-compliant, shipped product. The last two spent turning that fluency into strategy: sourcing clients, shaping roadmaps, and closing the distance between design and business outcomes.</p>
+        <div class="weights-row">
+          <span style="font-weight:400;">Regular</span>
+          <span style="font-weight:600;">Semibold</span>
+          <span style="font-weight:800;">Extrabold</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="specimen">
+      <div class="specimen-head"><span class="name">Space Mono</span><span class="role">Utility — labels, specs, dates, contact lines</span></div>
+      <div class="specimen-body">
+        <div class="mono-lines">
+          <div><span class="lbl">Eyebrow label</span>SENIOR PRODUCT DESIGNER</div>
+          <div><span class="lbl">Hex spec</span>#B84A28 · BURNT CLAY</div>
+          <div><span class="lbl">Date stamp</span>ISSUED 2026.09</div>
+          <div><span class="lbl">Contact line</span>tyler.entingh@gmail.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Type scale</div>
+    <div class="tablewrap">
+      <table class="scale-table">
+        <thead><tr><th>Role</th><th>Family / weight</th><th>Size / line-height</th><th>Used for</th></tr></thead>
+        <tbody>
+          <tr><td class="role" style="font-family:var(--f-display); font-size:1.3rem;">Cover name</td><td>Fraunces 600</td><td>56–102px / 0.94</td><td>Name lockup, page one only</td></tr>
+          <tr><td class="role" style="font-family:var(--f-display); font-size:1.15rem;">Headline</td><td>Fraunces 600</td><td>28–40px / 1.05</td><td>Section &amp; page headlines</td></tr>
+          <tr><td class="role" style="font-family:var(--f-display); font-style:italic;">Subhead</td><td>Fraunces 400 italic</td><td>19–24px / 1.2</td><td>Positioning lines, pull quotes</td></tr>
+          <tr><td class="role">Body</td><td>Nunito 400</td><td>16–17px / 1.6</td><td>Paragraphs, descriptions</td></tr>
+          <tr><td class="role">UI / labels</td><td>Nunito 700</td><td>14px / 1.4</td><td>Buttons, nav, form labels</td></tr>
+          <tr><td class="role" style="font-family:var(--f-mono);">Eyebrow / spec</td><td>Space Mono 400</td><td>11–12px / 1.5, tracked</td><td>Kickers, dates, hex codes, captions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 04 MARK -->
+  <section class="plate" id="mark">
+    <div class="plate-head">
+      <div class="plate-num">04</div>
+      <div class="plate-title-group">
+        <span class="kicker">Identity mark</span>
+        <h2>Mark</h2>
+      </div>
+    </div>
+    <p class="plate-intro">
+      Two ways to sign the work: a striped roundel for small spaces — favicon, social
+      avatar, business card — and a set wordmark for anywhere the full name fits.
+    </p>
+
+    <div class="markgrid">
+      <div class="markbox">
+        <span class="cap">Roundel — 24px minimum</span>
+        <div class="roundel"><span>TE</span></div>
+      </div>
+      <div class="markbox">
+        <span class="cap">Wordmark — headers &amp; letterhead</span>
+        <div class="wordmark-demo">Tyler Entingh<div class="rule"></div></div>
+      </div>
+    </div>
+
+    <div class="rulecard">
+      <div class="subhead">Clear space &amp; minimum size</div>
+      <ul>
+        <li>Keep clear space equal to the height of the "T" on all sides — nothing else crosses that margin.</li>
+        <li>Roundel drops below 24px on screen; below that, use initials alone, no ring.</li>
+        <li>Wordmark never gets condensed, stretched, or set in anything but Fraunces.</li>
+        <li>Use the roundel where space is tight and unattended (favicon, avatar); use the wordmark wherever the full name reads comfortably.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 05 MOTIFS -->
+  <section class="plate" id="motifs">
+    <div class="plate-head">
+      <div class="plate-num">05</div>
+      <div class="plate-title-group">
+        <span class="kicker">Supporting elements</span>
+        <h2>Motifs</h2>
+      </div>
+    </div>
+    <p class="plate-intro">
+      The wave is the signature graphic — four parallel bands, warm to light, doing the
+      work a logo mark usually does. Everything else in this kit is a smaller, quieter texture.
+      Pick <strong>one</strong> per composition; they're seasoning, not the meal.
+    </p>
+
+    <div class="wave-showcase">
+      <div class="stage">
+        <svg viewBox="0 0 1200 320" preserveAspectRatio="none">
+          <path d="M -180 120 L 20 120 C 150 120 190 250 340 250 C 490 250 530 60 690 60 C 850 60 890 210 1180 210 L 1380 210"
+                fill="none" stroke="var(--ink)" stroke-width="36" stroke-linecap="butt"/>
+          <path d="M -180 120 L 20 120 C 150 120 190 250 340 250 C 490 250 530 60 690 60 C 850 60 890 210 1180 210 L 1380 210"
+                fill="none" stroke="var(--rust)" stroke-width="36" stroke-linecap="butt" transform="translate(0,29)"/>
+          <path d="M -180 120 L 20 120 C 150 120 190 250 340 250 C 490 250 530 60 690 60 C 850 60 890 210 1180 210 L 1380 210"
+                fill="none" stroke="var(--gold)" stroke-width="36" stroke-linecap="butt" transform="translate(0,58)"/>
+          <path d="M -180 120 L 20 120 C 150 120 190 250 340 250 C 490 250 530 60 690 60 C 850 60 890 210 1180 210 L 1380 210"
+                fill="none" stroke="var(--paper-3)" stroke-width="36" stroke-linecap="butt" transform="translate(0,87)"/>
+        </svg>
+      </div>
+      <div class="lbl">Wave — signature graphic, use once per page</div>
+    </div>
+
+    <div class="motifgrid">
+      <div class="motif m-diagonal"><span class="lbl">Diagonal stripes</span></div>
+      <div class="motif m-stack"><span class="lbl">Stacked bands</span></div>
+      <div class="motif m-halftone"><span class="lbl">Halftone</span></div>
+      <div class="motif m-rules"><span class="lbl">Rule pair</span></div>
+    </div>
+  </section>
+
+  <!-- 06 APPLICATIONS -->
+  <section class="plate" id="applications">
+    <div class="plate-head">
+      <div class="plate-num">06</div>
+      <div class="plate-title-group">
+        <span class="kicker">In use</span>
+        <h2>Applications</h2>
+      </div>
+    </div>
+    <p class="plate-intro">
+      How the system holds up across the pieces this search actually needs: resume header,
+      site hero, business card, social banner, email signature.
+    </p>
+
+    <div class="appgrid">
+      <div class="app">
+        <div class="app-stage mock-header">
+          <div>
+            <div class="name">Tyler Entingh</div>
+            <div class="title">Senior Product Designer</div>
+          </div>
+          <div class="contact">Chicago, IL<br>tylerentingh.com</div>
+        </div>
+        <div class="app-cap">Application — resume / portfolio header</div>
+      </div>
+
+      <div class="app">
+        <div class="app-stage mock-hero">
+          <div class="nav"><span>WORK</span><span>ABOUT</span><span>CONTACT</span></div>
+          <h4>Systems that ship,<br>strategy that lands.</h4>
+          <span class="cta">View the work →</span>
+        </div>
+        <div class="app-cap">Application — website hero</div>
+      </div>
+
+      <div class="app">
+        <div class="app-stage" style="padding:0;">
+          <div class="mock-card">
+            <div class="top">
+              <div>
+                <div class="name">Tyler Entingh</div>
+                <div class="role">PRODUCT DESIGN &amp; STRATEGY</div>
+              </div>
+              <div class="roundel-sm">TE</div>
+            </div>
+            <div class="contact">tyler.entingh@gmail.com<br>tylerentingh.com · Chicago, IL</div>
+          </div>
+        </div>
+        <div class="app-cap">Application — business card front</div>
+      </div>
+
+      <div class="app">
+        <div class="app-stage" style="padding:0;">
+          <div class="mock-banner">
+            <h4>Tyler Entingh — open to design &amp; strategy roles</h4>
+            <p>PRODUCT DESIGN · UX STRATEGY · CHICAGO, IL</p>
+          </div>
+        </div>
+        <div class="app-cap">Application — LinkedIn / social banner</div>
+      </div>
+    </div>
+
+    <div class="app" style="margin-top:22px; max-width:420px;">
+      <div class="app-stage mock-sig">
+        <div class="name">Tyler Entingh</div>
+        <div class="role">Product Designer &amp; Strategist</div>
+        <div class="divider"></div>
+        <div class="line">tyler.entingh@gmail.com</div>
+        <div class="line">tylerentingh.com · Chicago, IL</div>
+      </div>
+      <div class="app-cap">Application — email signature</div>
+    </div>
+  </section>
+
+  <!-- 07 RULES -->
+  <section class="plate" id="rules">
+    <div class="plate-head">
+      <div class="plate-num">07</div>
+      <div class="plate-title-group">
+        <span class="kicker">Do / don't</span>
+        <h2>Usage rules</h2>
+      </div>
+    </div>
+
+    <div class="dodont">
+      <div class="dodont-col do">
+        <h4>Do</h4>
+        <ul>
+          <li>Run one Fraunces headline per composition — let it be the loud thing.</li>
+          <li>Set every paragraph in Espresso or Cocoa on Paperwhite.</li>
+          <li>Use Burnt Clay as the single call-to-action / accent color per screen.</li>
+          <li>Let Paperwhite breathe — open white space is what keeps this feeling current, not dated.</li>
+          <li>Use the mono face for anything factual: dates, contact info, specs.</li>
+        </ul>
+      </div>
+      <div class="dodont-col dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Set body copy in Harvest Gold — it won't clear contrast at any size.</li>
+          <li>Stack more than one motif (wave + diagonal stripes, etc.) in one composition.</li>
+          <li>Condense, stretch, or italicize Fraunces headlines for a tighter fit.</li>
+          <li>Tint the whole page cream or beige — Paperwhite is the ground; warmth comes from the accents.</li>
+          <li>Border every panel — let white space and the wave motif carry the rhythm instead.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="colophon">
+    <span>Entingh Brand Standards · Vol. I</span>
+    <span>Prepared for resume, portfolio site &amp; job search collateral · Issued 2026.09</span>
+  </div>
+
+</main>

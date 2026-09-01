@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="c"><circle cx="32" cy="32" r="32"/></clipPath>
+    <clipPath id="c2"><circle cx="32" cy="32" r="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="64" height="64" fill="#33210F"/>
+    <g clip-path="url(#c2)" transform="translate(32,32) rotate(35) translate(-32,-32)">
+      <rect x="-20" y="0" width="104" height="8" fill="#33210F"/>
+      <rect x="-20" y="8" width="104" height="8" fill="#B84A28"/>
+      <rect x="-20" y="16" width="104" height="8" fill="#D69A3C"/>
+      <rect x="-20" y="24" width="104" height="8" fill="#F1E1BF"/>
+      <rect x="-20" y="32" width="104" height="8" fill="#33210F"/>
+      <rect x="-20" y="40" width="104" height="8" fill="#B84A28"/>
+      <rect x="-20" y="48" width="104" height="8" fill="#D69A3C"/>
+      <rect x="-20" y="56" width="104" height="8" fill="#F1E1BF"/>
+    </g>
+  </g>
+  <circle cx="32" cy="32" r="18" fill="#FFFFFF"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="18" fill="#33210F">TE</text>
+</svg>
