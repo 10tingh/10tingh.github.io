@@ -10,11 +10,12 @@ Personal job-search site for Tyler Entingh — static HTML/CSS, hosted free on G
 - `assets/style.css` — design system (colors, type, layout), matching `Tyler-Entingh-Brand-Standards.html`
 - `assets/favicon.svg` — the "TE" roundel mark used as the browser tab icon
 
-Sections still marked `Add dates & details` / `Add project` / `add link` in `index.html` are placeholders —
-swap in real resume bullets, case studies, and your LinkedIn URL when ready.
+Experience is filled in from `Tyler_Entingh_Senior_Product_Designer_Resume.pdf`, which is also linked as
+the "Download résumé" button. Sections still marked `Add project` / `add link` in `index.html` are
+placeholders — swap in real case studies and your LinkedIn URL when ready.
 
-To add a downloadable résumé: drop a `resume.pdf` file in this folder (same name the "Download résumé"
-button already links to).
+To update the résumé: replace `Tyler_Entingh_Senior_Product_Designer_Resume.pdf` with the new file (same
+name), or update the "Download résumé" link's `href` in `index.html` if you rename it.
 
 ## Publishing changes
 
