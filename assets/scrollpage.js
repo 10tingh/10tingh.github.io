@@ -15,7 +15,12 @@
   // much less -- reaching 100% on the bar is the one and only trigger for
   // advancing forward, since we (not the browser) decide exactly when that is.
   var FORWARD_THRESHOLD = 650;
-  var BACKWARD_THRESHOLD = 110;
+  var BACKWARD_THRESHOLD = 165;
+  // scrollTop is integer-rounded by the browser but scrollHeight-clientHeight
+  // can be fractional, so "still has room to absorb" must tolerate a
+  // sub-pixel gap -- otherwise scrollTop can permanently sit just below a
+  // fractional innerRange and never register as exhausted.
+  var OVERFLOW_EPSILON = 2;
 
   var currentIndex = 0;
   var accum = 0;
@@ -86,16 +91,20 @@
 
     // Let the active page's own overflow (if any -- e.g. Experience's long
     // timeline) absorb the scroll first, before it counts toward paging.
+    // Beyond the epsilon tolerance, also check that scrollTop actually moved:
+    // browsers clamp scrollTop to their own internal (sometimes fractional)
+    // max, which can sit fractionally below the integer scrollHeight-
+    // clientHeight we compute here, so scrollTop can otherwise permanently
+    // read as "still short of max" and never fall through to paging.
     if (innerRange > 1) {
-      if (deltaY > 0 && pageEl.scrollTop < innerRange) {
+      if (deltaY > 0 && pageEl.scrollTop < innerRange - OVERFLOW_EPSILON) {
+        var beforeDown = pageEl.scrollTop;
         pageEl.scrollTop = Math.min(innerRange, pageEl.scrollTop + deltaY);
-        updateProgressBar();
-        return;
-      }
-      if (deltaY < 0 && pageEl.scrollTop > 0) {
+        if (pageEl.scrollTop > beforeDown) { updateProgressBar(); return; }
+      } else if (deltaY < 0 && pageEl.scrollTop > OVERFLOW_EPSILON) {
+        var beforeUp = pageEl.scrollTop;
         pageEl.scrollTop = Math.max(0, pageEl.scrollTop + deltaY);
-        updateProgressBar();
-        return;
+        if (pageEl.scrollTop < beforeUp) { updateProgressBar(); return; }
       }
     }
 
