@@ -34,17 +34,25 @@
 
   function updateProgressBar(){
     if (!progressBar || !activePage) return;
-    var range = activePage.scrollHeight - activePage.clientHeight;
-    // No internal overflow means there's nothing left to reveal here — any
-    // further scroll immediately moves to the next/previous section, so the
-    // bar reads as fully "ready to transition."
-    var fraction = range <= 1 ? 1 : Math.max(0, Math.min(1, activePage.scrollTop / range));
+    // Two phases, combined into one continuous 0-1 sweep:
+    // 1) scrolling through the page's own overflow, if it has any (scroll
+    //    chaining means the outer scrollport won't move at all yet), then
+    // 2) the outer scroll distance still needed to actually carry the snap
+    //    container to the next/previous page, once that content is
+    //    exhausted. Reaching "all the content" is only the halfway point if
+    //    there's a full page-height of outer scroll still to go.
+    var innerRange = Math.max(0, activePage.scrollHeight - activePage.clientHeight);
+    var innerScrolled = Math.min(activePage.scrollTop, innerRange);
+    var pageHeight = scrollport.clientHeight || 1;
+    var outerProgress = scrollport.scrollTop % pageHeight;
+    var total = innerRange + pageHeight;
+    var fraction = Math.max(0, Math.min(1, (innerScrolled + outerProgress) / total));
     progressBar.style.transform = 'scaleX(' + fraction + ')';
   }
 
   if (progressBar) {
     document.addEventListener('scroll', function(e){
-      if (e.target === activePage) updateProgressBar();
+      if (e.target === activePage || e.target === scrollport) updateProgressBar();
     }, true);
     window.addEventListener('resize', updateProgressBar);
   }
