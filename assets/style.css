@@ -103,28 +103,26 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .navbar-nav a:hover, .navbar-nav a:focus-visible{color:var(--rust-dark); border-bottom-color:var(--rust);}
 .navbar-nav a.active{color:var(--rust-dark); border-bottom-color:var(--rust); font-weight:700;}
 
-/* ---------- scroll-snap pages ---------- */
+/* ---------- custom-paged sections ---------- */
+/* Paging is driven entirely by assets/scrollpage.js (wheel/keyboard/touch),
+   not native scroll-snap -- that's what lets the progress bar be the exact,
+   guaranteed trigger for advancing, and lets forward/backward have
+   different effort. .pages-track is translated by JS in whole --page-h
+   increments; .scrollport just clips whatever isn't the current page. */
 :root{ --nav-h:64px; --page-h:100vh; }
 .scrollport{
   position:fixed; top:var(--nav-h); left:0; right:0; bottom:0;
-  overflow-y:auto; overflow-x:hidden;
-  scroll-snap-type:y mandatory;
-  scroll-behavior:smooth;
+  overflow:hidden;
 }
-/* Each .page is taller than one screen; .page-stage sticks for that extra
-   run, giving the wheel real physical distance to travel (and the reveal
-   transition real time to play) before the next section takes over,
-   instead of an instant, decoupled snap-jump. */
+.pages-track{
+  transition:transform .7s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
 .page{
-  height:calc(var(--page-h) * 1.4);
-  scroll-snap-align:start;
-  scroll-snap-stop:always;
-}
-.page-stage{
-  position:sticky; top:0;
+  position:relative;
   height:var(--page-h);
   display:flex;
-  overflow:hidden auto;
+  overflow-y:auto;
 }
 .page-inner{
   width:100%; max-width:920px; margin:auto; padding:56px 28px;
@@ -135,6 +133,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .page-inner.is-visible{opacity:1; transform:translateY(0);}
 
 /* ---------- hero ---------- */
+.hero{overflow-x:hidden;}
 .hero-inner{max-width:920px; margin:auto; position:relative; z-index:1;}
 .eyebrow{
   font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
