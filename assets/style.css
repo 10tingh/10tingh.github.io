@@ -67,7 +67,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .navbar-nav a:hover, .navbar-nav a:focus-visible{color:var(--rust-dark); border-bottom-color:var(--rust);}
 
 /* ---------- hero ---------- */
-.hero{padding:76px 28px 48px; position:relative; overflow:hidden;}
+.hero{padding:76px 28px 180px; position:relative; overflow:hidden;}
 .hero-inner{max-width:920px; margin:0 auto; position:relative; z-index:1;}
 .eyebrow{
   font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
