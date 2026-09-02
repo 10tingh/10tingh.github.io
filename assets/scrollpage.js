@@ -91,20 +91,27 @@
 
     // Let the active page's own overflow (if any -- e.g. Experience's long
     // timeline) absorb the scroll first, before it counts toward paging.
-    // Beyond the epsilon tolerance, also check that scrollTop actually moved:
-    // browsers clamp scrollTop to their own internal (sometimes fractional)
-    // max, which can sit fractionally below the integer scrollHeight-
-    // clientHeight we compute here, so scrollTop can otherwise permanently
-    // read as "still short of max" and never fall through to paging.
+    // Only ever consume up to whatever room is actually left and carry the
+    // *leftover* delta through to the paging logic below in this same call
+    // -- a single large gesture (a fast trackpad swipe, or several wheel
+    // ticks coalesced into one event) that both finishes the content AND
+    // has scroll left over must still count that remainder toward paging,
+    // or a big scroll can get silently swallowed right at the boundary and
+    // every subsequent small gesture has to rebuild paging progress from
+    // zero, which reads as being stuck.
     if (innerRange > 1) {
       if (deltaY > 0 && pageEl.scrollTop < innerRange - OVERFLOW_EPSILON) {
-        var beforeDown = pageEl.scrollTop;
-        pageEl.scrollTop = Math.min(innerRange, pageEl.scrollTop + deltaY);
-        if (pageEl.scrollTop > beforeDown) { updateProgressBar(); return; }
+        var room = innerRange - pageEl.scrollTop;
+        var consumed = Math.min(deltaY, room);
+        pageEl.scrollTop += consumed;
+        deltaY -= consumed;
+        if (deltaY <= 0) { updateProgressBar(); return; }
       } else if (deltaY < 0 && pageEl.scrollTop > OVERFLOW_EPSILON) {
-        var beforeUp = pageEl.scrollTop;
-        pageEl.scrollTop = Math.max(0, pageEl.scrollTop + deltaY);
-        if (pageEl.scrollTop < beforeUp) { updateProgressBar(); return; }
+        var roomUp = pageEl.scrollTop;
+        var consumedUp = Math.min(-deltaY, roomUp);
+        pageEl.scrollTop -= consumedUp;
+        deltaY += consumedUp;
+        if (deltaY >= 0) { updateProgressBar(); return; }
       }
     }
 
@@ -126,9 +133,20 @@
     updateProgressBar();
   }
 
+  function normalizedWheelDelta(e){
+    // A plain mouse wheel (as opposed to a trackpad) commonly reports
+    // deltaMode 1 (DOM_DELTA_LINE), where deltaY is a tiny number like 3
+    // rather than a pixel count -- our thresholds assume pixels, so treating
+    // a line-mode delta literally would make forward/backward progress
+    // accumulate at a small fraction of the intended rate.
+    if (e.deltaMode === 1) return e.deltaY * 34;
+    if (e.deltaMode === 2) return e.deltaY * scrollport.clientHeight;
+    return e.deltaY;
+  }
+
   scrollport.addEventListener('wheel', function(e){
     e.preventDefault();
-    applyDelta(e.deltaY);
+    applyDelta(normalizedWheelDelta(e));
   }, { passive: false });
 
   document.addEventListener('keydown', function(e){
