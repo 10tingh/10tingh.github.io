@@ -24,6 +24,9 @@
   }
 
   // Highlight the nav link for whichever section is currently in view.
+  // The mark ("Hi, I'm Tyler Entingh") lights up instead when that section
+  // is the hero, which has no nav link of its own.
+  var navMark = document.querySelector('.navbar-mark');
   var navLinks = document.querySelectorAll('.navbar-nav a');
   var pages = document.querySelectorAll('.page[id]');
   if (navLinks.length && pages.length) {
@@ -38,7 +41,12 @@
         if (entry.intersectionRatio < 0.5) return;
         navLinks.forEach(function(a){ a.classList.remove('active'); });
         var link = navMap[entry.target.id];
-        if (link) link.classList.add('active');
+        if (link) {
+          link.classList.add('active');
+          if (navMark) navMark.classList.remove('active');
+        } else if (navMark) {
+          navMark.classList.add('active');
+        }
       });
     }, { root: scrollport, threshold: [0, 0.5, 1] });
 

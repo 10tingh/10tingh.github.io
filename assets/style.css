@@ -60,7 +60,11 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
   display:flex; align-items:baseline; justify-content:space-between;
   gap:16px; flex-wrap:wrap;
 }
-.navbar-mark{font-family:var(--f-display); font-weight:700; font-size:1.05rem; letter-spacing:.01em; text-decoration:none; color:var(--ink);}
+.navbar-mark{
+  font-family:var(--f-display); font-weight:700; font-size:1.05rem; letter-spacing:.01em;
+  text-decoration:none; color:var(--ink); border-bottom:1px solid transparent;
+}
+.navbar-mark.active{border-bottom-color:var(--rust);}
 .navbar-nav{
   display:flex; gap:18px; flex-wrap:wrap;
   font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em;
