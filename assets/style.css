@@ -34,7 +34,7 @@ body{
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
   *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
-  .hero-wave svg{animation-duration:11s !important;}
+  .hero-wave-track{animation-duration:9s !important;}
 }
 
 img{max-width:100%;}
@@ -110,12 +110,13 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 }
 .hero-wave svg{
   --wave-scale:1.8;
-  display:block; width:100%; height:auto; transform-origin:center top;
-  animation:hero-wave-drift 11s ease-in-out infinite;
+  display:block; width:100%; height:auto; overflow:hidden;
+  transform:scale(var(--wave-scale)); transform-origin:center top;
 }
-@keyframes hero-wave-drift{
-  0%, 100%{ transform:scale(var(--wave-scale)) translateX(-14px); }
-  50%{ transform:scale(var(--wave-scale)) translateX(14px); }
+.hero-wave-track{animation:hero-wave-flow 9s linear infinite;}
+@keyframes hero-wave-flow{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-600px); }
 }
 @media (max-width:480px){
   .hero{padding-bottom:28px;}
