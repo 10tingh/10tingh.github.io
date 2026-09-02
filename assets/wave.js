@@ -4,7 +4,7 @@
   var bands = Array.prototype.slice.call(track.querySelectorAll('.wave-band'));
   if(!bands.length) return;
 
-  var baselines = [150, 190, 230, 270];
+  var baselines = [150, 178, 206, 234];
 
   // A dominant gentle wave, plus a much smaller, slower second component so
   // the shape drifts and softly reshapes over time instead of repeating a
