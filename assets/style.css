@@ -35,6 +35,7 @@ body{
   html{scroll-behavior:auto;}
   *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
   .hero-wave-track{animation-duration:9s !important;}
+  .wave-band{animation-duration:4s !important;}
 }
 
 img{max-width:100%;}
@@ -116,8 +117,17 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .hero-wave-track{animation:hero-wave-flow 9s linear infinite;}
 @keyframes hero-wave-flow{
   from{ transform:translateX(0); }
-  to{ transform:translateX(-600px); }
+  to{ transform:translateX(600px); }
 }
+.wave-band{animation:hero-wave-bob 4s ease-in-out infinite;}
+@keyframes hero-wave-bob{
+  0%, 100%{ transform:translateY(var(--band-offset)); }
+  50%{ transform:translateY(calc(var(--band-offset) + 16px)); }
+}
+.wave-band:nth-child(1){animation-delay:0s;}
+.wave-band:nth-child(2){animation-delay:-1s;}
+.wave-band:nth-child(3){animation-delay:-2s;}
+.wave-band:nth-child(4){animation-delay:-3s;}
 @media (max-width:480px){
   .hero{padding-bottom:28px;}
   .hero-wave{top:10px;}
