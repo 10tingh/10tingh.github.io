@@ -29,6 +29,26 @@
   var navMark = document.querySelector('.navbar-mark');
   var navLinks = document.querySelectorAll('.navbar-nav a');
   var pages = document.querySelectorAll('.page[id]');
+  var progressBar = document.querySelector('.scroll-progress-bar');
+  var activePage = null;
+
+  function updateProgressBar(){
+    if (!progressBar || !activePage) return;
+    var range = activePage.scrollHeight - activePage.clientHeight;
+    // No internal overflow means there's nothing left to reveal here — any
+    // further scroll immediately moves to the next/previous section, so the
+    // bar reads as fully "ready to transition."
+    var fraction = range <= 1 ? 1 : Math.max(0, Math.min(1, activePage.scrollTop / range));
+    progressBar.style.transform = 'scaleX(' + fraction + ')';
+  }
+
+  if (progressBar) {
+    document.addEventListener('scroll', function(e){
+      if (e.target === activePage) updateProgressBar();
+    }, true);
+    window.addEventListener('resize', updateProgressBar);
+  }
+
   if (navLinks.length && pages.length) {
     var navMap = {};
     navLinks.forEach(function(a){
@@ -47,6 +67,8 @@
         } else if (navMark) {
           navMark.classList.add('active');
         }
+        activePage = entry.target;
+        updateProgressBar();
       });
     }, { root: scrollport, threshold: [0, 0.5, 1] });
 

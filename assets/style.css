@@ -52,7 +52,12 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
   position:fixed; top:0; left:0; right:0; z-index:30;
   background:rgba(255,255,255,.92);
   -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line-soft);
+}
+.scroll-progress{height:2px; background:var(--line-soft);}
+.scroll-progress-bar{
+  height:100%; width:100%; background:var(--rust);
+  transform:scaleX(0); transform-origin:left center;
+  transition:transform .15s ease-out;
 }
 .navbar-inner{
   position:relative;
