@@ -3,13 +3,14 @@
   var scrollport = document.getElementById('scrollport');
   if (!navbar || !scrollport) return;
 
-  function setNavHeight(){
+  function setMetrics(){
     document.documentElement.style.setProperty('--nav-h', navbar.getBoundingClientRect().height + 'px');
+    document.documentElement.style.setProperty('--page-h', scrollport.clientHeight + 'px');
   }
-  setNavHeight();
-  window.addEventListener('resize', setNavHeight);
+  setMetrics();
+  window.addEventListener('resize', setMetrics);
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(setNavHeight);
+    document.fonts.ready.then(setMetrics);
   }
 
   var items = document.querySelectorAll('.page-inner');
@@ -23,28 +24,32 @@
     items.forEach(function(el){ io.observe(el); });
   }
 
-  // Highlight the nav link for whichever section is currently in view.
-  // The mark ("Hi, I'm Tyler Entingh") lights up instead when that section
-  // is the hero, which has no nav link of its own.
+  // Highlight the nav link for whichever section's sticky stage is
+  // currently in view. The mark ("Hi, I'm Tyler Entingh") lights up
+  // instead when that section is the hero, which has no nav link of its own.
   var navMark = document.querySelector('.navbar-mark');
   var navLinks = document.querySelectorAll('.navbar-nav a');
-  var pages = document.querySelectorAll('.page[id]');
+  var stages = document.querySelectorAll('.page-stage');
   var progressBar = document.querySelector('.scroll-progress-bar');
-  var activePage = null;
+  var activeStage = null;
 
   function updateProgressBar(){
-    if (!progressBar || !activePage) return;
+    if (!progressBar || !activeStage) return;
     // Two phases, combined into one continuous 0-1 sweep:
-    // 1) scrolling through the page's own overflow, if it has any (scroll
+    // 1) scrolling through the stage's own overflow, if it has any (scroll
     //    chaining means the outer scrollport won't move at all yet), then
     // 2) the outer scroll distance still needed to actually carry the snap
-    //    container to the next/previous page, once that content is
-    //    exhausted. Reaching "all the content" is only the halfway point if
-    //    there's a full page-height of outer scroll still to go.
-    var innerRange = Math.max(0, activePage.scrollHeight - activePage.clientHeight);
-    var innerScrolled = Math.min(activePage.scrollTop, innerRange);
-    var pageHeight = scrollport.clientHeight || 1;
-    var outerProgress = scrollport.scrollTop % pageHeight;
+    //    container through the rest of this page's (stretched) height and
+    //    into the next/previous one. Reaching "all the content" is only
+    //    partway if there's a stretch of outer scroll still to go.
+    var innerRange = Math.max(0, activeStage.scrollHeight - activeStage.clientHeight);
+    var innerScrolled = Math.min(activeStage.scrollTop, innerRange);
+    var pageEl = activeStage.closest('.page');
+    var pageHeight = (pageEl ? pageEl.offsetHeight : scrollport.clientHeight) || 1;
+    // Measured from this page's own offset rather than scrollTop % pageHeight:
+    // at exact boundaries, subpixel rounding can make the modulo read as
+    // ~100% of the *previous* page instead of ~0% of this one.
+    var outerProgress = pageEl ? Math.max(0, Math.min(pageHeight, scrollport.scrollTop - pageEl.offsetTop)) : 0;
     var total = innerRange + pageHeight;
     var fraction = Math.max(0, Math.min(1, (innerScrolled + outerProgress) / total));
     progressBar.style.transform = 'scaleX(' + fraction + ')';
@@ -52,12 +57,12 @@
 
   if (progressBar) {
     document.addEventListener('scroll', function(e){
-      if (e.target === activePage || e.target === scrollport) updateProgressBar();
+      if (e.target === activeStage || e.target === scrollport) updateProgressBar();
     }, true);
     window.addEventListener('resize', updateProgressBar);
   }
 
-  if (navLinks.length && pages.length) {
+  if (navLinks.length && stages.length) {
     var navMap = {};
     navLinks.forEach(function(a){
       var href = a.getAttribute('href') || '';
@@ -68,18 +73,19 @@
       entries.forEach(function(entry){
         if (entry.intersectionRatio < 0.5) return;
         navLinks.forEach(function(a){ a.classList.remove('active'); });
-        var link = navMap[entry.target.id];
+        var pageEl = entry.target.closest('.page');
+        var link = pageEl ? navMap[pageEl.id] : null;
         if (link) {
           link.classList.add('active');
           if (navMark) navMark.classList.remove('active');
         } else if (navMark) {
           navMark.classList.add('active');
         }
-        activePage = entry.target;
+        activeStage = entry.target;
         updateProgressBar();
       });
     }, { root: scrollport, threshold: [0, 0.5, 1] });
 
-    pages.forEach(function(p){ navObserver.observe(p); });
+    stages.forEach(function(s){ navObserver.observe(s); });
   }
 })();

@@ -104,20 +104,27 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .navbar-nav a.active{color:var(--rust-dark); border-bottom-color:var(--rust); font-weight:700;}
 
 /* ---------- scroll-snap pages ---------- */
-:root{ --nav-h:64px; }
+:root{ --nav-h:64px; --page-h:100vh; }
 .scrollport{
   position:fixed; top:var(--nav-h); left:0; right:0; bottom:0;
   overflow-y:auto; overflow-x:hidden;
   scroll-snap-type:y mandatory;
   scroll-behavior:smooth;
 }
+/* Each .page is taller than one screen; .page-stage sticks for that extra
+   run, giving the wheel real physical distance to travel (and the reveal
+   transition real time to play) before the next section takes over,
+   instead of an instant, decoupled snap-jump. */
 .page{
-  position:relative;
-  height:100%;
-  display:flex;
-  overflow-y:auto;
+  height:calc(var(--page-h) * 1.4);
   scroll-snap-align:start;
   scroll-snap-stop:always;
+}
+.page-stage{
+  position:sticky; top:0;
+  height:var(--page-h);
+  display:flex;
+  overflow:hidden auto;
 }
 .page-inner{
   width:100%; max-width:920px; margin:auto; padding:56px 28px;
@@ -128,7 +135,6 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .page-inner.is-visible{opacity:1; transform:translateY(0);}
 
 /* ---------- hero ---------- */
-.hero{overflow-x:hidden;}
 .hero-inner{max-width:920px; margin:auto; position:relative; z-index:1;}
 .eyebrow{
   font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
