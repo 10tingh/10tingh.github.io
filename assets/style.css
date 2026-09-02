@@ -67,8 +67,8 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .navbar-nav a:hover, .navbar-nav a:focus-visible{color:var(--rust-dark); border-bottom-color:var(--rust);}
 
 /* ---------- hero ---------- */
-.hero{padding:76px 28px 0;}
-.hero-inner{max-width:920px; margin:0 auto;}
+.hero{padding:76px 28px 120px; position:relative; overflow:hidden;}
+.hero-inner{max-width:920px; margin:0 auto; position:relative; z-index:1;}
 .eyebrow{
   font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
   text-transform:uppercase; color:var(--rust-dark);
@@ -102,8 +102,15 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
   font-family:var(--f-mono); font-size:.78rem; color:var(--ink-soft);
 }
 .hero-meta strong{color:var(--ink); font-weight:700;}
-.hero-wave{margin:52px -28px 0; width:calc(100% + 56px); line-height:0; overflow:hidden;}
-.hero-wave svg{display:block; width:100%; height:auto; overflow:hidden;}
+.hero-wave{
+  position:absolute; top:40px; left:-28px; right:-28px;
+  z-index:0; line-height:0; pointer-events:none; opacity:.5;
+}
+.hero-wave svg{display:block; width:100%; height:auto; transform:scale(1.8); transform-origin:center top;}
+@media (max-width:480px){
+  .hero-wave{top:10px;}
+  .hero-wave svg{transform:scale(2.2);}
+}
 
 /* ---------- section scaffolding ---------- */
 .section{padding:64px 0 8px; border-bottom:1px solid var(--line-soft); scroll-margin-top:80px;}
