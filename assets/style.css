@@ -34,6 +34,7 @@ body{
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
   *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  .hero-wave svg{animation-duration:11s !important;}
 }
 
 img{max-width:100%;}
@@ -107,11 +108,19 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
   width:100vw; max-width:1000px;
   z-index:0; line-height:0; pointer-events:none; opacity:.5;
 }
-.hero-wave svg{display:block; width:100%; height:auto; transform:scale(1.8); transform-origin:center top;}
+.hero-wave svg{
+  --wave-scale:1.8;
+  display:block; width:100%; height:auto; transform-origin:center top;
+  animation:hero-wave-drift 11s ease-in-out infinite;
+}
+@keyframes hero-wave-drift{
+  0%, 100%{ transform:scale(var(--wave-scale)) translateX(-14px); }
+  50%{ transform:scale(var(--wave-scale)) translateX(14px); }
+}
 @media (max-width:480px){
   .hero{padding-bottom:28px;}
   .hero-wave{top:10px;}
-  .hero-wave svg{transform:scale(2.2);}
+  .hero-wave svg{--wave-scale:2.2;}
 }
 
 /* ---------- section scaffolding ---------- */
