@@ -57,8 +57,9 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .scroll-progress-bar{
   height:100%; width:100%; background:var(--rust);
   transform:scaleX(0); transform-origin:left center;
-  transition:transform .15s ease-out;
+  transition:transform .15s ease-out, background .2s ease;
 }
+body[data-active-section="experience"] .scroll-progress-bar{background:var(--gold);}
 .navbar-inner{
   position:relative;
   max-width:920px; margin:0 auto; padding:14px 28px;
@@ -147,7 +148,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
   margin-top:18px; color:var(--ink);
 }
 .hero .position{
-  font-family:var(--f-display); font-style:italic; font-weight:600;
+  font-family:var(--f-display); font-style:normal; font-weight:300;
   font-size:clamp(1.2rem, 2.6vw, 1.7rem);
   color:var(--rust-dark); margin-top:14px; max-width:34ch;
 }
@@ -197,13 +198,29 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .section-intro{max-width:64ch; font-size:1.05rem; color:var(--ink-soft); margin-bottom:30px;}
 .section-intro strong{color:var(--ink);}
 
-/* ---------- skills ---------- */
-.skills-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
-.skill-pill{
-  font-family:var(--f-mono); font-size:.7rem; letter-spacing:.03em;
-  color:var(--ink-soft); background:var(--paper-2); border:1px solid var(--line-soft);
-  padding:6px 13px; border-radius:var(--radius-pill);
+/* ---------- off the clock ---------- */
+.offclock{margin-top:36px; padding-top:28px; border-top:1px solid var(--line-soft);}
+.offclock-kicker{
+  font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--rust-dark); display:block; margin-bottom:10px;
 }
+.offclock .section-intro{margin-bottom:0;}
+
+/* ---------- experience: inverted dark panel ---------- */
+/* Brick (--rust-dark) is the brand doc's designated dark-panel color
+   ("white on Brick = 9.4:1 AAA") -- closest match to "dark burnt orange"
+   in the existing palette, so section-scoped overrides swap every text
+   color for a light-on-dark equivalent rather than introducing new ones. */
+#experience{background:var(--rust-dark); color:#fff;}
+#experience .section-num{color:var(--gold); opacity:.32;}
+#experience .kicker{color:var(--gold);}
+#experience .section-title-group h2{color:#fff;}
+#experience .section-intro{color:rgba(255,255,255,.75);}
+#experience .role-when{color:rgba(255,255,255,.55);}
+#experience .role-title{color:#fff;}
+#experience .role-org{color:var(--gold);}
+#experience .role-desc{color:rgba(255,255,255,.78);}
+#experience .role{border-top-color:rgba(255,255,255,.16);}
 
 /* ---------- experience timeline ---------- */
 .timeline{display:flex; flex-direction:column; gap:0;}
@@ -215,32 +232,166 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 .role-when{font-family:var(--f-mono); font-size:.74rem; color:var(--ink-soft); letter-spacing:.03em; padding-top:2px;}
 .role-title{font-family:var(--f-display); font-weight:600; font-size:1.25rem; color:var(--ink);}
 .role-org{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.04em; text-transform:uppercase; color:var(--rust-dark); margin-top:2px;}
-.role-desc{color:var(--ink-soft); font-size:.98rem; margin-top:10px; max-width:60ch;}
-.role-todo{
-  display:inline-block; margin-top:12px; font-family:var(--f-mono); font-size:.68rem;
-  letter-spacing:.04em; text-transform:uppercase; color:var(--gold-dark);
-  background:var(--paper-3); padding:5px 11px; border-radius:var(--radius-pill);
+.role-desc{color:var(--ink-soft); font-size:.98rem; max-width:60ch;}
+
+/* Each role collapses behind a "+" trigger; only one open at a time
+   (enforced in JS). Dark-panel colors are hardcoded here rather than via
+   currentColor/inherit since .role only ever appears on Experience's
+   inverted-dark background. */
+.role-trigger{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
+  width:100%; background:none; border:none; padding:0; margin:0; text-align:left; cursor:pointer;
 }
+.role-trigger-text{display:flex; flex-direction:column; gap:2px;}
+.role-icon{
+  flex:none; width:24px; height:24px; margin-top:.2em; border-radius:50%;
+  border:1px solid rgba(255,255,255,.35); position:relative;
+  transition:transform .3s ease, border-color .25s ease, background .25s ease;
+}
+.role-icon::before, .role-icon::after{
+  content:""; position:absolute; top:50%; left:50%; background:#fff;
+  transform:translate(-50%,-50%); transition:transform .3s ease;
+}
+.role-icon::before{width:11px; height:1.5px;}
+.role-icon::after{width:1.5px; height:11px;}
+.role-trigger[aria-expanded="true"] .role-icon{
+  background:var(--gold); border-color:var(--gold); transform:rotate(45deg);
+}
+.role-trigger[aria-expanded="true"] .role-icon::before,
+.role-trigger[aria-expanded="true"] .role-icon::after{background:var(--rust-dark);}
+.role-panel{display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s cubic-bezier(.22,.61,.36,1);}
+.role-panel-inner{overflow:hidden;}
+.role-panel-inner .role-desc{margin:14px 0 0; padding-top:14px; border-top:1px solid rgba(255,255,255,.16);}
+.role:has(.role-trigger[aria-expanded="true"]) .role-panel{grid-template-rows:1fr;}
 @media (max-width:640px){ .role{grid-template-columns:1fr; gap:6px;} }
 
-/* ---------- work grid ---------- */
-.workgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
-.workcard{
-  border:1px solid var(--line-soft); background:var(--paper-2); border-radius:var(--radius);
-  padding:26px; display:flex; flex-direction:column; gap:10px; min-height:180px;
+/* ---------- work: coming soon ---------- */
+/* No real case studies yet -- this reuses the same gradient treatment
+   (gold -> rust -> brick, matching the LinkedIn banner) so the section
+   still reads as an intentional, finished piece of the site rather than
+   an empty placeholder. */
+.work-soon{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  background:linear-gradient(135deg, var(--gold) 0%, var(--rust) 55%, var(--rust-dark) 100%);
+  color:#fff; padding:56px 40px; display:flex; flex-direction:column; align-items:flex-start; gap:16px;
+  min-height:320px; justify-content:center;
 }
-.workcard h3{font-family:var(--f-display); font-size:1.2rem; font-weight:600;}
-.workcard p{color:var(--ink-soft); font-size:.92rem;}
-.workcard .role-todo{margin-top:auto; align-self:flex-start;}
-@media (max-width:640px){ .workgrid{grid-template-columns:1fr;} }
+.work-soon-note{
+  font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+  padding:6px 14px; border-radius:var(--radius-pill);
+}
+.work-soon h3{font-family:var(--f-display); font-size:clamp(1.6rem, 4vw, 2.3rem); font-weight:600; max-width:20ch;}
+.work-soon p{color:rgba(255,255,255,.88); font-size:1rem; max-width:52ch;}
+.work-soon .btn-primary{background:#fff; color:var(--rust-dark); margin-top:8px;}
+.work-soon .btn-primary:hover, .work-soon .btn-primary:focus-visible{background:var(--paper-3);}
 
-/* ---------- about pillars ---------- */
-.pillars{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:8px;}
-.pillar{background:var(--paper-2); padding:24px; border-radius:var(--radius); border:1px solid var(--line-soft);}
+/* ---------- about: lava-lamp ambient background ---------- */
+/* A zero-height sticky wrapper is the standard trick for a background
+   layer that stays pinned to the top of a scrolling container without
+   consuming layout space or pushing content down -- necessary here since
+   #about's own content can outgrow one viewport and scroll internally. */
+.lava-bg{
+  position:sticky; top:0; height:0; overflow:visible; z-index:0; pointer-events:none;
+}
+.lava-bg-inner{
+  /* .page is a flex container, so the zero-content .lava-bg sticky wrapper
+     shrinks to width:0 as a flex item and sits flush at .page's left edge.
+     "left:0" is a literal offset (unaffected by the collapsed parent
+     width), so anchoring there and sizing off the viewport instead of the
+     parent avoids depending on that collapsed width. */
+  position:absolute; top:0; left:0; width:100vw; height:var(--page-h); overflow:hidden;
+}
+.lava-blob{
+  position:absolute; bottom:-25%; border-radius:50%; filter:blur(7px); opacity:0;
+  animation-name:lava-rise; animation-timing-function:ease-in-out; animation-iteration-count:infinite;
+}
+@keyframes lava-rise{
+  /* translateY here must scale off the section's own height (--page-h),
+     not a percentage of the blob's own small size (the default meaning of
+     a % in transform) -- that was the bug: on a tall viewport the rise
+     never covered the real distance from "just below the fold" back up
+     through the visible area. border-radius cycles through asymmetric
+     8-value shapes (each corner's h/v radius set independently) so the
+     browser interpolates a genuine liquid morph between them, rather than
+     a fixed circle just moving and scaling. */
+  0%{ transform:translate(0,0) scale(.85); opacity:0; border-radius:50%; }
+  10%{ opacity:.16; border-radius:58% 42% 38% 62% / 55% 35% 65% 45%; }
+  30%{ transform:translate(24px, calc(var(--page-h) * -0.35)) scale(1.05); border-radius:42% 58% 65% 35% / 48% 62% 38% 52%; }
+  55%{ transform:translate(-18px, calc(var(--page-h) * -0.65)) scale(.95); border-radius:65% 35% 50% 50% / 40% 55% 45% 60%; }
+  80%{ transform:translate(14px, calc(var(--page-h) * -0.95)) scale(1.08); opacity:.14; border-radius:38% 62% 55% 45% / 60% 40% 60% 40%; }
+  100%{ transform:translate(0, calc(var(--page-h) * -1.3)) scale(.8); opacity:0; border-radius:50%; }
+}
+.lava-blob--1{left:2%;  width:255px; height:255px; background:var(--gold);     animation-duration:27s; animation-delay:-2s;}
+.lava-blob--2{left:19%; width:165px; height:165px; background:var(--rust);     animation-duration:21s; animation-delay:-9s;}
+.lava-blob--3{left:37%; width:300px; height:300px; background:var(--paper-3); animation-duration:32s; animation-delay:-17s;}
+.lava-blob--4{left:56%; width:195px; height:195px; background:var(--rust-dark); animation-duration:24s; animation-delay:-4s;}
+.lava-blob--5{left:74%; width:233px; height:233px; background:var(--gold);     animation-duration:29s; animation-delay:-21s;}
+.lava-blob--6{left:90%; width:150px; height:150px; background:var(--rust);     animation-duration:19s; animation-delay:-11s;}
+
+/* Two of the six blobs get a "budding" child bubble: it sits hidden inside
+   the parent, then partway through the rise it separates and keeps
+   climbing on its own path while the parent settles back to round --
+   real lava lamps do this occasionally, not on every bubble every cycle,
+   so only --2 and --5 get it. animation-duration/delay:inherit locks the
+   child's split moment to that specific parent's own cycle. */
+.lava-blob--2::after, .lava-blob--5::after{
+  content:""; position:absolute; left:22%; top:8%; width:52%; height:52%;
+  border-radius:50%; background:inherit; filter:inherit;
+  animation-name:lava-split; animation-timing-function:ease-in-out; animation-iteration-count:infinite;
+  animation-duration:inherit; animation-delay:inherit;
+}
+@keyframes lava-split{
+  0%, 45%{ opacity:0; transform:translate(0,0) scale(.25); border-radius:50%; }
+  50%{ opacity:.85; transform:translate(8%,-18%) scale(.6); border-radius:56% 44% 40% 60% / 50% 55% 45% 50%; }
+  70%{ opacity:.75; transform:translate(-14%,-70%) scale(.8); border-radius:44% 56% 60% 40% / 55% 45% 50% 50%; }
+  100%{ opacity:0; transform:translate(18%,-150%) scale(.5); border-radius:50%; }
+}
+@media (prefers-reduced-motion: reduce){
+  .lava-blob--2::after, .lava-blob--5::after{animation:none; opacity:0;}
+  .lava-blob{animation:none; opacity:.14; bottom:auto; top:20%;}
+}
+
+/* ---------- about pillars carousel ---------- */
+/* One pillar in view at a time, JS-driven translateX (same philosophy as
+   the outer page pager: an explicit index drives the transform, rather
+   than native scroll-snap) with arrow buttons and dot indicators. */
+.pillars-carousel{margin-bottom:8px; border-radius:var(--radius);}
+.pillars-carousel:focus-visible{outline:2px solid var(--rust); outline-offset:4px;}
+.pillars-viewport{overflow:hidden; border-radius:var(--radius);}
+.pillars-track{display:flex; transition:transform .5s cubic-bezier(.22,.61,.36,1);}
+.pillars-track .pillar{flex:0 0 100%; width:100%; box-sizing:border-box;}
+.pillar{
+  background:var(--paper-2); padding:28px 32px; border:1px solid var(--line-soft);
+  min-height:220px;
+}
+.pillars-nav{display:flex; align-items:center; justify-content:center; gap:18px; margin-top:20px;}
+.pillars-arrow{
+  width:38px; height:38px; flex:none; border-radius:50%; border:1px solid var(--line-soft);
+  background:var(--paper); font-family:var(--f-display); font-size:1.3rem; line-height:1;
+  color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer;
+  transition:border-color .2s ease, color .2s ease;
+}
+.pillars-arrow:hover, .pillars-arrow:focus-visible{border-color:var(--rust); color:var(--rust-dark);}
+.pillars-arrow:focus-visible{outline:2px solid var(--rust); outline-offset:2px;}
+.pillars-dots{display:flex; align-items:center; gap:9px;}
+.pillars-dot{
+  width:9px; height:9px; padding:0; border-radius:50%; border:1px solid var(--line-soft);
+  background:var(--paper-3); cursor:pointer; transition:background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.pillars-dot:hover{border-color:var(--rust);}
+.pillars-dot.is-active{background:var(--rust); border-color:var(--rust); transform:scale(1.25);}
 .pillar-num{font-family:var(--f-mono); font-size:.72rem; color:var(--rust-dark); letter-spacing:.08em;}
 .pillar h3{font-family:var(--f-display); font-size:1.3rem; margin:8px 0 8px; font-weight:600;}
 .pillar p{color:var(--ink-soft); font-size:.95rem;}
-@media (max-width:640px){ .pillars{grid-template-columns:1fr;} }
+.pillar-example{
+  margin:14px 0 0; padding-top:14px; border-top:1px solid var(--line-soft);
+  font-size:.92rem;
+}
+.pillar-example strong{
+  font-family:var(--f-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--rust-dark); font-weight:700;
+}
 
 /* ---------- contact ---------- */
 .contact-card{
@@ -249,15 +400,85 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outlin
 }
 .contact-card h2{font-family:var(--f-display); font-weight:600; font-size:clamp(1.6rem, 4vw, 2.2rem); color:#fff;}
 .contact-card p{color:var(--paper-3); max-width:52ch;}
-.contact-links{display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;}
-.contact-links .btn-primary{background:var(--rust);}
-.contact-links .btn-outline{border-color:rgba(255,255,255,.3); color:#fff;}
-.contact-links .btn-outline:hover, .contact-links .btn-outline:focus-visible{border-color:var(--gold); color:var(--gold);}
+/* ---------- contact form ---------- */
+.contact-form-wrap{margin-top:12px; padding-top:24px; border-top:1px solid rgba(255,255,255,.16);}
+.contact-form{display:flex; flex-direction:column; gap:16px; max-width:52ch;}
+.contact-form-row{display:flex; gap:16px; flex-wrap:wrap;}
+.contact-form-row .contact-form-field{flex:1 1 180px;}
+.contact-form-honeypot{position:absolute; left:-9999px; width:1px; height:1px; opacity:0;}
+.contact-form-field{display:flex; flex-direction:column; gap:6px;}
+.contact-form-field span{
+  font-family:var(--f-mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+.contact-form-field input, .contact-form-field textarea{
+  font-family:var(--f-body); font-size:.95rem; color:#fff;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.25); border-radius:var(--radius-sm);
+  padding:10px 12px; resize:vertical; transition:border-color .2s ease, background .2s ease;
+}
+.contact-form-field input::placeholder, .contact-form-field textarea::placeholder{color:rgba(255,255,255,.4);}
+.contact-form-field input:focus-visible, .contact-form-field textarea:focus-visible{
+  outline:none; border-color:var(--gold); background:rgba(255,255,255,.1);
+}
+.contact-form-actions{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+.contact-form-actions .btn-primary{background:var(--rust); border:none;}
+.contact-form-actions .btn-primary:disabled{opacity:.6; cursor:default;}
+.contact-form-status{font-family:var(--f-mono); font-size:.78rem; color:rgba(255,255,255,.75);}
+.contact-form-status.is-success{color:var(--gold);}
+.contact-form-status.is-error{color:#f2a691;}
+
+/* ---------- contact: sliding panel background ---------- */
+/* Same zero-height sticky trick as the About lava background (see there
+   for why: it's needed so this layer stays pinned behind the section
+   without consuming layout space or scrolling away with content), full
+   var(--page-h) tall so each panel spans the entire viewport, top to
+   bottom. opacity:.5 matches the hero wave's treatment.
+
+   This is JS-driven (assets/contact-panels.js), not a CSS @keyframes
+   loop -- a pure-CSS attempt (independent animation-delay per panel on a
+   shared keyframe) turned out unable to satisfy "exactly one panel
+   slides at a time" and "adjacent panels never match" simultaneously:
+   offsetting a shared periodic animation by whole multiples of its own
+   segment length changes which color a panel shows, but NOT when its
+   transitions happen in real time (delay mod segment-length was always
+   0), so every panel ended up sliding at the same synchronized instants
+   regardless of the color-index math being correct. Genuinely
+   decorrelating the timing while still guaranteeing no-clash-with-
+   neighbors requires knowing neighbors' *current* color at the moment of
+   each transition, which only JS can do. So: JS picks one panel at a
+   time (round-robin, one every ~4s), computes a new color that isn't its
+   own current one or either neighbor's current one, and sets it --
+   `transition: transform` below is what turns that JS-driven state
+   change into an animated slide instead of an instant jump. */
+.contact-bg{position:sticky; top:0; height:0; overflow:visible; z-index:0; pointer-events:none; opacity:.5;}
+.contact-bg-inner{
+  position:absolute; top:0; left:0; width:100vw; height:var(--page-h);
+  display:flex; overflow:hidden;
+}
+.contact-panel{flex:1 1 0; height:100%; overflow:hidden; position:relative;}
+.contact-panel-reel{
+  position:absolute; top:0; left:0; width:100%; height:600%;
+  transition:transform .9s cubic-bezier(.65,0,.35,1);
+}
+.contact-panel-block{display:block; width:100%; height:16.6667%;}
+.contact-panel-block:nth-child(1){background:var(--gold);}
+.contact-panel-block:nth-child(2){background:var(--rust);}
+.contact-panel-block:nth-child(3){background:var(--rust-dark);}
+.contact-panel-block:nth-child(4){background:var(--ink);}
+.contact-panel-block:nth-child(5){background:var(--ink-soft);}
+.contact-panel-block:nth-child(6){background:var(--gold-dark);}
+@media (prefers-reduced-motion: reduce){
+  /* JS still checks this and skips scheduling further moves entirely
+     (see contact-panels.js) -- this rule is just a safety net so even a
+     stray transform change can't animate if that check is ever bypassed. */
+  .contact-panel-reel{transition:none;}
+}
 
 /* ---------- footer ---------- */
 .colophon{
-  padding:40px 0 0; margin-top:40px;
+  margin-top:40px; padding:14px 20px;
   font-family:var(--f-mono); font-size:.72rem; color:var(--ink-soft);
   display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  background:var(--paper); border-radius:var(--radius-sm); box-shadow:var(--shadow-sm);
 }
 .colophon a{color:var(--ink-soft);}

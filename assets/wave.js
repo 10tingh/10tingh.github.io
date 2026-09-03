@@ -4,7 +4,15 @@
   var bands = Array.prototype.slice.call(track.querySelectorAll('.wave-band'));
   if(!bands.length) return;
 
-  var baselines = [150, 178, 206, 234];
+  // The stack is drawn as shared boundary curves (top edge of band 0 down
+  // through the bottom edge of the last band) rather than independent
+  // centered strokes -- each band is the filled area between two adjacent
+  // boundaries, so when a band's thickness grows it visibly pushes its
+  // neighbor's shared edge rather than sliding invisibly behind it.
+  var TOP_OFFSET = 131;
+  var BASE_WIDTH = 34;
+  var WIDTH_AMP = 5;
+  var WIDTH_SPEED = (2 * Math.PI) / 13;
 
   // A dominant gentle wave, plus a much smaller, slower second component so
   // the shape drifts and softly reshapes over time instead of repeating a
@@ -15,24 +23,41 @@
   var xs = [];
   for (var x = -20; x <= 1220; x += 14) xs.push(x);
 
-  function buildD(baseline, t){
-    var parts = new Array(xs.length);
+  function waveY(px, t){
+    return wave1.amp * Math.sin((px / wave1.wavelength) * 2 * Math.PI - t * wave1.speed)
+         + wave2.amp * Math.sin((px / wave2.wavelength) * 2 * Math.PI - t * wave2.speed);
+  }
+
+  // Per-band phase offset so the four thicknesses breathe out of sync with
+  // each other instead of swelling and shrinking all at once.
+  function thickness(i, t){
+    var phase = i * (Math.PI / 2);
+    return BASE_WIDTH + WIDTH_AMP * Math.sin(t * WIDTH_SPEED - phase);
+  }
+
+  function buildBandD(topOffset, bottomOffset, t){
+    var top = new Array(xs.length);
+    var bottom = new Array(xs.length);
     for (var i = 0; i < xs.length; i++){
       var px = xs[i];
-      var y = baseline
-        + wave1.amp * Math.sin((px / wave1.wavelength) * 2 * Math.PI - t * wave1.speed)
-        + wave2.amp * Math.sin((px / wave2.wavelength) * 2 * Math.PI - t * wave2.speed);
-      parts[i] = (i === 0 ? 'M' : 'L') + px.toFixed(1) + ',' + y.toFixed(1);
+      var w = waveY(px, t);
+      top[i] = px.toFixed(1) + ',' + (topOffset + w).toFixed(1);
+      bottom[i] = px.toFixed(1) + ',' + (bottomOffset + w).toFixed(1);
     }
-    return parts.join(' ');
+    return 'M' + top.join(' L') + ' L' + bottom.reverse().join(' L') + ' Z';
   }
 
   var startTime = null;
   function frame(ts){
     if (startTime === null) startTime = ts;
     var t = (ts - startTime) / 1000;
+
+    var boundaries = [TOP_OFFSET];
     for (var i = 0; i < bands.length; i++){
-      bands[i].setAttribute('d', buildD(baselines[i], t));
+      boundaries.push(boundaries[i] + thickness(i, t));
+    }
+    for (var i = 0; i < bands.length; i++){
+      bands[i].setAttribute('d', buildBandD(boundaries[i], boundaries[i + 1], t));
     }
     requestAnimationFrame(frame);
   }

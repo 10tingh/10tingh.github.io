@@ -15,7 +15,7 @@
   // much less -- reaching 100% on the bar is the one and only trigger for
   // advancing forward, since we (not the browser) decide exactly when that is.
   var FORWARD_THRESHOLD = 650;
-  var BACKWARD_THRESHOLD = 165;
+  var BACKWARD_THRESHOLD = 206;
   // scrollTop is integer-rounded by the browser but scrollHeight-clientHeight
   // can be fractional, so "still has room to absorb" must tolerate a
   // sub-pixel gap -- otherwise scrollTop can permanently sit just below a
@@ -43,6 +43,7 @@
 
   function updateNavActive(){
     var id = pages[currentIndex].id;
+    document.body.setAttribute('data-active-section', id);
     navLinks.forEach(function(a){ a.classList.remove('active'); });
     var link = navMap[id];
     if (link) {
@@ -170,10 +171,9 @@
   }, { passive: false });
   scrollport.addEventListener('touchend', function(){ touchY = null; });
 
-  navLinks.forEach(function(a){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var href = a.getAttribute('href') || '';
-      if (href.charAt(0) !== '#') return;
       var idx = pages.findIndex(function(p){ return p.id === href.slice(1); });
       if (idx >= 0) { e.preventDefault(); goTo(idx); }
     });
