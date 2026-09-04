@@ -151,6 +151,11 @@
   }, { passive: false });
 
   document.addEventListener('keydown', function(e){
+    // Don't hijack Home/End/PageUp/PageDown/Arrow keys from form fields --
+    // someone editing the contact message textarea needs those for normal
+    // text-cursor movement, not to page the whole site out from under them.
+    var tag = e.target && e.target.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (e.target && e.target.isContentEditable)) return;
     if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goTo(currentIndex + 1); }
     else if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); goTo(currentIndex - 1); }
     else if (e.key === 'Home') { e.preventDefault(); goTo(0); }

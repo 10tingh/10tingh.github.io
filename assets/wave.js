@@ -47,11 +47,7 @@
     return 'M' + top.join(' L') + ' L' + bottom.reverse().join(' L') + ' Z';
   }
 
-  var startTime = null;
-  function frame(ts){
-    if (startTime === null) startTime = ts;
-    var t = (ts - startTime) / 1000;
-
+  function paintAt(t){
     var boundaries = [TOP_OFFSET];
     for (var i = 0; i < bands.length; i++){
       boundaries.push(boundaries[i] + thickness(i, t));
@@ -59,6 +55,20 @@
     for (var i = 0; i < bands.length; i++){
       bands[i].setAttribute('d', buildBandD(boundaries[i], boundaries[i + 1], t));
     }
+  }
+
+  // Runs forever by design (it's a decorative background), so respect
+  // prefers-reduced-motion the same way the lava blobs and contact panels
+  // do elsewhere on the site: paint one still frame instead of animating.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    paintAt(0);
+    return;
+  }
+
+  var startTime = null;
+  function frame(ts){
+    if (startTime === null) startTime = ts;
+    paintAt((ts - startTime) / 1000);
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
