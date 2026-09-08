@@ -265,26 +265,43 @@ body[data-active-section="experience"] .scroll-progress-bar{background:var(--gol
 .role:has(.role-trigger[aria-expanded="true"]) .role-panel{grid-template-rows:1fr;}
 @media (max-width:640px){ .role{grid-template-columns:1fr; gap:6px;} }
 
-/* ---------- work: coming soon ---------- */
-/* No real case studies yet -- this reuses the same gradient treatment
-   (gold -> rust -> brick, matching the LinkedIn banner) so the section
-   still reads as an intentional, finished piece of the site rather than
-   an empty placeholder. */
-.work-soon{
-  position:relative; overflow:hidden; border-radius:var(--radius);
+/* ---------- work: case study carousel ---------- */
+/* One case study per slide (see the shared carousel mechanics above), all
+   sharing the same gradient treatment (gold -> rust -> brick) this section
+   used for its old single "coming soon" panel, so the carousel reads as
+   one consistent set even though only one card is a live link today. A
+   built case study's whole slide is a link to its standalone page, with a
+   teaser and CTA; an unbuilt one is the same card shape with a
+   "Coming soon" badge in the same bottom-of-card slot instead. */
+.work-card{
+  display:flex; flex-direction:column; gap:10px; text-decoration:none;
   background:linear-gradient(135deg, var(--gold) 0%, var(--rust) 55%, var(--rust-dark) 100%);
-  color:#fff; padding:56px 40px; display:flex; flex-direction:column; align-items:flex-start; gap:16px;
-  min-height:320px; justify-content:center;
+  color:#fff; padding:28px 32px; border:1px solid transparent;
+  min-height:220px; transition:box-shadow .2s ease;
+}
+a.work-card:hover, a.work-card:focus-visible{box-shadow:var(--shadow-sm);}
+.work-card-company{
+  font-family:var(--f-mono); font-size:.72rem; color:rgba(255,255,255,.85); letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.work-card h3{font-family:var(--f-display); font-size:1.3rem; font-weight:600; color:#fff;}
+.work-card p{color:rgba(255,255,255,.88); font-size:.95rem;}
+.work-card-tags{display:flex; flex-wrap:wrap; gap:8px;}
+.work-card-tag{
+  font-family:var(--f-mono); font-size:.66rem; letter-spacing:.04em; text-transform:uppercase;
+  color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+  padding:4px 10px; border-radius:var(--radius-pill);
+}
+.work-card-cta{
+  margin-top:auto; padding-top:14px; font-family:var(--f-mono); font-size:.72rem;
+  letter-spacing:.08em; text-transform:uppercase; color:#fff; font-weight:700;
 }
 .work-soon-note{
+  align-self:flex-start; margin-top:auto;
   font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
   color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
   padding:6px 14px; border-radius:var(--radius-pill);
 }
-.work-soon h3{font-family:var(--f-display); font-size:clamp(1.6rem, 4vw, 2.3rem); font-weight:600; max-width:20ch;}
-.work-soon p{color:rgba(255,255,255,.88); font-size:1rem; max-width:52ch;}
-.work-soon .btn-primary{background:#fff; color:var(--rust-dark); margin-top:8px;}
-.work-soon .btn-primary:hover, .work-soon .btn-primary:focus-visible{background:var(--paper-3);}
 
 /* ---------- about: lava-lamp ambient background ---------- */
 /* A zero-height sticky wrapper is the standard trick for a background
@@ -352,15 +369,18 @@ body[data-active-section="experience"] .scroll-progress-bar{background:var(--gol
   .lava-blob{animation:none; opacity:.14; bottom:auto; top:20%;}
 }
 
-/* ---------- about pillars carousel ---------- */
-/* One pillar in view at a time, JS-driven translateX (same philosophy as
+/* ---------- shared one-at-a-time carousel (about pillars + work cards) ---------- */
+/* One slide in view at a time, JS-driven translateX (same philosophy as
    the outer page pager: an explicit index drives the transform, rather
-   than native scroll-snap) with arrow buttons and dot indicators. */
+   than native scroll-snap) with arrow buttons and dot indicators. Shared
+   by #about's pillars and #work's case studies (assets/pillars.js inits
+   every .pillars-carousel it finds) -- only each slide's inner content
+   differs. */
 .pillars-carousel{margin-bottom:8px; border-radius:var(--radius);}
 .pillars-carousel:focus-visible{outline:2px solid var(--rust); outline-offset:4px;}
 .pillars-viewport{overflow:hidden; border-radius:var(--radius);}
 .pillars-track{display:flex; transition:transform .5s cubic-bezier(.22,.61,.36,1);}
-.pillars-track .pillar{flex:0 0 100%; width:100%; box-sizing:border-box;}
+.pillars-track > *{flex:0 0 100%; width:100%; box-sizing:border-box;}
 .pillar{
   background:var(--paper-2); padding:28px 32px; border:1px solid var(--line-soft);
   min-height:220px;

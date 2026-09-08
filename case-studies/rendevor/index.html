@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rendevor: Audit Center — Case Study — Tyler Entingh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    CASE STUDY PAGE TEMPLATE — Tyler Entingh
+    Built from the "Entingh Brand Standards" system (same tokens, same
+    component patterns: numbered plates, mono kickers, rounded cards,
+    pill chips). Duplicate this file per case study; only the content
+    inside <body> needs to change — the CSS is meant to stay identical
+    across all 8 so the site reads as one system.
+
+    Sections map 1:1 to case-study-guide.md:
+      Cover        -> At-a-glance (role / timeline / team / tools)
+      Plate 00     -> Executive Summary (write this LAST + final screenshot)
+      Plate 01     -> The Setup (context & problem)
+      Plate 02     -> The Approach (role & process)
+      Plate 03     -> The Work (key decisions)
+      Plate 04     -> The Outcome (impact)
+      Plate 05     -> The Takeaway (optional)
+      Footer nav   -> prev / next case study + back to index
+
+    Section headers use the mono kicker only (no serif h2 below it) —
+    keep it that way across all 8, one line of hierarchy per plate.
+  */
+  :root{
+    --paper:      #FFFFFF;
+    --paper-2:    #FAF3E7;
+    --paper-3:    #F1E1BF;
+    --ink:        #33210F;
+    --ink-soft:   #5C4530;
+    --rust:       #B84A28;
+    --rust-dark:  #7A2E1C;
+    --gold:       #D69A3C;
+    --gold-dark:  #A6721F;
+    --line:       rgba(51,33,15,.16);
+    --line-soft:  rgba(51,33,15,.10);
+    --shadow-sm:  0 1px 2px rgba(51,33,15,.05), 0 6px 16px -12px rgba(51,33,15,.16);
+
+    --radius:     18px;
+    --radius-sm:  10px;
+    --radius-pill:999px;
+
+    --f-display:  'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --f-body:     'Nunito', 'Segoe UI', system-ui, sans-serif;
+    --f-mono:     'Space Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:16px;
+    line-height:1.6;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+
+  img{max-width:100%; display:block; border-radius:var(--radius);}
+  h1,h2,h3,h4{text-wrap:balance; margin:0; font-weight:600;}
+  p{margin:0;}
+  ::selection{background:var(--rust); color:#fff;}
+  a{color:var(--rust-dark);}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px 120px;}
+
+  /* ---------- top index bar ---------- */
+  .indexbar{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,.92);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .indexbar-inner{
+    max-width:920px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  .indexbar-mark{font-family:var(--f-display); font-weight:700; font-size:1.05rem;}
+  .indexbar-back{
+    font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-soft); text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .indexbar-back:hover, .indexbar-back:focus-visible{color:var(--rust-dark); border-bottom-color:var(--rust);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outline-offset:3px;}
+
+  /* ---------- cover ---------- */
+  .cover{padding:76px 28px 0;}
+  .cover-inner{max-width:920px; margin:0 auto;}
+  .eyebrow{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--rust-dark);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--rust); display:inline-block;}
+  .cover h1{
+    font-family:var(--f-display); font-weight:900;
+    font-size:clamp(2.4rem, 7vw, 4.6rem);
+    line-height:.98; margin-top:18px; color:var(--ink);
+  }
+  .cover .position{
+    font-family:var(--f-display); font-style:italic; font-weight:600;
+    font-size:clamp(1.1rem, 2.4vw, 1.5rem);
+    color:var(--rust-dark); margin-top:14px; max-width:46ch;
+  }
+
+  /* at-a-glance meta strip */
+  .meta-strip{
+    margin-top:40px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .meta-cell{padding:16px 20px 16px 0; border-right:1px solid var(--line-soft);}
+  .meta-cell:last-child{border-right:none;}
+  .meta-label{
+    font-family:var(--f-mono); font-size:.64rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:6px;
+  }
+  .meta-value{font-family:var(--f-body); font-weight:700; font-size:.92rem; color:var(--ink);}
+  @media (max-width:700px){
+    .meta-strip{grid-template-columns:repeat(2,1fr);}
+    .meta-cell{border-bottom:1px solid var(--line-soft); padding:14px 16px 14px 0;}
+  }
+
+  .cover-wave{margin:52px -28px 0; width:calc(100% + 56px); line-height:0; overflow:hidden;}
+  .cover-wave svg{display:block; width:100%; height:auto; overflow:hidden;}
+
+  /* reusable image block — executive-summary screenshot, process visuals, etc. */
+  .figure{margin-top:24px; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--line-soft);}
+  .figure img{border-radius:0;}
+  .figure .caption{
+    font-family:var(--f-mono); font-size:.68rem; color:var(--ink-soft);
+    padding:10px 16px; border-top:1px solid var(--line-soft); background:var(--paper-2);
+  }
+
+  /* ---------- plate scaffolding ---------- */
+  .plate{padding:64px 0 8px; border-bottom:1px solid var(--line-soft); scroll-margin-top:80px;}
+  .plate:last-of-type{border-bottom:none;}
+  .plate-head{display:grid; grid-template-columns:auto 1fr; gap:20px 26px; align-items:baseline; margin-bottom:34px;}
+  .plate-num{
+    font-family:var(--f-display); font-weight:600; font-style:italic;
+    font-size:clamp(2.6rem, 6vw, 4.2rem); color:var(--rust); opacity:.24; line-height:1;
+  }
+  .plate-title-group .kicker{
+    font-family:var(--f-mono); font-weight:700; font-size:.95rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--rust-dark); display:block;
+  }
+  .plate-body{max-width:66ch; font-size:1.05rem; color:var(--ink);}
+  .plate-body p{margin-bottom:16px;}
+  .plate-body p:last-child{margin-bottom:0;}
+  .plate-body strong{color:var(--ink);}
+
+  .subhead{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft);
+    border-top:1px solid var(--line-soft); padding-top:8px; margin:36px 0 16px;
+  }
+  .subhead:first-of-type{margin-top:0;}
+
+  /* ---------- decision cards (Plate 03) ---------- */
+  .decisions{display:flex; flex-direction:column; gap:16px;}
+  .decision{
+    background:var(--paper-2); border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .decision-num{font-family:var(--f-mono); font-size:.7rem; color:var(--rust-dark); letter-spacing:.08em;}
+  .decision h3{font-family:var(--f-display); font-size:1.2rem; font-weight:600; margin:8px 0 10px;}
+  .decision p{color:var(--ink-soft); font-size:.95rem; margin-bottom:8px;}
+  .decision p:last-child{margin-bottom:0;}
+  .decision .alt{
+    font-size:.85rem; color:var(--ink-soft); border-left:2px solid var(--line);
+    padding-left:12px; margin-top:10px; font-style:italic;
+  }
+
+  /* ---------- outcome stat cards (Plate 04) ---------- */
+  .statgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px;}
+  .stat{
+    background:var(--rust-dark); color:#fff; border-radius:var(--radius);
+    padding:22px 20px; box-shadow:var(--shadow-sm);
+  }
+  .stat .num{font-family:var(--f-display); font-weight:900; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1;}
+  .stat .lbl{font-family:var(--f-mono); font-size:.68rem; letter-spacing:.04em; color:var(--paper-3); margin-top:8px; display:block;}
+  @media (max-width:700px){ .statgrid{grid-template-columns:1fr;} }
+
+  /* pill tags — tools, skills */
+  .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+  .pill{
+    font-family:var(--f-mono); font-size:.7rem; color:var(--ink);
+    background:var(--paper-2); padding:7px 14px; border-radius:var(--radius-pill);
+    border:1px solid var(--line-soft);
+  }
+
+  /* pull quote */
+  .pullquote{
+    font-family:var(--f-display); font-style:italic; font-weight:500;
+    font-size:clamp(1.3rem, 2.6vw, 1.7rem); color:var(--rust-dark);
+    max-width:36ch; margin:8px 0 32px; line-height:1.3;
+  }
+
+  .rulecard{
+    border:1px solid var(--line-soft); background:var(--paper-2); border-radius:var(--radius);
+    padding:22px 24px; margin-top:20px;
+  }
+  .rulecard .subhead{border-top:none; margin:0 0 10px; padding-top:0;}
+  .rulecard p{color:var(--ink-soft); font-size:.95rem;}
+
+  /* ---------- footer / prev-next nav ---------- */
+  .colophon{
+    padding:40px 0 0; margin-top:40px;
+    font-family:var(--f-mono); font-size:.72rem; color:var(--ink-soft);
+  }
+  .nextnav{
+    display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    padding:28px 0; border-top:1px solid var(--line-soft); margin-top:40px;
+  }
+  .nextnav a{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.06em;
+    text-transform:uppercase; text-decoration:none; color:var(--ink-soft);
+  }
+  .nextnav a:hover, .nextnav a:focus-visible{color:var(--rust-dark);}
+  .nextnav .to{display:block; font-family:var(--f-display); font-style:italic; font-size:1.1rem; color:var(--ink); margin-top:6px; text-transform:none; letter-spacing:0;}
+</style>
+</head>
+<body>
+
+<div class="indexbar">
+  <div class="indexbar-inner">
+    <div class="indexbar-mark">TE</div>
+    <a class="indexbar-back" href="/work.html">← All case studies</a>
+  </div>
+</div>
+
+<!-- ============ COVER / AT-A-GLANCE ============ -->
+<header class="cover">
+  <div class="cover-inner">
+    <p class="eyebrow">Case Study</p>
+
+    <h1>Rendevor: Audit Center</h1>
+
+    <p class="position">Standardizing a black-box audit process across 70+ facilities, and using AI to kill the paper re-entry problem for good.</p>
+
+    <div class="meta-strip">
+      <div class="meta-cell">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Lead Product Designer &amp; Product Manager</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">8 months</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Team</span>
+        <span class="meta-value">Product Designer &amp; PM (me), 2 Engineers</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">Figma, Claude Code, Excel, Anthropic API</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave motif — signature graphic, use once per page. The final-state
+       screenshot lives in Plate 00 below, not up here, so this motif is
+       the only visual in the cover. -->
+  <div class="cover-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--ink)" stroke-width="30" stroke-linecap="butt"/>
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--rust)" stroke-width="30" stroke-linecap="butt" transform="translate(0,24)"/>
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--gold)" stroke-width="30" stroke-linecap="butt" transform="translate(0,48)"/>
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--paper-3)" stroke-width="30" stroke-linecap="butt" transform="translate(0,72)"/>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ 00 — EXECUTIVE SUMMARY ============ -->
+  <!-- Write this section LAST, after 00-05 are drafted and you know how
+       the story actually ends. It's the distilled narrative — problem,
+       approach, and outcome in miniature — plus a screenshot of the
+       finished, shipped state. This is what a skimming reader sees first. -->
+  <section class="plate" id="summary">
+    <div class="plate-head">
+      <div class="plate-num">00</div>
+      <div class="plate-title-group">
+        <span class="kicker">Executive Summary</span>
+      </div>
+    </div>
+    <div class="plate-body">
+      <p>Rendevor's audit process was a black box: audits moved through delegations and sign-offs that nobody in the organization could describe start to finish, across facilities where some staff could use tablets and others were restricted to paper only. I led design and product management on Audit Center, standardizing the process around one workflow that works whether an audit happens on a device, in Excel, or on paper, and closing the loop on paper audits with an AI layer that reads handwritten forms directly instead of forcing staff to re-key them. That layer alone cut manual audit entry by 80%, and gave Rendevor's leadership real visibility into audit status and findings across every facility for the first time.</p>
+    </div>
+
+    <div class="figure">
+      <img src="images/final-state.png" alt="Audit Center's digital audit view, showing a BioMed audit in progress with section tabs, Yes/No/N/A questions, and Print PDF, Upload Paper Audit, and Proceed actions.">
+      <div class="caption">Audit Center — an audit in progress, digital format</div>
+    </div>
+  </section>
+
+  <!-- ============ 01 — THE SETUP ============ -->
+  <section class="plate" id="setup">
+    <div class="plate-head">
+      <div class="plate-num">01</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Setup</span>
+      </div>
+    </div>
+    <div class="plate-body">
+      <p>Rendevor runs dialysis operations across more than 70 facilities nationwide, managed by 4 regional teams, many inside correctional settings, and needed a way to see where their internal processes were losing time and money. The project started as a discovery workshop with the client to map operations end to end and find either a bottleneck or an opportunity to free up staff time.</p>
+      <p>That workshop surfaced the audit process as a black box. Nobody in the organization could describe it start to finish. Audits moved through a maze of delegations and sign-offs with no visibility into status: was a given audit in review, and with whom? What was needed to move it forward? Was it stalled in a remediation step waiting on a corrective action, and had that action actually been verified before the audit moved on? No one could answer those questions with confidence.</p>
+      <p>Underneath that was a bigger problem: there was no formalized audit process to begin with. Each department ran audits its own way.</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 — THE APPROACH ============ -->
+  <section class="plate" id="approach">
+    <div class="plate-head">
+      <div class="plate-num">02</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Approach</span>
+      </div>
+    </div>
+    <div class="plate-body">
+      <p>Ran a series of workshops to map every user, workflow, and audit state across the organization. Followed that with one-on-one interviews across departments and regions, talking to both frontline users and subject matter experts, to pull out the actual process each group followed, define requirements, and identify practices worth standardizing company-wide.</p>
+      <p>Two constraints shaped the design from there. First, the facilities themselves: because audits happen in correctional settings, device access varies by site. Some allow tablets and electronics, others restrict staff to paper only. Second, the paper workflow itself was generating rework: staff printed an Excel audit template, filled it out by hand, then re-typed it into a spreadsheet before the audit could move to its next step. Slow, and it introduced errors every time data got re-entered.</p>
+      <p>Designed and validated the solution in stages: low-fidelity wireframes, user validation testing, then high-fidelity Figma screens for usability testing. From there, instead of handing off static screens, I built a working prototype directly in Claude Code, then led the development team through the build, an MVP launch, and subsequent releases that expanded functionality across the organization.</p>
+    </div>
+
+    <div class="figure">
+      <img src="images/wireframe-audit-setup.png" alt="Early low-fidelity wireframe of the audit setup screen: three format options, an upload dropzone, and basic action buttons, no visual design applied yet.">
+      <div class="caption">Low-fidelity wireframe — choosing how to start an audit</div>
+    </div>
+
+    <div class="figure">
+      <img src="images/wireframe-conduct-audit.png" alt="Early low-fidelity wireframe of the audit-taking screen: section tabs, a sidebar, and repeated Yes/No/N/A question rows, no visual design applied yet.">
+      <div class="caption">Low-fidelity wireframe — conducting an audit</div>
+    </div>
+
+    <div class="pillrow">
+      <span class="pill">Discovery workshops</span>
+      <span class="pill">User interviews</span>
+      <span class="pill">Figma</span>
+      <span class="pill">Usability testing</span>
+      <span class="pill">Claude Code</span>
+      <span class="pill">Anthropic API</span>
+    </div>
+  </section>
+
+  <!-- ============ 03 — THE WORK (key decisions) ============ -->
+  <section class="plate" id="work">
+    <div class="plate-head">
+      <div class="plate-num">03</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Work</span>
+      </div>
+    </div>
+    <div class="decisions">
+      <div class="decision">
+        <span class="decision-num">Decision 01</span>
+        <h3>One audit format, three input modes</h3>
+        <p>Built a single audit format that works whether staff are on a device, in Excel, or on paper, instead of mandating one digital-only tool across every facility.</p>
+        <p class="alt">Considered instead: standardizing on a single digital workflow. That wasn't viable given the facility restrictions on electronics, so the format had to flex to the environment rather than assume it away.</p>
+      </div>
+
+      <div class="figure">
+        <img src="images/decision-01-audit-modes.png" alt="The Start New Audit screen, showing Digital Audit, Excel Audit, and Paper Audit as parallel options, plus a drop zone to upload a completed audit.">
+        <div class="caption">Starting an audit — digital, Excel, or paper, same system either way</div>
+      </div>
+
+      <div class="decision">
+        <span class="decision-num">Decision 02</span>
+        <h3>OCR instead of accepting the double-entry workflow</h3>
+        <p>Added a handwriting-recognition layer, built on the Anthropic API, so paper-only sites could upload a photo or scan of a completed audit instead of re-keying it into a spreadsheet by hand.</p>
+        <p class="alt">Considered instead: leaving paper-based facilities on the manual re-entry process as an accepted limitation. That would have kept the slowest, most error-prone part of the workflow in place for exactly the sites least able to absorb it.</p>
+      </div>
+
+      <div class="figure">
+        <img src="images/decision-02-ocr-upload.png" alt="The Upload Paper Audit flow: facility, auditor, and period fields, then a drag-and-drop area accepting a PDF, page images, or an Excel file.">
+        <div class="caption">Uploading a completed paper audit for automatic processing</div>
+      </div>
+
+      <div class="decision">
+        <span class="decision-num">Decision 03</span>
+        <h3>One standardized workflow, not eight digitized ones</h3>
+        <p>Defined a single audit taxonomy and workflow, built from the cross-department research, rather than digitizing each department's existing (and inconsistent) process as-is.</p>
+        <p class="alt">Considered instead: building the tool around each department's current process to minimize change management. That would have preserved the black box in digital form. The actual problem was the absence of a shared process, so the design had to fix that first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — THE OUTCOME ============ -->
+  <section class="plate" id="outcome">
+    <div class="plate-head">
+      <div class="plate-num">04</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Outcome</span>
+      </div>
+    </div>
+
+    <p class="pullquote">"AI handwriting recognition cut manual audit entry by 80%."</p>
+
+    <div class="statgrid">
+      <div class="stat">
+        <span class="num">80%</span>
+        <span class="lbl">Reduction in manual audit entry</span>
+      </div>
+    </div>
+
+    <div class="plate-body">
+      <p>Rendevor got its first fully transparent, end-to-end audit system: every audit's status, owner, and next step are now visible as it moves through review and remediation. That transparency directly reduced their regulatory risk with health and government oversight bodies. Leadership also got, for the first time, real data on audit findings across teams and facilities, enough to spot patterns and make informed decisions at the C-level instead of guessing.</p>
+    </div>
+
+    <div class="figure">
+      <img src="images/outcome-final.png" alt="The Start New Audit screen, the same one every facility now uses to begin an audit digitally, in Excel, or on paper.">
+      <div class="caption">Audit Center today — one system, every format, all 70+ facilities</div>
+    </div>
+  </section>
+
+  <!-- ============ 05 — THE TAKEAWAY (optional) ============ -->
+  <!-- Delete this whole <section> if it doesn't earn its place. -->
+  <section class="plate" id="takeaway">
+    <div class="plate-head">
+      <div class="plate-num">05</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Takeaway</span>
+      </div>
+    </div>
+    <div class="rulecard">
+      <div class="subhead">What I'd carry forward</div>
+      <p>The workshop-first approach is what actually found the real problem. If the project had started from "audits are slow, build a faster audit tool," it likely would have shipped a faster version of eight different broken processes. Starting from operational discovery instead of a stated solution is what surfaced that the real fix was standardizing a process that didn't exist yet.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PREV / NEXT + BACK ============ -->
+<!-- No other case studies are built yet, so this is a single back-link for
+     now. Once a second one exists, restore the two-link prev/next pattern
+     from case-study-template.html. -->
+<div class="wrap">
+  <div class="nextnav">
+    <a href="/work.html">← All case studies</a>
+  </div>
+  <div class="colophon">
+    <span>Tyler Entingh · Case Studies · tylerentingh.com</span>
+  </div>
+</div>
+
+</body>
+</html>
