@@ -274,6 +274,7 @@ body[data-active-section="experience"] .scroll-progress-bar{background:var(--gol
    teaser and CTA; an unbuilt one is the same card shape with a
    "Coming soon" badge in the same bottom-of-card slot instead. */
 .work-card{
+  position:relative;
   display:flex; flex-direction:column; gap:10px; text-decoration:none;
   background:linear-gradient(135deg, var(--gold) 0%, var(--rust) 55%, var(--rust-dark) 100%);
   color:#fff; padding:28px 32px; border:1px solid transparent;
@@ -283,6 +284,12 @@ a.work-card:hover, a.work-card:focus-visible{box-shadow:var(--shadow-sm);}
 .work-card-company{
   font-family:var(--f-mono); font-size:.72rem; color:rgba(255,255,255,.85); letter-spacing:.08em;
   text-transform:uppercase;
+  padding-right:52px; /* keep the company name clear of the date badge */
+}
+.work-card-date{
+  position:absolute; top:28px; right:32px;
+  font-family:var(--f-mono); font-size:.72rem; letter-spacing:.06em;
+  color:rgba(255,255,255,.75);
 }
 .work-card h3{font-family:var(--f-display); font-size:1.3rem; font-weight:600; color:#fff;}
 .work-card p{color:rgba(255,255,255,.88); font-size:.95rem;}
@@ -297,10 +304,9 @@ a.work-card:hover, a.work-card:focus-visible{box-shadow:var(--shadow-sm);}
   letter-spacing:.08em; text-transform:uppercase; color:#fff; font-weight:700;
 }
 .work-soon-note{
-  align-self:flex-start; margin-top:auto;
+  align-self:flex-start; margin-top:auto; padding-top:14px;
   font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
-  color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
-  padding:6px 14px; border-radius:var(--radius-pill);
+  color:rgba(255,255,255,.65); font-weight:700; font-style:italic;
 }
 
 /* ---------- about: lava-lamp ambient background ---------- */

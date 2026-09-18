@@ -25,6 +25,34 @@
   var currentIndex = 0;
   var accum = 0;
 
+  // A trackpad swipe keeps emitting wheel events for a few hundred ms after
+  // the physical gesture ends (momentum scrolling). Without a lock, those
+  // trailing events land right after goTo() has already switched
+  // currentIndex, and get fed straight into the new page's own scrollTop --
+  // so the user arrives at a section and immediately gets scrolled past its
+  // first content before they've seen it. Swallow input for the duration of
+  // the slide transition so leftover momentum from the old gesture has
+  // nothing left to act on by the time input is accepted again.
+  var scrollLocked = false;
+  var scrollLockTimer = null;
+  function lockScroll(){
+    scrollLocked = true;
+    clearTimeout(scrollLockTimer);
+    track.addEventListener('transitionend', onTrackTransitionEnd);
+    // Fallback in case transitionend doesn't fire (e.g. transition
+    // interrupted by another goTo, or reduced-motion edge cases).
+    scrollLockTimer = setTimeout(unlockScroll, 750);
+  }
+  function onTrackTransitionEnd(e){
+    if (e.target !== track || e.propertyName !== 'transform') return;
+    unlockScroll();
+  }
+  function unlockScroll(){
+    scrollLocked = false;
+    clearTimeout(scrollLockTimer);
+    track.removeEventListener('transitionend', onTrackTransitionEnd);
+  }
+
   function setMetrics(){
     document.documentElement.style.setProperty('--nav-h', navbar.getBoundingClientRect().height + 'px');
     document.documentElement.style.setProperty('--page-h', scrollport.clientHeight + 'px');
@@ -61,11 +89,51 @@
     });
   }
 
+  // Setting scrollTop directly, once per wheel event, moves it in a single
+  // discrete jump with nothing to interpolate the frames in between -- that
+  // reads as choppy even though each individual jump is small. Instead, wheel
+  // input only updates a *target* scrollTop, and a rAF loop eases the page's
+  // actual scrollTop toward that target a little each frame, so the motion
+  // is smooth regardless of how sparse or bursty the incoming wheel events are.
+  var innerScrollTarget = null;
+  var smoothRafId = null;
+  var SMOOTH_EASE = 0.22;
+
+  function ensureInnerTarget(pageEl){
+    if (innerScrollTarget === null) innerScrollTarget = pageEl.scrollTop;
+    return innerScrollTarget;
+  }
+
+  function cancelSmoothLoop(){
+    if (smoothRafId !== null) { cancelAnimationFrame(smoothRafId); smoothRafId = null; }
+  }
+
+  function stepSmoothScroll(){
+    var pageEl = pages[currentIndex];
+    var target = innerScrollTarget === null ? pageEl.scrollTop : innerScrollTarget;
+    var diff = target - pageEl.scrollTop;
+    if (Math.abs(diff) < 0.5) {
+      pageEl.scrollTop = target;
+      smoothRafId = null;
+      updateProgressBar();
+      return;
+    }
+    pageEl.scrollTop += diff * SMOOTH_EASE;
+    updateProgressBar();
+    smoothRafId = requestAnimationFrame(stepSmoothScroll);
+  }
+
+  function setInnerTarget(v){
+    innerScrollTarget = v;
+    if (smoothRafId === null) smoothRafId = requestAnimationFrame(stepSmoothScroll);
+  }
+
   function updateProgressBar(){
     if (!progressBar) return;
     var pageEl = pages[currentIndex];
     var innerRange = Math.max(0, pageEl.scrollHeight - pageEl.clientHeight);
-    var innerScrolled = Math.min(pageEl.scrollTop, innerRange);
+    var innerPos = innerScrollTarget === null ? pageEl.scrollTop : innerScrollTarget;
+    var innerScrolled = Math.min(innerPos, innerRange);
     var forwardAccum = Math.max(0, accum);
     var total = innerRange + FORWARD_THRESHOLD;
     var fraction = total > 0 ? Math.max(0, Math.min(1, (innerScrolled + forwardAccum) / total)) : 0;
@@ -76,11 +144,14 @@
     index = Math.max(0, Math.min(pages.length - 1, index));
     accum = 0;
     if (index === currentIndex) { updateProgressBar(); return; }
+    cancelSmoothLoop();
+    innerScrollTarget = null;
     currentIndex = index;
     track.style.transform = 'translateY(calc(-1 * var(--page-h) * ' + currentIndex + '))';
     updateNavActive();
     updateReveal();
     updateProgressBar();
+    lockScroll();
     if (window.history && history.replaceState) {
       history.replaceState(null, '', '#' + pages[currentIndex].id);
     }
@@ -100,17 +171,21 @@
     // or a big scroll can get silently swallowed right at the boundary and
     // every subsequent small gesture has to rebuild paging progress from
     // zero, which reads as being stuck.
+    // Room/consumption is measured against the target, not the (eased,
+    // lagging) actual scrollTop -- otherwise a burst of wheel events would
+    // think there's still room left that a prior event already claimed.
     if (innerRange > 1) {
-      if (deltaY > 0 && pageEl.scrollTop < innerRange - OVERFLOW_EPSILON) {
-        var room = innerRange - pageEl.scrollTop;
+      var target = ensureInnerTarget(pageEl);
+      if (deltaY > 0 && target < innerRange - OVERFLOW_EPSILON) {
+        var room = innerRange - target;
         var consumed = Math.min(deltaY, room);
-        pageEl.scrollTop += consumed;
+        setInnerTarget(target + consumed);
         deltaY -= consumed;
         if (deltaY <= 0) { updateProgressBar(); return; }
-      } else if (deltaY < 0 && pageEl.scrollTop > OVERFLOW_EPSILON) {
-        var roomUp = pageEl.scrollTop;
+      } else if (deltaY < 0 && target > OVERFLOW_EPSILON) {
+        var roomUp = target;
         var consumedUp = Math.min(-deltaY, roomUp);
-        pageEl.scrollTop -= consumedUp;
+        setInnerTarget(target - consumedUp);
         deltaY += consumedUp;
         if (deltaY >= 0) { updateProgressBar(); return; }
       }
@@ -134,19 +209,30 @@
     updateProgressBar();
   }
 
+  // Raw wheel/trackpad deltas map almost 1:1 onto both inner-page scrollTop
+  // and paging progress, which is far more sensitive than it feels like it
+  // should be -- a single native scroll tick is easily 100+ px, enough to
+  // carry a whole section header off screen before the user can react.
+  // Scale every input down so it takes a noticeably bigger physical gesture
+  // to move the same visual distance.
+  var SCROLL_SCALE = 0.3;
+
   function normalizedWheelDelta(e){
     // A plain mouse wheel (as opposed to a trackpad) commonly reports
     // deltaMode 1 (DOM_DELTA_LINE), where deltaY is a tiny number like 3
     // rather than a pixel count -- our thresholds assume pixels, so treating
     // a line-mode delta literally would make forward/backward progress
     // accumulate at a small fraction of the intended rate.
-    if (e.deltaMode === 1) return e.deltaY * 34;
-    if (e.deltaMode === 2) return e.deltaY * scrollport.clientHeight;
-    return e.deltaY;
+    var px;
+    if (e.deltaMode === 1) px = e.deltaY * 34;
+    else if (e.deltaMode === 2) px = e.deltaY * scrollport.clientHeight;
+    else px = e.deltaY;
+    return px * SCROLL_SCALE;
   }
 
   scrollport.addEventListener('wheel', function(e){
     e.preventDefault();
+    if (scrollLocked) return;
     applyDelta(normalizedWheelDelta(e));
   }, { passive: false });
 
@@ -156,10 +242,10 @@
     // text-cursor movement, not to page the whole site out from under them.
     var tag = e.target && e.target.tagName;
     if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (e.target && e.target.isContentEditable)) return;
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goTo(currentIndex + 1); }
-    else if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); goTo(currentIndex - 1); }
-    else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
-    else if (e.key === 'End') { e.preventDefault(); goTo(pages.length - 1); }
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); if (!scrollLocked) goTo(currentIndex + 1); }
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); if (!scrollLocked) goTo(currentIndex - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); if (!scrollLocked) goTo(0); }
+    else if (e.key === 'End') { e.preventDefault(); if (!scrollLocked) goTo(pages.length - 1); }
   });
 
   var touchY = null;
@@ -172,6 +258,7 @@
     var deltaY = touchY - y;
     touchY = y;
     e.preventDefault();
+    if (scrollLocked) return;
     applyDelta(deltaY * 1.6);
   }, { passive: false });
   scrollport.addEventListener('touchend', function(){ touchY = null; });
