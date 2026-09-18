@@ -1,0 +1,43 @@
+# Tyler's personal brand system (v2, 2026-09)
+
+Full visual guideline published as an Artifact: https://claude.ai/code/artifact/b8214d4f-266f-4fbc-963d-3ab0eb9eacb2
+("Entingh Brand Standards") — read this artifact before building the resume site, portfolio, or any other visual collateral so new work matches. Republishing this file path keeps the same URL.
+
+## Direction
+1970s autumnal palette, kept modern with a white ground instead of tinted paper (v1 read "too old school" — parchment ground, heavy borders, vintage manual affectations were dialed back). Positioning is deliberately hybrid — credible for both product/UX design leadership roles and strategy/business-development roles. Signature graphic: a flowing 4-band wave/ribbon motif (like a retro sunset horizon) used once per composition — cover hero + a showcase in the Motifs plate.
+
+## Palette (white ground, not cream)
+- Paperwhite #FFFFFF — ground (always; never tint the whole page cream/beige)
+- Manila #FAF3E7 — panel fill only
+- Sand #F1E1BF — ribbon tint / accent fill (lightest band in the wave motif)
+- Espresso #33210F — ink/text (15.4:1 on Paperwhite, AAA)
+- Cocoa #5C4530 — secondary text (8.9:1, AAA)
+- Burnt Clay #B84A28 — primary accent (5.2:1 on Paperwhite — now clears full AA for body text too, an improvement over the cream-ground version)
+- Brick #7A2E1C — deep accent/panels (white on Brick = 9.4:1 AAA)
+- Harvest Gold #D69A3C — secondary accent, fill only, never text (2.5:1 — fails)
+- Ochre #A6721F — gold deepened for text use (4.2:1 — large/bold only)
+- (Avocado green dropped in v2 to keep a tight 4-tone story matching the wave motif: brown/orange/gold/cream)
+
+## Type
+- Display: Fraunces (headlines, name, pull quotes) — weights 300 italic / 600 / 900
+- Body: Nunito (paragraphs, UI copy) — 400 / 600 / 800
+- Utility: Space Mono (labels, dates, specs, contact lines)
+
+## Mark
+Sunburst roundel with "TE" initials for small/unattended spaces (favicon, avatar); full "Tyler Entingh" wordmark in Fraunces with a Burnt Clay underline rule elsewhere.
+
+## Signature graphic
+A 4-band flowing wave (dark brown → rust → gold → sand, thick rounded parallel bands) — the primary brand asset, used once per page (cover hero or a section divider), not stacked with other motifs.
+
+## Supporting motifs (secondary, use one per composition)
+Sunburst, halftone dot field, arch, thin/thick rule pairs.
+
+## Voice pillars
+Systems-minded, plainspoken teacher, accessible by default (WCAG), strategic operator — each backed by real resume proof points (Strata Decision Technology brand refresh, Flatiron/Army instruction, WCAG work, SeeSaw Labs/Slide UX strategy roles).
+
+## Modern-not-vintage rules (learned from feedback)
+Rounded cards (18px radius) with soft shadows instead of heavy black borders; pill-shaped tag/badge chips instead of outlined rectangles; flat ghost-numeral plate markers instead of engraved/stroked type; generous white space does the work vintage borders used to do.
+
+## Applications produced
+- **LinkedIn banner** (1584×396): https://claude.ai/code/artifact/193654cc-f7df-4150-9d01-ca2ad9abd7e6 — gold-to-brick gradient (text sits on the dark/rust side for AAA contrast), signature wave motif as a low horizon band, TE roundel top-right. No name or "open to work" copy — LinkedIn already shows the name, and Tyler didn't want the banner to read as begging. Copy instead positions him as a design-minded product person willing to execute, not just strategize: "Design-minded. Sleeves rolled up." / "Systems thinking · Rapid prototyping · Chicago, IL". Content kept clear of the left ~440px / bottom ~170px to stay clear of LinkedIn's profile-photo overlap and mobile crop.
+- **Resume, styled to brand** (one page, PDF, delivered as a download — `Tyler_Entingh_Senior_Product_Designer_Resume_Styled.pdf`): built as a single-page HTML/CSS doc (Fraunces/Nunito/Space Mono self-hosted so PDF rendering doesn't depend on internet access) and printed to a Letter-size PDF via headless Chromium. Layout: 4-color stacked-band accent bar at the very top edge (echoes the wave's brown/rust/gold/sand story without the vertical cost); name in Fraunces 900 + italic Fraunces role line + Space Mono contact block, right-aligned; Burnt Clay rule under the header; mono uppercase section kickers (Skills & Tools / Experience / Education) with a hairline top border, matching the brand-standards `.subhead` treatment; skills as pill chips on Manila fill; job rows with Fraunces 600 titles, Burnt Clay company names, Space Mono dates/location right-aligned; small Burnt Clay square bullet markers. Closes with a compact version of the signature 4-band wave motif and a small "Portfolio & references available at tylerentingh.com" mono caption — the one wave-motif use on this page, per the "once per composition" rule. All content from the original resume preserved (no bullets cut), tightened typographically to hold one page.
