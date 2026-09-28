@@ -150,7 +150,7 @@ body[data-active-section="experience"] .scroll-progress-bar{background:var(--gol
 .hero .position{
   font-family:var(--f-display); font-style:normal; font-weight:300;
   font-size:clamp(1.2rem, 2.6vw, 1.7rem);
-  color:var(--rust-dark); margin-top:14px; max-width:34ch;
+  color:var(--rust-dark); margin-top:14px; text-wrap:balance;
 }
 .hero-cta{margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;}
 .btn{
