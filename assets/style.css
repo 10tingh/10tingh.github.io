@@ -375,6 +375,48 @@ a.work-card:hover, a.work-card:focus-visible{box-shadow:var(--shadow-sm);}
   .lava-blob{animation:none; opacity:.14; bottom:auto; top:20%;}
 }
 
+/* ---------- #work backdrop ---------- */
+/* Same sticky zero-height wrapper trick as .lava-bg (see the note there on
+   why the inner layer anchors at left:0 and sizes off 100vw). Each slot
+   holds a faded, tilted screenshot of the matching case study that fades
+   in when its card is the active carousel slide. */
+.work-bg{
+  position:sticky; top:0; height:0; overflow:visible; z-index:0; pointer-events:none;
+}
+.work-bg-inner{
+  position:absolute; top:0; left:0; width:100vw; height:var(--page-h); overflow:hidden;
+}
+.work-bg-slide{
+  position:absolute; inset:0; opacity:0; transition:opacity .8s ease;
+}
+.work-bg-slide.is-active{opacity:1;}
+.work-bg-slide img{
+  position:absolute; top:50%; left:50%;
+  width:min(1400px, 130vw); height:auto;
+  /* % here is the img's own size, which is what centering wants */
+  transform:translate(-50%,-50%) rotate(-6deg) scale(1.06);
+  transition:transform 1.4s cubic-bezier(.22,.61,.36,1);
+  opacity:var(--work-bg-opacity, .5); filter:grayscale(1) sepia(.35); mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 50%, #000 35%, transparent 100%);
+          mask-image:radial-gradient(ellipse 60% 55% at 50% 50%, #000 35%, transparent 100%);
+}
+/* Soft white halo behind the heading so it stays readable over the
+   backdrop. justify-self:start shrinks the group to its text so the halo
+   hugs the words instead of spanning the grid column. */
+#work .section-title-group{position:relative; isolation:isolate; justify-self:start;}
+#work .section-title-group::before{
+  content:""; position:absolute; inset:-16px -28px; z-index:-1;
+  background:rgba(255,255,255,.5); border-radius:24px; filter:blur(18px);
+}
+.work-bg-slide.is-active img{transform:translate(-50%,-50%) rotate(-6deg) scale(1);}
+/* Mostly-dark screenshots turn into heavy grey slabs at full strength */
+.work-bg-slide--dark{--work-bg-opacity:.22;}
+/* Portrait phone shots size off height so they don't blow up to 130vw */
+.work-bg-slide--phone img{width:auto; height:min(88vh, 900px); max-width:none;}
+@media (prefers-reduced-motion: reduce){
+  .work-bg-slide, .work-bg-slide img{transition:none;}
+}
+
 /* ---------- shared one-at-a-time carousel (about pillars + work cards) ---------- */
 /* One slide in view at a time, JS-driven translateX (same philosophy as
    the outer page pager: an explicit index drives the transform, rather

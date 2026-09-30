@@ -6,6 +6,9 @@
     var prevBtn = carousel.querySelector('.pillars-prev');
     var nextBtn = carousel.querySelector('.pillars-next');
     if (!track || !slides.length) return;
+    // Optional backdrop: data-bg names an element whose children pair 1:1 with the slides.
+    var bg = carousel.dataset.bg ? document.getElementById(carousel.dataset.bg) : null;
+    var bgSlides = bg ? Array.prototype.slice.call(bg.children) : [];
 
     var dots = slides.map(function(_, i){
       var dot = document.createElement('button');
@@ -27,6 +30,7 @@
         dot.classList.toggle('is-active', i2 === index);
         dot.setAttribute('aria-selected', i2 === index ? 'true' : 'false');
       });
+      bgSlides.forEach(function(s, i2){ s.classList.toggle('is-active', i2 === index); });
     }
 
     prevBtn.addEventListener('click', function(){ goTo(index - 1); });
