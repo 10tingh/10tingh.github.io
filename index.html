@@ -166,6 +166,17 @@
 
   <!-- EXPERIENCE -->
   <section class="page" id="experience">
+    <!-- Chicago doodles, spawned by assets/doodles.js. The filter roughens
+         their clean geometry into a hand-drawn line. -->
+    <div class="doodle-bg" aria-hidden="true">
+      <svg width="0" height="0" style="position:absolute">
+        <filter id="doodle-wobble">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3"/>
+          <feDisplacementMap in="SourceGraphic" scale="3.5"/>
+        </filter>
+      </svg>
+      <div class="doodle-bg-inner"></div>
+    </div>
     <div class="page-inner wrap">
       <div class="section-head">
         <div class="section-num">02</div>
@@ -564,6 +575,7 @@
 <script src="assets/wave.js"></script>
 <script src="assets/nav.js"></script>
 <script src="assets/pillars.js"></script>
+<script src="assets/doodles.js"></script>
 <script src="assets/timeline.js"></script>
 <script src="assets/contact-form.js"></script>
 <script src="assets/contact-panels.js"></script>

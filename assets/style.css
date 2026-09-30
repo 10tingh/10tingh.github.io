@@ -222,6 +222,20 @@ body[data-active-section="experience"] .scroll-progress-bar{background:var(--gol
 #experience .role-desc{color:rgba(255,255,255,.78);}
 #experience .role{border-top-color:rgba(255,255,255,.16);}
 
+/* Chicago doodles (assets/doodles.js). Same sticky zero-height wrapper as
+   .lava-bg so the layer stays pinned while the timeline scrolls. */
+.doodle-bg{position:sticky; top:0; height:0; overflow:visible; z-index:0; pointer-events:none;}
+.doodle-bg-inner{position:absolute; top:0; left:0; width:100vw; height:var(--page-h); overflow:hidden;}
+.doodle{position:absolute; overflow:visible; opacity:.42; transition:opacity .9s ease;}
+.doodle--big{opacity:.22;}
+.doodle.is-leaving{opacity:0;}
+.doodle path{
+  fill:none; stroke:var(--gold); stroke-width:var(--doodle-stroke, 2.4); stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:1; stroke-dashoffset:1;
+  animation:doodle-draw 1s ease-in-out forwards;
+}
+@keyframes doodle-draw{to{stroke-dashoffset:0;}}
+
 /* ---------- experience timeline ---------- */
 .timeline{display:flex; flex-direction:column; gap:0;}
 .role{
@@ -408,13 +422,24 @@ a.work-card:hover, a.work-card:focus-visible{box-shadow:var(--shadow-sm);}
   content:""; position:absolute; inset:-16px -28px; z-index:-1;
   background:rgba(255,255,255,.5); border-radius:24px; filter:blur(18px);
 }
-.work-bg-slide.is-active img{transform:translate(-50%,-50%) rotate(-6deg) scale(1);}
+.work-bg-slide.is-active img{
+  transform:translate(-50%,-50%) rotate(-6deg) scale(1);
+  animation:work-bg-flash 1.8s ease-out;
+}
+/* Color pulse: a newly active backdrop arrives in full color, holds a
+   beat, then settles into the resting mono look. The end frame matches
+   the base img rule, so there's no jump when the animation lets go. */
+@keyframes work-bg-flash{
+  0%, 30%{filter:grayscale(0) sepia(0); opacity:var(--work-bg-flash-opacity, .9);}
+  100%{filter:grayscale(1) sepia(.35); opacity:var(--work-bg-opacity, .5);}
+}
 /* Mostly-dark screenshots turn into heavy grey slabs at full strength */
-.work-bg-slide--dark{--work-bg-opacity:.22;}
+.work-bg-slide--dark{--work-bg-opacity:.22; --work-bg-flash-opacity:.55;}
 /* Portrait phone shots size off height so they don't blow up to 130vw */
 .work-bg-slide--phone img{width:auto; height:min(88vh, 900px); max-width:none;}
 @media (prefers-reduced-motion: reduce){
   .work-bg-slide, .work-bg-slide img{transition:none;}
+  .work-bg-slide.is-active img{animation:none;}
 }
 
 /* ---------- shared one-at-a-time carousel (about pillars + work cards) ---------- */
