@@ -1,7 +1,7 @@
 # Kasasa — Unifying a Fragmented Sales Demo into One Cohesive Experience
 
 Company: SeeSaw Labs
-Status: Draft v3, ready for Tyler's review: v2 follow-up answers folded in (navigation is now a Decision, product names added), 00 attribution fixed, no [TK]s or open questions left; the draft and the JobHunter summary await Tyler's approval
+Status: Ported, awaiting Tyler's push (v3 approved unedited; page at `case-studies/kasasa/index.html`, Work card linked, JobHunter summary applied)
 Source: `case-study-placeholders.md`, section "7. Kasasa" (resume-level skeleton) + `images/surelock-phone.webp` + Tyler's inline answers to the v1 questions and his chat answers to the v2 follow-ups (both archived verbatim at the bottom).
 
 ---
@@ -107,7 +107,7 @@ Image: reuse `images/surelock-phone.webp` as the closing shot (a screen from the
 
 ---
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved, applied)
 Kasasa (SeeSaw Labs): as Senior Designer & Project Lead, unified Kasasa's disconnected sales demo tools in 8 weeks into one demo that works sales-led or self-guided and carries data across the product suite, getting product and sales on the same page; the sales team met the rollout with incredibly positive feedback.
 
 ---

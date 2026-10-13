@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" role="img" aria-labelledby="t">
+  <title id="t">Entry-point map: Salesperson-led and Self-guided both open into one demo, which then splits by user type into new user and power user</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="340" fill="#fff"/>
+  <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
+    <text x="30" y="40">ENTRY POINTS</text>
+  </g>
+  <!-- doors -->
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="40" y="80" width="200" height="64" rx="10"/>
+    <rect x="40" y="200" width="200" height="64" rx="10"/>
+  </g>
+  <!-- one demo -->
+  <rect x="380" y="132" width="200" height="80" rx="10" fill="#E2E2E2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <!-- user types -->
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="720" y="80" width="200" height="64" rx="10"/>
+    <rect x="720" y="200" width="200" height="64" rx="10"/>
+  </g>
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M240 112 C310 112 310 160 378 160"/>
+    <path d="M240 232 C310 232 310 184 378 184"/>
+    <path d="M580 160 C650 160 650 112 718 112"/>
+    <path d="M580 184 C650 184 650 232 718 232"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700" fill="#333" text-anchor="middle">
+    <text x="140" y="117">Salesperson-led</text>
+    <text x="140" y="237">Self-guided</text>
+    <text x="480" y="178" font-size="17" font-weight="800">One demo</text>
+    <text x="820" y="117">New user</text>
+    <text x="820" y="237">Power user</text>
+  </g>
+</svg>

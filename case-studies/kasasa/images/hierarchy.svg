@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" role="img" aria-labelledby="t">
+  <title id="t">Hierarchy diagram: SureLock, the primary tool, at the top, with Kasasa Cash, Everyday Rewards, and Take-Back Loans below it as peers</title>
+  <rect width="960" height="340" fill="#fff"/>
+  <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
+    <text x="30" y="40">HIERARCHY</text>
+  </g>
+  <rect x="370" y="70" width="220" height="72" rx="10" fill="#E2E2E2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="90" y="230" width="220" height="64" rx="10"/>
+    <rect x="370" y="230" width="220" height="64" rx="10"/>
+    <rect x="650" y="230" width="220" height="64" rx="10"/>
+  </g>
+  <g fill="none" stroke="#555" stroke-width="1.5">
+    <path d="M480 142 V186"/>
+    <path d="M200 186 H760"/>
+    <path d="M200 186 V230"/>
+    <path d="M480 186 V230"/>
+    <path d="M760 186 V230"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700" fill="#333" text-anchor="middle">
+    <text x="480" y="104" font-size="17" font-weight="800">SureLock</text>
+    <text x="200" y="267">Kasasa Cash</text>
+    <text x="480" y="267">Everyday Rewards</text>
+    <text x="760" y="267">Take-Back Loans</text>
+  </g>
+  <text x="480" y="126" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5">PRIMARY TOOL</text>
+</svg>
