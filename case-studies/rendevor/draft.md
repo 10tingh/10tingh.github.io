@@ -82,7 +82,7 @@ The workshop-first approach is what actually found the real problem. If the proj
 - Skipped the SeeSaw Labs published framing entirely per Tyler's call; the only thing pulled from it is the 80% stat, which matches Tyler's own account of what the OCR layer fixed.
 - Wireframe images were generated (not sourced from Tyler's original design files) to represent what an early low-fidelity pass of these two screens would look like, based on the structure of the final screenshots.
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved by Tyler 2026-10-13; applied to JobHunter row 3)
 Rendevor (SeeSaw Labs): as Lead Product Designer & Product Manager, led design and product management on Audit Center in 8 months, standardizing a dialysis provider's audit process across 70+ facilities into one workflow that works on a device, in Excel, or on paper, with an AI layer that reads handwritten forms and cut manual audit entry by 80%.
 
 Sources: role = At-a-glance "Lead Product Designer & Product Manager"; "led design and product management on Audit Center" = 00; "8 months" = At-a-glance Timeline; "dialysis operations across more than 70 facilities" = 01; "standardizing the process around one workflow that works whether an audit happens on a device, in Excel, or on paper" = 00; "an AI layer that reads handwritten forms directly" and "cut manual audit entry by 80%" = 00 (also 04 and the stat card).
