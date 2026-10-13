@@ -1,7 +1,7 @@
 # Huddl — Streamlining REMS Drug Care Through Connected Pharmacy Workflows
 
 Company: SeeSaw Labs + Slide UX
-Status: Draft v3, ready for Tyler's review
+Status: Ported into index.html, v3; awaiting Tyler's push
 Source: `case-study-placeholders.md`, section "4. Huddl" (resume-level skeleton) + Tyler's inline answers to the v1 questions and the v2 follow-ups (both archived verbatim at the bottom).
 
 ---

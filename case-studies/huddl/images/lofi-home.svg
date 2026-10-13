@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="t">
+  <title id="t">Before: paper form, platform A, platform B, phone. After: one Huddl home view with Education, Registration, and Orders side by side</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="520" fill="#fff"/>
+  <line x1="480" y1="30" x2="480" y2="490" stroke="#DDD" stroke-width="1.5"/>
+
+  <!-- before -->
+  <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
+    <text x="40" y="44">BEFORE: SCATTERED PATH</text>
+    <text x="520" y="44">AFTER: ONE HOME VIEW</text>
+  </g>
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5" stroke-dasharray="5 4">
+    <rect x="130" y="80" width="220" height="56" rx="8"/>
+    <rect x="130" y="186" width="220" height="56" rx="8"/>
+    <rect x="130" y="292" width="220" height="56" rx="8"/>
+    <rect x="130" y="398" width="220" height="56" rx="8"/>
+  </g>
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M240 136 V184"/>
+    <path d="M240 242 V290"/>
+    <path d="M240 348 V396"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700" fill="#333" text-anchor="middle">
+    <text x="240" y="113">Paper form</text>
+    <text x="240" y="219">Platform A</text>
+    <text x="240" y="325">Platform B</text>
+    <text x="240" y="431">Phone</text>
+  </g>
+
+  <!-- after: phone wireframe -->
+  <rect x="580" y="70" width="280" height="420" rx="32" fill="#FAFAFA" stroke="#8A8A8A" stroke-width="2"/>
+  <rect x="680" y="82" width="80" height="8" rx="4" fill="#CFCFCF"/>
+  <rect x="600" y="104" width="240" height="40" rx="6" fill="#E6E6E6"/>
+  <text x="620" y="130" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="16" font-weight="800" fill="#444">Huddl</text>
+  <g fill="#EDEDED" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="600" y="164" width="74" height="96" rx="8"/>
+    <rect x="683" y="164" width="74" height="96" rx="8"/>
+    <rect x="766" y="164" width="74" height="96" rx="8"/>
+  </g>
+  <g fill="#C8C8C8">
+    <rect x="623" y="182" width="28" height="28" rx="6"/>
+    <rect x="706" y="182" width="28" height="28" rx="6"/>
+    <rect x="789" y="182" width="28" height="28" rx="6"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">
+    <text x="637" y="240">Education</text>
+    <text x="720" y="240">Registration</text>
+    <text x="803" y="240">Orders</text>
+  </g>
+  <g fill="#DADADA">
+    <rect x="600" y="284" width="240" height="56" rx="8"/>
+    <rect x="600" y="352" width="240" height="56" rx="8"/>
+    <rect x="600" y="420" width="160" height="12" rx="6"/>
+  </g>
+</svg>
