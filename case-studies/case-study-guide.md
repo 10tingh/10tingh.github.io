@@ -209,5 +209,5 @@ once a case study's copy is approved and it's ported into the template.
 | 4 | `huddl` | SeeSaw Labs + Slide UX | Huddl — Streamlining Pharmacy Workflows | **Live** |
 | 5 | `mystique-productions` | SeeSaw Labs | Mystique Productions — Content-Rich Marketing Website | Not started |
 | 6 | `ecoproducts` | Slide UX | EcoProducts — Enhancing eCommerce through Information Architecture | Not started |
-| 7 | `kasasa` | SeeSaw Labs | Kasasa — Sales Demonstration Tool | Not started |
+| 7 | `kasasa` | SeeSaw Labs | Kasasa — Sales Demonstration Tool | Draft v1, questions out for Tyler |
 | 8 | `cs-disco` | SeeSaw Labs | CS DISCO — Using AI to Transform the Legal Sector | Not started |
