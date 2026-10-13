@@ -1,8 +1,8 @@
 # Kasasa — Unifying a Fragmented Sales Demo into One Cohesive Experience
 
 Company: SeeSaw Labs
-Status: Draft v2, Tyler's answers folded in, no [TK]s left; 4 follow-ups and the JobHunter summary await Tyler
-Source: `case-study-placeholders.md`, section "7. Kasasa" (resume-level skeleton) + `images/surelock-phone.webp` + Tyler's inline answers to the v1 questions (archived verbatim at the bottom).
+Status: Draft v3, ready for Tyler's review: v2 follow-up answers folded in (navigation is now a Decision, product names added), 00 attribution fixed, no [TK]s or open questions left; the draft and the JobHunter summary await Tyler's approval
+Source: `case-study-placeholders.md`, section "7. Kasasa" (resume-level skeleton) + `images/surelock-phone.webp` + Tyler's inline answers to the v1 questions and his chat answers to the v2 follow-ups (both archived verbatim at the bottom).
 
 ---
 
@@ -20,7 +20,7 @@ Source: `case-study-placeholders.md`, section "7. Kasasa" (resume-level skeleton
 
 ## 00 — Executive Summary
 
-Kasasa's sales demos ran on separate tools that didn't talk to each other, so salespeople configured each one by hand and stuck to a tight script, and Kasasa's product team saw the demo as a major blocker to growing sales. In 8 weeks as Senior Designer & Project Lead, I helped turn it into one demo that works whether a salesperson leads it or someone explores it on their own, carries data across the whole platform so a change in one product ripples through the rest, and shows the emails and other collateral that about 8 salespeople told us in testing were missing. It got product and sales on the same page: the demo now ties what Kasasa's products promise to how they behave over time and affect each other, and the sales team met the rollout with incredibly positive feedback.
+Kasasa's sales demos ran on separate tools that didn't talk to each other, so salespeople configured each one by hand and stuck to a tight script. The organization was under pressure to increase sales, the demo was a major blocker, and Kasasa's product team brought the problem to us. In 8 weeks as Senior Designer & Project Lead, I helped turn it into one demo that works whether a salesperson leads it or someone explores it on their own, guides viewers through every product as a new user or a power user, carries data across the whole platform so a change in one product ripples through the rest, and shows the emails and other collateral that about 8 salespeople told us in testing were missing. It got product and sales on the same page: the demo now ties what Kasasa's products promise to how they behave over time and affect each other, and the sales team met the rollout with incredibly positive feedback.
 
 Image: `images/surelock-phone.webp` — a screen from the finished demo (confirmed by Tyler). SureLock is the primary tool in the platform; the screen shows a "Freedom Checking +" account with Threat Monitoring, Scam Detection ("Start Scanning"), and a Dark Web Monitoring strength score of 3/10.
 
@@ -30,25 +30,25 @@ Kasasa's sales demos were hard to deliver with consistent messaging, and the too
 
 Real workflows added another drag. Showing how the software behaved meant sitting through the real-time wait for documents and sign-offs to move through each workflow.
 
+The demo had to cover Kasasa's product suite: SureLock, the primary tool, alongside Kasasa Cash, Everyday Rewards, and Take-Back Loans.
+
 The request came from Kasasa's product team. The organization was under a lot of pressure to increase sales, and the difficulty of the demo was a major blocker to that. The project ran 8 weeks.
 
 ## 02 — The Approach
 
 It started with a big kickoff: a download of Kasasa's design system, its product suite, and the demo tools the sales team was already using.
 
-From there, it was an information architecture problem first. The question was how every product could be reached interchangeably by different types of users. We worked it out in hierarchy and flow diagrams before designing screens.
+From there, it was an information architecture problem first. The question was how every product could be reached interchangeably by different types of users. We worked it out in hierarchy and flow diagrams before designing screens. Next, we got together as a team to decide what the navigation would feel like (see Decision 02).
 
-Next, we got together as a team to decide what the navigation would feel like. People in a demo need hand-holding, so the navigation had to tell them what they were looking at at any given moment. It also had to switch perspective. Sometimes a viewer wants to see a tool as a brand-new user, and sometimes as a power user who's been on the platform for a few years, because the tool offers different benefits to each. That was the hardest part of the project: untangling every way a user could reach each product, seen through the lens of each user type.
+We ran internal usability testing with about 8 salespeople, the people who would eventually use the tool to drive conversations and demos. Testing showed we needed to show the collateral users receive at different points in the process, such as the emails sent when certain actions happen. We added those moments to the demo (see Decision 04).
 
-We ran internal usability testing with about 8 salespeople, the people who would eventually use the tool to drive conversations and demos. Testing showed we needed to show the collateral users receive at different points in the process, such as the emails sent when certain actions happen. We added those moments to the demo (see Decision 03).
-
-Figma held the design system, and we used Figma Make for early prototype concepts. Once we'd landed on a concept and validated it, we moved all design and development into Claude Code.
+Figma held the design system, and we used Figma Make for early prototype concepts. Once the initial concept was validated with a team of Kasasa's stakeholders, we moved all design and development into Claude Code.
 
 Tools/pills: Figma, Figma Make, Claude Code
 
 Image plan (all recreated for this case study; Tyler has no original process artifacts):
-- **Hierarchy diagram** — the product suite as a tree, with SureLock as the primary tool and the other products below it (labeled generically; the sources name only SureLock). Caption: "Hierarchy diagram, recreated for this case study to illustrate the information architecture work. Not an original project artifact."
-- **User-type flow diagram** — two lanes, new user and power user, each tracing a different path to the same products. Caption: "Flow diagram, recreated for this case study. Not an original project artifact."
+- **Hierarchy diagram** — the product suite as a tree, with SureLock as the primary tool and Kasasa Cash, Everyday Rewards, and Take-Back Loans below it. Caption: "Hierarchy diagram, recreated for this case study to illustrate the information architecture work. Not an original project artifact."
+- **User-type flow diagram** — two lanes, new user and power user, each tracing a different path to the same products (SureLock, Kasasa Cash, Everyday Rewards, Take-Back Loans). Caption: "Flow diagram, recreated for this case study. Not an original project artifact."
 
 ## 03 — The Work
 
@@ -57,12 +57,17 @@ I designed a single demo with more than one way in: a salesperson can lead it, o
 
 Image plan: entry-point map with two doors, "Salesperson-led" and "Self-guided," opening into one demo, then splitting by user type (new user, power user). Caption: "Entry-point map, recreated for this case study. Not an original project artifact."
 
-**Decision 02 — Data that persists across the whole platform**
+**Decision 02 — Navigation that holds the viewer's hand and switches perspective**
+I designed navigation that always tells the viewer what they're looking at, and that lets them switch between a brand-new user's view and the view of a power user who's been on the platform for a few years. Considered instead: one fixed perspective with no guidance. Why: people in a demo need context at every moment, and the tool offers different benefits to different user types. This was the hardest part of the project: untangling every way a user could reach each product, seen through the lens of each user type.
+
+Image plan: none of its own; the user-type flow diagram in 02 illustrates the two perspectives.
+
+**Decision 03 — Data that persists across the whole platform**
 I made inputs carry through the entire demo, so a change in one place ripples through every product it touches. Considered instead: the setup the sales team already had, separate tools configured one at a time that didn't talk to each other. Why: with persisting data, a viewer can see how different inputs affect products across the whole platform. The demo reads and reacts in real time the way Kasasa's actual software would, so a salesperson no longer has to hold to a tight script or wait on real documents and sign-offs to show a workflow.
 
-Image plan: data-ripple flow showing one input (in SureLock) updating the other products in the suite, contrasted with a "before" sketch of disconnected tools each configured by hand. Caption: "Recreated for this case study. Not an original project artifact."
+Image plan: data-ripple flow showing one input in SureLock updating Kasasa Cash, Everyday Rewards, and Take-Back Loans, contrasted with a "before" sketch of disconnected tools each configured by hand. Caption: "Recreated for this case study. Not an original project artifact."
 
-**Decision 03 — Adding collateral moments after testing, at the cost of complexity**
+**Decision 04 — Adding collateral moments after testing, at the cost of complexity**
 After testing with about 8 salespeople, I added the collateral users receive along the way, such as emails triggered by certain actions, into the demo experience. Considered instead: the original, simpler plan without those moments. Why: testing showed the demo needed to show what users actually receive at different points in the process. Adding those moments made the demo more complicated than we originally planned, and we took that on.
 
 Image plan: a demo timeline with an action step followed by the email it triggers, inserted as its own moment in the flow. Caption: "Low-fidelity screens, recreated for this case study. Not an original project artifact."
@@ -82,19 +87,23 @@ Image: reuse `images/surelock-phone.webp` as the closing shot (a screen from the
 ## Notes
 
 - Title changed to the placeholder's title at Tyler's request (Q13), in huddl's "Company — Title" shape.
-- All mention of the team changing removed at Tyler's request (Q10): no Decision on it, no "took over all design" or "back half." The Team field lists the starting roles (2 designers including Tyler, 2 developers) without implying a change. Tyler to confirm the wording (follow-up 1).
+- All mention of the team changing removed at Tyler's request (Q10): no Decision on it, no "took over all design" or "back half." The Team field lists the starting roles; Tyler confirmed the wording (follow-up 1).
 - Decision 01's rejected alternative ("separate tools for each use case") is the Writer's framing of the opposite of Tyler's "a single tool"; the reason is Tyler's.
-- Decision 02's alternative is the real before-state from Q3, not an invented option. The link between persisting data and dropping the tight script is the Writer's framing of two facts Tyler gave.
-- Decision 03's alternative is the original plan Tyler mentions in Q6 ("more complicated than we originally planned").
-- Navigation (new-user vs power-user perspectives) and the Figma Make → Claude Code switch stay in 02 as process, not Decisions: Tyler gave no alternative or reason for either. Follow-ups 2 and 3 ask whether they should become Decisions.
-- No product names beyond SureLock; the recreated diagrams label the other products generically.
+- Decision 02 (navigation) added at Tyler's request (follow-up 2). The decision, the reason, and "hardest part" come from his v1 Q5 answer. He named no alternative, so "one fixed perspective with no guidance" is the Writer's framing of the plain opposite, the same approach as Decision 01. The navigation detail was trimmed from 02 so it isn't told twice; 02 keeps the IA/hierarchy work and points to the Decision.
+- Decision 03's alternative is the real before-state from Q3, not an invented option. The link between persisting data and dropping the tight script is the Writer's framing of two facts Tyler gave.
+- Decision 04's alternative is the original plan Tyler mentions in Q6 ("more complicated than we originally planned").
+- Decisions ordered entry points → navigation → data → collateral, so the navigation Decision follows the entry-point map's split by user type.
+- The Figma Make → Claude Code move stays in 02 as process: Tyler gave a "when" (after the initial concept was validated with a team of Kasasa's stakeholders, follow-up 3), not a reason.
+- Product names (Kasasa Cash, Everyday Rewards, Take-Back Loans, alongside SureLock) come from follow-up 4. Used in 01 and in the hierarchy, user-type flow, and data-ripple image plans. No claims about what each product does. The hierarchy places SureLock at the top as "the primary tool," per Tyler's Q13 answer; the other three sit below it as peers.
+- The 00 attribution was corrected: the product team made the request; the sales pressure and the demo-as-blocker belong to the organization (v1 Q4).
+- 00 now also mentions the new-user/power-user navigation, so the summary covers all four Decisions.
 - "Varied by salesperson" from the placeholder is folded in as "hard to deliver with consistent messaging," Tyler's wording.
 - Outcome stat is qualitative by necessity; the copy says plainly that no metric exists. No number invented.
 - 00 says "I helped turn it into" because a designer and two developers were on the team; Tyler can tighten if he prefers.
 - Section 05 (Takeaway) omitted; Tyler had nothing to add (Q12) and it's optional.
 - All process visuals are planned as recreations; none exist yet. Each caption must say it was recreated for this case study.
-- Content checklist: passes. Specific stat (qualitative, flagged as such); roles only; duration not dates; 00 written last as an ending; final-state screenshot in 00; a number, tool, or duration in every section (01: 8 weeks; 02: about 8 salespeople, Figma/Figma Make/Claude Code; 03: about 8 salespeople; 04: 3 months); three real trade-offs in 03; voice hits systems-minded (scattered tools → one environment), plainspoken teacher, strategic operator (sales pressure as the driver).
-- Guide status table row 7 still reads "Draft v1, questions out for Tyler"; not updated here because this run only touches `case-studies/kasasa/`.
+- JobHunter summary unchanged from v2: no fact in it changed.
+- Content checklist: passes. Specific stat (qualitative, flagged as such); roles only; duration not dates; 00 written last as an ending; final-state screenshot in 00; a number, tool, or duration in every section (01: 8 weeks; 02: about 8 salespeople, Figma/Figma Make/Claude Code; 03: about 8 salespeople; 04: 3 months); four real trade-offs in 03; voice hits systems-minded (scattered tools → one environment), plainspoken teacher, strategic operator (sales pressure as the driver).
 
 ---
 
@@ -103,25 +112,24 @@ Kasasa (SeeSaw Labs): as Senior Designer & Project Lead, unified Kasasa's discon
 
 ---
 
-## Follow-up questions for Tyler
-Answer inline under each question; the next run folds your answers into the draft.
+## Tyler's answers (archive)
+Kept verbatim so the source stays on record.
+
+### v2 follow-ups (answered in chat)
 
 1. The Team field now reads "Senior Designer & Project Lead (me), 1 Designer, 2 Developers," the starting team, with no mention of the change. Is that wording right?
-   Answer:
+   Answer: Yeah
 
 2. Navigation as hand-holding (new-user vs power-user views) is in 02 as process. Do you want it as a Decision? If so, what did you consider instead, and why did you go the way you did?
-   Answer:
+   Answer: Yes
 
 3. Why move from Figma Make to Claude Code once the concept was validated, rather than staying in Figma for the rest of the design? If there's a reason, it could become a Decision.
-   Answer:
+   Answer: After the initial concept was validated with a a team of the client's stakeholders.
 
 4. The recreated diagrams label Kasasa's other products generically, since only SureLock is named. OK as is, or can you name any others?
-   Answer:
+   Answer: Kasasa Cash, Everyday Rewards, Take-Back Loans,
 
----
-
-## Tyler's answers (v1 source)
-Kept verbatim so the source stays on record.
+### v1 source
 
 **At-a-glance**
 
