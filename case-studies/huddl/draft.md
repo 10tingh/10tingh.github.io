@@ -1,7 +1,7 @@
 # Huddl — Streamlining REMS Drug Care Through Connected Pharmacy Workflows
 
 Company: SeeSaw Labs + Slide UX
-Status: Ported into index.html, v3; awaiting Tyler's push
+Status: Published; v3 with Tyler's 4 page fixes
 Source: `case-study-placeholders.md`, section "4. Huddl" (resume-level skeleton) + Tyler's inline answers to the v1 questions and the v2 follow-ups (both archived verbatim at the bottom).
 
 ---
@@ -103,7 +103,7 @@ Image: reuse `images/app hero.webp` as the closing shot (the finished app on Tes
 
 ---
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved, applied)
 Huddl (SeeSaw Labs + Slide UX): as Lead Designer, took a REMS pharmacy app from discovery to a validated TestFlight prototype in 8 weeks, cutting administrative hours managing REMS prescriptions by up to 80% and helping the startup secure UCSF funding.
 
 ---

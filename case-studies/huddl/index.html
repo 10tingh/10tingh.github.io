@@ -117,11 +117,12 @@
 
   /* at-a-glance meta strip */
   .meta-strip{
-    margin-top:40px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:0;
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
   }
   .meta-cell{padding:16px 20px 16px 0; border-right:1px solid var(--line-soft);}
-  .meta-cell:last-child{border-right:none;}
+  .meta-cell:nth-child(3n){border-right:none;}
+  .meta-cell:nth-child(-n+3){border-bottom:1px solid var(--line-soft);}
   .meta-label{
     font-family:var(--f-mono); font-size:.64rem; letter-spacing:.08em;
     text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:6px;
@@ -130,6 +131,8 @@
   @media (max-width:700px){
     .meta-strip{grid-template-columns:repeat(2,1fr);}
     .meta-cell{border-bottom:1px solid var(--line-soft); padding:14px 16px 14px 0;}
+    .meta-cell:nth-child(3n){border-right:1px solid var(--line-soft);}
+    .meta-cell:nth-child(2n){border-right:none;}
   }
 
   .cover-wave{margin:28px -28px 0; width:calc(100% + 56px); line-height:0; overflow:hidden;}
@@ -236,7 +239,7 @@
 <div class="indexbar">
   <div class="indexbar-inner">
     <div class="indexbar-mark">TE</div>
-    <a class="indexbar-back" href="/work.html">← All case studies</a>
+    <a class="indexbar-back" href="/#work">← All case studies</a>
   </div>
 </div>
 
@@ -247,7 +250,7 @@
 
     <h1>Huddl: Streamlining REMS Drug Care Through Connected Pharmacy Workflows</h1>
 
-    <p class="position">Huddl streamlines how pharmacists get educated and registered to dispense REMS drugs.</p>
+    <p class="position">One app for REMS education, registration, and orders, with in-app chat for patients in place of the phone.</p>
 
     <div class="meta-strip">
       <div class="meta-cell">
@@ -265,6 +268,14 @@
       <div class="meta-cell">
         <span class="meta-label">Tools</span>
         <span class="meta-value">Figma, Claude Code, TestFlight</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Company</span>
+        <span class="meta-value">SeeSaw Labs + Slide UX</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Outcome</span>
+        <span class="meta-value">Up to 80% reduction in administrative hours managing REMS prescriptions</span>
       </div>
     </div>
   </div>
@@ -448,7 +459,7 @@
      case studies link to each other. -->
 <div class="wrap">
   <div class="nextnav">
-    <a href="/work.html">← All case studies</a>
+    <a href="/#work">← All case studies</a>
   </div>
   <div class="colophon">
     <span>Tyler Entingh · Case Studies · tylerentingh.com</span>
