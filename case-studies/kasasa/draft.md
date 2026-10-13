@@ -1,7 +1,7 @@
 # Kasasa — Unifying a Fragmented Sales Demo into One Cohesive Experience
 
 Company: SeeSaw Labs
-Status: Ported, awaiting Tyler's push (v3 approved unedited; page at `case-studies/kasasa/index.html`, Work card linked, JobHunter summary applied)
+Status: Ported with Tyler's post-port fixes, awaiting Tyler's push (v3 approved unedited; page at `case-studies/kasasa/index.html`, Work card linked, JobHunter summary applied)
 Source: `case-study-placeholders.md`, section "7. Kasasa" (resume-level skeleton) + `images/surelock-phone.webp` + Tyler's inline answers to the v1 questions and his chat answers to the v2 follow-ups (both archived verbatim at the bottom).
 
 ---
@@ -14,7 +14,7 @@ Source: `case-study-placeholders.md`, section "7. Kasasa" (resume-level skeleton
 | Timeline | 8 weeks |
 | Team | Senior Designer & Project Lead (me), 1 Designer, 2 Developers |
 | Tools | Figma, Figma Make, Claude Code |
-| Outcome stat | One demo in place of separately configured tools, rolled out to Kasasa's sales team |
+| Outcome stat | 4 products in one connected demo, rolled out to Kasasa's sales team |
 
 ---
 
@@ -48,7 +48,7 @@ Tools/pills: Figma, Figma Make, Claude Code
 
 Image plan (all recreated for this case study; Tyler has no original process artifacts):
 - **Hierarchy diagram** — the product suite as a tree, with SureLock as the primary tool and Kasasa Cash, Everyday Rewards, and Take-Back Loans below it. Caption: "Hierarchy diagram, recreated for this case study to illustrate the information architecture work. Not an original project artifact."
-- **User-type flow diagram** — two lanes, new user and power user, each tracing a different path to the same products (SureLock, Kasasa Cash, Everyday Rewards, Take-Back Loans). Caption: "Flow diagram, recreated for this case study. Not an original project artifact."
+- **User-type perspective diagram** — two perspectives, new user and power user, each connected with the same line style to the same four products (SureLock, Kasasa Cash, Everyday Rewards, Take-Back Loans). Caption: "Perspective diagram, recreated for this case study. Not an original project artifact."
 
 ## 03 — The Work
 
@@ -78,7 +78,7 @@ The demo rolled out to Kasasa's sales team, replacing separately configured tool
 
 There's no metric. A follow-up to collect measurables was planned for 3 months after launch, and I left the agency before it happened.
 
-Stat card: One demo — in place of separately configured tools, rolled out to Kasasa's sales team (no usage metrics were collected before Tyler left the agency)
+Stat card: 4 products — SureLock, Kasasa Cash, Everyday Rewards, and Take-Back Loans in one connected demo, rolled out to Kasasa's sales team (no usage metrics were collected before Tyler left the agency)
 
 Image: reuse `images/surelock-phone.webp` as the closing shot (a screen from the finished demo), as Rendevor and huddl do with their outcome images.
 
@@ -103,6 +103,7 @@ Image: reuse `images/surelock-phone.webp` as the closing shot (a screen from the
 - Section 05 (Takeaway) omitted; Tyler had nothing to add (Q12) and it's optional.
 - All process visuals are planned as recreations; none exist yet. Each caption must say it was recreated for this case study.
 - JobHunter summary unchanged from v2: no fact in it changed.
+- Post-port fixes, per Tyler ("The small things you mentioned, clean those up with your best judgement"): Work card now opens "Led design and project management"; Company cell kept as "SeeSaw Labs"; the user-type diagram redrawn as a perspective diagram with identical lines from both perspectives to the same four products (the draft never says how the paths differed); outcome stat changed from "One demo" to "4 products" (the four named products in one connected demo), still with no usage metric.
 - Content checklist: passes. Specific stat (qualitative, flagged as such); roles only; duration not dates; 00 written last as an ending; final-state screenshot in 00; a number, tool, or duration in every section (01: 8 weeks; 02: about 8 salespeople, Figma/Figma Make/Claude Code; 03: about 8 salespeople; 04: 3 months); four real trade-offs in 03; voice hits systems-minded (scattered tools → one environment), plainspoken teacher, strategic operator (sales pressure as the driver).
 
 ---

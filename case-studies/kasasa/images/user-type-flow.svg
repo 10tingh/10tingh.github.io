@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" role="img" aria-labelledby="t">
-  <title id="t">Flow diagram: two user types, new user and power user, each reaching the same products: SureLock, Kasasa Cash, Everyday Rewards, and Take-Back Loans</title>
+  <title id="t">Perspective diagram: two perspectives, new user and power user, each connected by the same style of line to the same four products: SureLock, Kasasa Cash, Everyday Rewards, and Take-Back Loans</title>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
@@ -7,7 +7,7 @@
   </defs>
   <rect width="960" height="420" fill="#fff"/>
   <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
-    <text x="30" y="40">FLOW</text>
+    <text x="30" y="40">TWO PERSPECTIVES, SAME PRODUCTS</text>
   </g>
   <!-- user types -->
   <g fill="#E2E2E2" stroke="#8A8A8A" stroke-width="1.5">
@@ -26,8 +26,6 @@
     <path d="M220 210 C300 210 290 174 368 174"/>
     <path d="M220 210 C300 210 290 250 368 250"/>
     <path d="M220 210 C300 210 290 326 368 326"/>
-  </g>
-  <g fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#a)">
     <path d="M740 210 C660 210 670 98 592 98"/>
     <path d="M740 210 C660 210 670 174 592 174"/>
     <path d="M740 210 C660 210 670 250 592 250"/>
