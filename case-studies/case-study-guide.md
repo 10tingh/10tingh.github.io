@@ -206,7 +206,7 @@ once a case study's copy is approved and it's ported into the template.
 | 1 | `cogent-analytics` | SeeSaw Labs + Slide UX | Cogent Analytics — Marketing Website & Custom Tools | Not started |
 | 2 | `cfbdepth` | SeeSaw Labs | CFBDepth.com — AI-powered chatbot | Not started |
 | 3 | `rendevor` | SeeSaw Labs | Rendevor — Audit Center | **Live** |
-| 4 | `huddl` | SeeSaw Labs + Slide UX | Huddl — Streamlining Pharmacy Workflows | Draft v2, follow-up questions out for Tyler |
+| 4 | `huddl` | SeeSaw Labs + Slide UX | Huddl — Streamlining Pharmacy Workflows | Draft v3, ready for Tyler's review |
 | 5 | `mystique-productions` | SeeSaw Labs | Mystique Productions — Content-Rich Marketing Website | Not started |
 | 6 | `ecoproducts` | Slide UX | EcoProducts — Enhancing eCommerce through Information Architecture | Not started |
 | 7 | `kasasa` | SeeSaw Labs | Kasasa — Sales Demonstration Tool | Not started |
