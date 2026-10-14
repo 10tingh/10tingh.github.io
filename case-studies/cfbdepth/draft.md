@@ -100,12 +100,12 @@ Image: reuse `images/homepage hero.webp` (the final chat panel UI) as the closin
 - Section 05 omitted; Tyler had nothing to add (v1 Q11) and it's optional.
 - Q5's "hardest part / change of course" went unanswered; 02 doesn't claim one.
 - All process visuals are planned as recreations; none exist yet. Each caption must say it was recreated for this case study.
-- JobHunter summary: the Owner picked the second of the two mailed lines on Tyler's "use your best judgement." v3's facts don't change it. Not written into JobHunter: that row's cell already holds the first wording, and the Writer only fills TODO cells. Tyler can apply it in the post office or edit the cell.
+- JobHunter summary: the Owner picked the second of the two mailed lines on Tyler's "use your best judgement." v3's facts don't change it. Not written into JobHunter: that row's cell already holds the first wording, and the Writer only fills TODO cells. Tyler can apply it in the post office or edit the cell. Applied to JobHunter row 2 on 2026-10-14 at Tyler's request, replacing the first wording.
 - Content checklist: passes. Specific stat (a handful of API customers, qualitative, flagged as no hard metric); roles only; duration not dates; 00 written last as an ending; final-state screenshot in 00; a number, tool, or duration in every section (00: 8 weeks; 01: Week 0; 02: 2 engineers, Figma/Claude Code/Vercel/Railway/Docusaurus; 03: 2 engineers, SOW; 04: Week 0); three real trade-offs in 03; voice hits systems-minded (staff hand-building views → one conversational layer), plainspoken teacher, strategic operator (the API as a new revenue stream).
 
 ---
 
-## JobHunter summary (approved by Tyler, not yet applied)
+## JobHunter summary (approved by Tyler, applied)
 CFBDepth.com (SeeSaw Labs): as Project Lead & Senior Designer, led an AI chat agent built in about 8 weeks, designing its conversations and chat experience, that lets college football fans and bettors work with CFBDepth's data in plain English and remembers each user's teams and betting preferences; also designed the key tool for a new data-licensing API that opened a new revenue stream with a handful of customers before final handoff.
 
 ---
