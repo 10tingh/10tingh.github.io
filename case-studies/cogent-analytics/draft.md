@@ -109,47 +109,47 @@ Answer inline under each question; the next run folds your answers into the draf
 **At-a-glance**
 
 1. Which company did this run under: SeeSaw Labs, Slide UX, or both? If both, how did the work split between them, and why? What was your exact title, and roughly how long did it run (a duration, not dates)?
-   Answer:
+   Answer:Slide UX. I did both design and development on this project. It took roughly 16 weeks in total.
 
 2. Besides you, the designer, and the developer, were any other roles involved (on Cogent's side, or on the tools)? If you had to defend this project's value in one sentence to someone who wasn't there, what's the sentence? Is there a number behind it?
-   Answer:
+   Answer:Just the stakeholders who had a very firm idea of how the tool should work from an inputs and outputs perspective. This tool was a huge part of their new client acquistion campaigns. They wanted to be able to put something tangible and useful in the hands of small business owners to start to build trust and earn their business for the consultancy. 
 
 **01 — The Setup**
 
 3. What was "dated" about the old site, concretely: the look, the content, the platform, how leads came in? Who does Cogent Analytics serve, and what does it sell?
-   Answer:
+   Answer: Everything. The look, the old platform, their CRM maturity. Cogent analytics serves small business owners. It is a consultancy that acts like more than that. They are about integrating themselves in the business and helping drive outcomes based on the goals of the business. 
 
 4. Who at Cogent asked for this, and why then? Was there a deadline or outside pressure? Were the custom tools part of the original ask, or did they come up during the project?
-   Answer:
+   Answer:This came from their marketing department with the pressure coming from the executive suite to start generating better qualified leads. They had the idea of new tools to put into customers hands which could live on the website and they drive traffic towards. 
 
 **02 — The Approach**
 
 5. Walk me through what you did, roughly in order. What was the first move? Any research (client interviews, analytics, Cogent's customers)? What was the hardest part, and was there a moment you changed course?
-   Answer:
+   Answer: We first decided on the visual language of the new website. We defined the inputs and outputs of the two tools. The hardest part was developing a tool that took into account all of the inputs of their business assessment and tying scores to exact resources from their resource library. There were over 80 questions in the assessment and lots of different outcomes to be linked. This also had to be dynamic and user friendly for the client to be able to update resources later down the road. We also did usability testing with the tools to validate their usability. 
 
 6. How did each tool fit in: Figma, Figma Make, WordPress, Claude Code? Was the site built on WordPress, and were the two tools built with Claude Code?
-   Answer:
+   Answer:We designed the website in Figma to keep collaboration open across the client stakeholders and our team. I concepted ideas for tools in Claude Code and implemented it's output into WordPress. I also created animations to be used on the website by using Figma Make and Claude Code together. 
 
 **03 — The Work**
 
 7. Why build custom tools instead of relying on a standard contact form or consultation request? Whose idea was it, and what did you consider instead?
-   Answer:
+   Answer:Because they had a very specific outcome in mind and sought out an agency to bring it to life. We tried many different out of the box plugins for wordpress but ultimately ended up on something custom built. 
 
 8. What is the second tool called, and what does it do? How did the tools work out a visitor's "biggest need," and what were the resources they got matched with?
-   Answer:
+   Answer:The two tools were Business Valuation Calculator which was very simple to build. The second was the business assessment to help owners understand what they are doing well and where there is room for improvement. They use this as a foundation for a playbook to drive towards desired outcomes in either it's technology initiatives, sales, financial health, work life balance of the owner, and various other factors. Go with what makes the most sense. Cogent produces tons of resources to provide small business owners so the assessment put together a custom made playbook for that owner. 
 
 9. The valuation calculator: what did visitors put in and get back? Were results gated behind contact details? What did you consider and reject in its design, and what trade-offs did you make?
-   Answer:
+   Answer:Nothing gated as the purpose is to put value in owners hands. This tool would be used to demonstrate value right away and owners could walk away with a sense of how much their business is currently worth. This kicks off plenty of conversation especially for those looking to exit their business. USers could ask to be in touch with somebody once they got their results and their information was also saved to the CRM. It might also be worth mentioning I did all the development between our custom web tools, the wordpress website, and building a new HubSpot environment for the client to capture leads from the tools. 
 
 10. Why direct the designer and developer on the core site but build the two tools yourself? What was the alternative? Was there a disagreement with Cogent or the team worth its own decision?
-    Answer:
+    Answer: The designer and developer were focused primarily on the website so I picked up the tools that would live on the website. This was to make the most of our resources and timeline. 
 
-**04 — The Outcome**
+**04 — The Outcome** 
 
 11. What happened after launch? Any number, even a rough one (leads, tool completions, booked calls, traffic), or the closest proof the site works as a lead-capture engine?
-    Answer:
+    Answer: increased their qualified leads in the first quarter by more than 100%
 
 **00 — Executive Summary, images, title, and takeaway**
 
 12. What does `images/Website Hero.webp` show? It looks like the live Cogent Analytics homepage hero ("Your American dream is worth fighting for," with buttons for "Book your Discovery," "Get business advice," and "Get your business health score"). Is that the finished site, and is "business health score" one of your tools? Do you have screens of the tools or process artifacts for 02–04, or should we recreate low-fi visuals? Which title: "Cogent Analytics — Marketing Website & Custom Tools" or "Enhancing Lead Generation through Custom Web Tools"? And anything you'd do differently or learned for the Takeaway (skip if nothing real)?
-    Answer:
+    Answer: Its the hero image. Please generate as many artifacts as needed. The site is finished. The latter title is better. 
