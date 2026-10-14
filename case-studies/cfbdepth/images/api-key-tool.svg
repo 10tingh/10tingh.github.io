@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" role="img" aria-labelledby="t">
+  <title id="t">Low-fidelity API key tool: client rows with data-stream checkboxes and subscription status; on the row whose subscription ended, a Rotate key action is highlighted. Text shown as grey placeholder bars</title>
+  <rect width="960" height="460" fill="#fff"/>
+
+  <!-- window -->
+  <rect x="40" y="30" width="880" height="400" rx="14" fill="#FAFAFA" stroke="#8A8A8A" stroke-width="2"/>
+  <rect x="40" y="30" width="880" height="56" rx="14" fill="#E6E6E6"/>
+  <rect x="40" y="70" width="880" height="16" fill="#E6E6E6"/>
+  <text x="66" y="64" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800" fill="#333">API keys</text>
+  <rect x="764" y="44" width="132" height="30" rx="15" fill="#BDBDBD"/>
+  <text x="830" y="63" text-anchor="middle" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="700" fill="#fff">Issue API key</text>
+
+  <!-- column headers -->
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5">
+    <text x="66" y="118">CLIENT</text>
+    <text x="260" y="118">DATA STREAMS</text>
+    <text x="560" y="118">SUBSCRIPTION</text>
+    <text x="740" y="118">KEY</text>
+  </g>
+  <line x1="56" y1="130" x2="904" y2="130" stroke="#CFCFCF"/>
+
+  <!-- rows -->
+  <g stroke="#E0E0E0">
+    <line x1="56" y1="210" x2="904" y2="210"/>
+    <line x1="56" y1="290" x2="904" y2="290"/>
+  </g>
+  <!-- client names -->
+  <g fill="#BDBDBD">
+    <rect x="66" y="164" width="120" height="9" rx="4"/>
+    <rect x="66" y="244" width="100" height="9" rx="4"/>
+    <rect x="66" y="324" width="130" height="9" rx="4"/>
+  </g>
+  <!-- data stream checkboxes: checked = filled -->
+  <g stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="260" y="160" width="16" height="16" rx="3" fill="#8A8A8A"/>
+    <rect x="352" y="160" width="16" height="16" rx="3" fill="#8A8A8A"/>
+    <rect x="444" y="160" width="16" height="16" rx="3" fill="#fff"/>
+    <rect x="260" y="240" width="16" height="16" rx="3" fill="#8A8A8A"/>
+    <rect x="352" y="240" width="16" height="16" rx="3" fill="#fff"/>
+    <rect x="444" y="240" width="16" height="16" rx="3" fill="#fff"/>
+    <rect x="260" y="320" width="16" height="16" rx="3" fill="#8A8A8A"/>
+    <rect x="352" y="320" width="16" height="16" rx="3" fill="#8A8A8A"/>
+    <rect x="444" y="320" width="16" height="16" rx="3" fill="#8A8A8A"/>
+  </g>
+  <g fill="#D0D0D0">
+    <rect x="282" y="164" width="52" height="8" rx="4"/><rect x="374" y="164" width="52" height="8" rx="4"/><rect x="466" y="164" width="52" height="8" rx="4"/>
+    <rect x="282" y="244" width="52" height="8" rx="4"/><rect x="374" y="244" width="52" height="8" rx="4"/><rect x="466" y="244" width="52" height="8" rx="4"/>
+    <rect x="282" y="324" width="52" height="8" rx="4"/><rect x="374" y="324" width="52" height="8" rx="4"/><rect x="466" y="324" width="52" height="8" rx="4"/>
+  </g>
+  <!-- subscription status pills -->
+  <rect x="560" y="156" width="96" height="24" rx="12" fill="#E6E6E6" stroke="#A0A0A0"/>
+  <rect x="576" y="164" width="64" height="8" rx="4" fill="#BDBDBD"/>
+  <rect x="560" y="236" width="96" height="24" rx="12" fill="#fff" stroke="#555" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="608" y="252" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#333" letter-spacing=".5">ENDED</text>
+  <rect x="560" y="316" width="96" height="24" rx="12" fill="#E6E6E6" stroke="#A0A0A0"/>
+  <rect x="576" y="324" width="64" height="8" rx="4" fill="#BDBDBD"/>
+  <!-- keys (masked) -->
+  <g fill="#DADADA">
+    <rect x="740" y="164" width="100" height="8" rx="4"/>
+    <rect x="740" y="324" width="100" height="8" rx="4"/>
+  </g>
+  <!-- rotate key on ended row -->
+  <rect x="736" y="232" width="124" height="32" rx="16" fill="#555"/>
+  <text x="798" y="253" text-anchor="middle" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" fill="#fff">Rotate key</text>
+  <path d="M660 248 H732" fill="none" stroke="#8A8A8A" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <text x="66" y="404" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5">WHEN A SUBSCRIPTION ENDS, ROTATE THE KEY</text>
+</svg>

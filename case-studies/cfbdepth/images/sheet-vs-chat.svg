@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" role="img" aria-labelledby="t">
+  <title id="t">Before: a published data sheet with its proprietary formulas stripped. After: the same question asked in plain English in a chat panel, answered by CFBAI</title>
+  <rect width="960" height="460" fill="#fff"/>
+  <line x1="480" y1="30" x2="480" y2="430" stroke="#DDD" stroke-width="1.5"/>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
+    <text x="40" y="44">BEFORE: PUBLISHED DATA SHEET</text>
+    <text x="520" y="44">AFTER: ASK IN CHAT</text>
+  </g>
+
+  <!-- before: sheet -->
+  <rect x="40" y="70" width="400" height="340" rx="8" fill="#FAFAFA" stroke="#8A8A8A" stroke-width="1.5"/>
+  <rect x="40" y="70" width="400" height="36" rx="8" fill="#E2E2E2"/>
+  <g stroke="#DADADA" stroke-width="1">
+    <line x1="40" y1="146" x2="440" y2="146"/>
+    <line x1="40" y1="186" x2="440" y2="186"/>
+    <line x1="40" y1="226" x2="440" y2="226"/>
+    <line x1="40" y1="266" x2="440" y2="266"/>
+    <line x1="40" y1="306" x2="440" y2="306"/>
+    <line x1="40" y1="346" x2="440" y2="346"/>
+    <line x1="140" y1="70" x2="140" y2="410"/>
+    <line x1="240" y1="70" x2="240" y2="410"/>
+    <line x1="330" y1="70" x2="330" y2="410"/>
+  </g>
+  <g fill="#BDBDBD">
+    <rect x="56" y="84" width="60" height="8" rx="4"/><rect x="156" y="84" width="60" height="8" rx="4"/><rect x="256" y="84" width="54" height="8" rx="4"/>
+    <rect x="56" y="122" width="70" height="7" rx="3"/><rect x="156" y="122" width="40" height="7" rx="3"/><rect x="256" y="122" width="44" height="7" rx="3"/>
+    <rect x="56" y="162" width="60" height="7" rx="3"/><rect x="156" y="162" width="50" height="7" rx="3"/><rect x="256" y="162" width="36" height="7" rx="3"/>
+    <rect x="56" y="202" width="74" height="7" rx="3"/><rect x="156" y="202" width="34" height="7" rx="3"/><rect x="256" y="202" width="50" height="7" rx="3"/>
+    <rect x="56" y="242" width="56" height="7" rx="3"/><rect x="156" y="242" width="46" height="7" rx="3"/><rect x="256" y="242" width="40" height="7" rx="3"/>
+    <rect x="56" y="282" width="66" height="7" rx="3"/><rect x="156" y="282" width="38" height="7" rx="3"/><rect x="256" y="282" width="48" height="7" rx="3"/>
+    <rect x="56" y="322" width="60" height="7" rx="3"/><rect x="156" y="322" width="52" height="7" rx="3"/><rect x="256" y="322" width="42" height="7" rx="3"/>
+    <rect x="56" y="362" width="70" height="7" rx="3"/><rect x="156" y="362" width="44" height="7" rx="3"/><rect x="256" y="362" width="38" height="7" rx="3"/>
+  </g>
+  <!-- stripped column -->
+  <rect x="331" y="107" width="108" height="302" fill="#F0F0F0"/>
+  <g stroke="#CFCFCF" stroke-width="1.5">
+    <line x1="331" y1="140" x2="439" y2="107"/><line x1="331" y1="190" x2="439" y2="157"/>
+    <line x1="331" y1="240" x2="439" y2="207"/><line x1="331" y1="290" x2="439" y2="257"/>
+    <line x1="331" y1="340" x2="439" y2="307"/><line x1="331" y1="390" x2="439" y2="357"/>
+  </g>
+  <rect x="338" y="236" width="94" height="44" rx="6" fill="#fff" stroke="#8A8A8A"/>
+  <g font-family="'Space Mono', Consolas, monospace" font-size="9" fill="#555" text-anchor="middle" letter-spacing=".3">
+    <text x="385" y="254">FORMULAS</text>
+    <text x="385" y="268">STRIPPED</text>
+  </g>
+
+  <!-- after: chat -->
+  <rect x="520" y="70" width="400" height="340" rx="16" fill="#FAFAFA" stroke="#8A8A8A" stroke-width="1.5"/>
+  <rect x="520" y="70" width="400" height="44" rx="16" fill="#E2E2E2"/>
+  <rect x="520" y="96" width="400" height="18" fill="#E2E2E2"/>
+  <text x="544" y="98" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#333">CFBAI</text>
+  <g font-family="'Space Mono', Consolas, monospace" font-size="9" fill="#888" letter-spacing=".5">
+    <text x="896" y="136" text-anchor="end">USER</text>
+    <text x="544" y="208">CFBAI</text>
+  </g>
+  <rect x="680" y="144" width="216" height="40" rx="12" fill="#D6D6D6" stroke="#A0A0A0"/>
+  <rect x="696" y="160" width="160" height="8" rx="4" fill="#BDBDBD"/>
+  <rect x="544" y="216" width="300" height="130" rx="12" fill="#EDEDED" stroke="#B0B0B0"/>
+  <g fill="#BDBDBD">
+    <rect x="560" y="232" width="250" height="8" rx="4"/>
+    <rect x="560" y="248" width="210" height="8" rx="4"/>
+  </g>
+  <g fill="#fff" stroke="#C8C8C8">
+    <rect x="560" y="268" width="268" height="22"/>
+    <rect x="560" y="290" width="268" height="22"/>
+    <rect x="560" y="312" width="268" height="22"/>
+  </g>
+  <g fill="#D0D0D0">
+    <rect x="570" y="276" width="90" height="6" rx="3"/><rect x="700" y="276" width="70" height="6" rx="3"/>
+    <rect x="570" y="298" width="80" height="6" rx="3"/><rect x="700" y="298" width="60" height="6" rx="3"/>
+    <rect x="570" y="320" width="96" height="6" rx="3"/><rect x="700" y="320" width="66" height="6" rx="3"/>
+  </g>
+  <rect x="544" y="362" width="300" height="32" rx="16" fill="#fff" stroke="#A0A0A0"/>
+  <text x="562" y="383" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#999">Ask in plain English</text>
+  <circle cx="874" cy="378" r="16" fill="#BDBDBD"/>
+  <path d="M867 378 H881 M875 372 L881 378 L875 384" fill="none" stroke="#fff" stroke-width="2"/>
+</svg>

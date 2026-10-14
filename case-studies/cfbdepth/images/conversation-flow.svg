@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" role="img" aria-labelledby="t">
+  <title id="t">Conversation flow: one entry point branches by user type into team fans, bettors, and subscribers, each leading to what interests them most, with an upsell moment marked on the path</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="500" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">CONVERSATION FLOW</text>
+
+  <!-- entry -->
+  <rect x="380" y="64" width="200" height="56" rx="28" fill="#E2E2E2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <text x="480" y="98" text-anchor="middle" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="16" font-weight="800" fill="#333">One entry point</text>
+
+  <!-- branch by user type -->
+  <path d="M480 120 V150" fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+  <polygon points="480,152 560,182 480,212 400,182" fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <text x="480" y="186" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#555" letter-spacing=".5">USER TYPE?</text>
+
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M400 182 H170 V244"/>
+    <path d="M480 212 V244"/>
+    <path d="M560 182 H790 V244"/>
+  </g>
+
+  <!-- user types -->
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="70" y="246" width="200" height="50" rx="10"/>
+    <rect x="380" y="246" width="200" height="50" rx="10"/>
+    <rect x="690" y="246" width="200" height="50" rx="10"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="170" y="276">Team fans</text>
+    <text x="480" y="276">Bettors</text>
+    <text x="790" y="276">Subscribers</text>
+  </g>
+
+  <!-- topics -->
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M170 296 V322"/>
+    <path d="M480 296 V322"/>
+    <path d="M790 296 V322"/>
+  </g>
+  <g fill="#fff" stroke="#8A8A8A" stroke-width="1.5" stroke-dasharray="5 4">
+    <rect x="70" y="324" width="200" height="50" rx="10"/>
+    <rect x="380" y="324" width="200" height="50" rx="10"/>
+    <rect x="690" y="324" width="200" height="50" rx="10"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="13" fill="#444" text-anchor="middle">
+    <text x="170" y="354">Teams and players</text>
+    <text x="480" y="354">Betting factors and picks</text>
+    <text x="790" y="354">Live stats and analytics</text>
+  </g>
+
+  <!-- upsell on the shared path -->
+  <g fill="none" stroke="#555" stroke-width="1.5">
+    <path d="M170 374 V400 H790 V374"/>
+    <path d="M480 374 V400"/>
+    <path d="M480 400 V420" marker-end="url(#a)"/>
+  </g>
+  <rect x="300" y="422" width="360" height="56" rx="10" fill="#D6D6D6" stroke="#555" stroke-width="2"/>
+  <text x="480" y="444" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#333" letter-spacing=".5">UPSELL MOMENT</text>
+  <text x="480" y="466" text-anchor="middle" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="13" fill="#333">Add more to their account or move to a larger plan</text>
+</svg>

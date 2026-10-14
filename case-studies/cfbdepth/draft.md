@@ -1,7 +1,7 @@
 # CFBDepth.com — Using AI to Make Complex Data Accessible to Everyone
 
 Company: SeeSaw Labs
-Status: Draft ready (v3)
+Status: Ported, awaiting Tyler's push
 Source: `case-study-placeholders.md`, section "2. CFBDepth.com" (resume-level skeleton) + `images/homepage hero.webp` (confirmed by Tyler as the final chat panel UI) + Tyler's inline answers to the v1 and v2 questions (archived verbatim at the bottom).
 
 ---
@@ -105,7 +105,7 @@ Image: reuse `images/homepage hero.webp` (the final chat panel UI) as the closin
 
 ---
 
-## JobHunter summary (chosen by the Owner, not yet applied)
+## JobHunter summary (approved by Tyler, not yet applied)
 CFBDepth.com (SeeSaw Labs): as Project Lead & Senior Designer, led an AI chat agent built in about 8 weeks, designing its conversations and chat experience, that lets college football fans and bettors work with CFBDepth's data in plain English and remembers each user's teams and betting preferences; also designed the key tool for a new data-licensing API that opened a new revenue stream with a handful of customers before final handoff.
 
 ---
