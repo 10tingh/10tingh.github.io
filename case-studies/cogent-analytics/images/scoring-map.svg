@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440" role="img" aria-labelledby="t">
+  <title id="t">Scoring map: 80+ questions feed scores by area (technology, sales, financial health, work-life balance, and more), which match resources from Cogent's library, which build the owner's custom playbook. Cogent can swap resources at the resource step</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="440" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">BUSINESS ASSESSMENT SCORING MAP</text>
+
+  <!-- questions -->
+  <rect x="30" y="80" width="170" height="280" rx="12" fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <g fill="#fff" stroke="#A0A0A0">
+    <rect x="48" y="140" width="134" height="20" rx="5"/>
+    <rect x="48" y="168" width="134" height="20" rx="5"/>
+    <rect x="48" y="196" width="134" height="20" rx="5"/>
+    <rect x="48" y="224" width="134" height="20" rx="5"/>
+    <rect x="48" y="252" width="134" height="20" rx="5"/>
+    <rect x="48" y="280" width="134" height="20" rx="5"/>
+  </g>
+  <text x="115" y="332" text-anchor="middle" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="800" fill="#999">&#8942;</text>
+
+  <!-- scores by area -->
+  <rect x="250" y="80" width="200" height="280" rx="12" fill="#E2E2E2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <g fill="#fff" stroke="#A0A0A0">
+    <rect x="266" y="140" width="168" height="32" rx="6"/>
+    <rect x="266" y="180" width="168" height="32" rx="6"/>
+    <rect x="266" y="220" width="168" height="32" rx="6"/>
+    <rect x="266" y="260" width="168" height="32" rx="6"/>
+    <rect x="266" y="300" width="168" height="32" rx="6"/>
+  </g>
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#555" letter-spacing=".5">
+    <text x="280" y="160">TECHNOLOGY</text>
+    <text x="280" y="200">SALES</text>
+    <text x="280" y="240">FINANCIAL HEALTH</text>
+    <text x="280" y="280">WORK-LIFE BALANCE</text>
+    <text x="280" y="320">AND MORE</text>
+  </g>
+
+  <!-- resources -->
+  <rect x="500" y="80" width="190" height="280" rx="12" fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <g fill="#D6D6D6">
+    <rect x="518" y="140" width="154" height="40" rx="6"/>
+    <rect x="518" y="190" width="154" height="40" rx="6"/>
+    <rect x="518" y="240" width="154" height="40" rx="6"/>
+  </g>
+  <rect x="504" y="300" width="182" height="32" rx="16" fill="#D6D6D6" stroke="#555" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="595" y="320" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="9" fill="#333" letter-spacing="0">COGENT CAN SWAP RESOURCES HERE</text>
+
+  <!-- playbook -->
+  <rect x="740" y="80" width="190" height="280" rx="12" fill="#D6D6D6" stroke="#555" stroke-width="1.5"/>
+  <g fill="#fff" stroke="#A0A0A0">
+    <rect x="758" y="140" width="154" height="20" rx="5"/>
+    <rect x="758" y="168" width="120" height="20" rx="5"/>
+    <rect x="758" y="196" width="154" height="20" rx="5"/>
+    <rect x="758" y="224" width="100" height="20" rx="5"/>
+  </g>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="115" y="114">80+ questions</text>
+    <text x="350" y="114">Scores by area</text>
+    <text x="595" y="106">Matched resources</text>
+    <text x="595" y="124">from Cogent's library</text>
+    <text x="835" y="106">The owner's</text>
+    <text x="835" y="124">custom playbook</text>
+  </g>
+
+  <!-- arrows -->
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M200 220 H248"/>
+    <path d="M450 220 H498"/>
+    <path d="M690 220 H738"/>
+  </g>
+</svg>

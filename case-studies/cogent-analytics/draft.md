@@ -1,7 +1,7 @@
 # Cogent Analytics — Enhancing Lead Generation through Custom Web Tools
 
 Company: Slide UX
-Status: Draft ready for Tyler's review (v2), with 4 short follow-ups to confirm (0 `[TK]` in the copy)
+Status: Ported, awaiting Tyler's push (v2 approved by Tyler as written; the 4 follow-ups were left unanswered and not used)
 Source: `case-study-placeholders.md`, section "1. Cogent Analytics" (resume-level skeleton) + `images/Website Hero.webp` (confirmed by Tyler as the hero of the finished, live site) + Tyler's inline answers to the v1 questions (archived verbatim at the bottom).
 
 ---
@@ -107,7 +107,7 @@ Image: reuse `images/Website Hero.webp` (the live site's hero) as the closing sh
 
 ---
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved by Tyler, applied)
 Cogent Analytics (Slide UX): as client-facing project lead, designer, and developer, led a WordPress website rebuild over about 16 weeks and designed and built two custom lead-generation tools, a Business Valuation Calculator and an 80+ question Business Assessment, plus a new HubSpot environment to capture their leads; qualified leads rose more than 100% in the first quarter.
 
 ---

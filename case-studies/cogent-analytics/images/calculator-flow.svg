@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" role="img" aria-labelledby="t">
+  <title id="t">Low-fidelity calculator flow in three steps: the owner answers the calculator's questions, shown as unlabeled placeholder fields; the estimated value is shown with no form in the way; then an optional Talk to someone at Cogent request, saved to HubSpot</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="420" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">BUSINESS VALUATION CALCULATOR</text>
+
+  <!-- screens -->
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="40" y="80" width="250" height="280" rx="12"/>
+    <rect x="355" y="80" width="250" height="280" rx="12"/>
+    <rect x="670" y="80" width="250" height="280" rx="12"/>
+  </g>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5">
+    <text x="60" y="108">STEP 1</text>
+    <text x="375" y="108">STEP 2</text>
+    <text x="690" y="108">STEP 3 (OPTIONAL)</text>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#333">
+    <text x="60" y="134">Owner answers the</text>
+    <text x="60" y="153">calculator's questions</text>
+    <text x="375" y="134">Estimated value</text>
+    <text x="690" y="134">Talk to someone</text>
+    <text x="690" y="153">at Cogent</text>
+  </g>
+
+  <!-- step 1: placeholder fields -->
+  <g fill="#D6D6D6">
+    <rect x="60" y="180" width="120" height="8" rx="4"/>
+    <rect x="60" y="226" width="90" height="8" rx="4"/>
+    <rect x="60" y="272" width="140" height="8" rx="4"/>
+  </g>
+  <g fill="#fff" stroke="#A0A0A0">
+    <rect x="60" y="194" width="210" height="22" rx="5"/>
+    <rect x="60" y="240" width="210" height="22" rx="5"/>
+    <rect x="60" y="286" width="210" height="22" rx="5"/>
+  </g>
+  <rect x="60" y="320" width="100" height="24" rx="12" fill="#8A8A8A"/>
+
+  <!-- step 2: value, ungated -->
+  <rect x="375" y="180" width="210" height="80" rx="8" fill="#fff" stroke="#A0A0A0"/>
+  <rect x="400" y="208" width="160" height="24" rx="6" fill="#BDBDBD"/>
+  <rect x="375" y="280" width="210" height="32" rx="16" fill="#D6D6D6" stroke="#555" stroke-width="1.5"/>
+  <text x="480" y="300" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#333" letter-spacing=".5">NO FORM IN THE WAY</text>
+
+  <!-- step 3: contact request -->
+  <g fill="#fff" stroke="#A0A0A0">
+    <rect x="690" y="180" width="210" height="22" rx="5"/>
+    <rect x="690" y="212" width="210" height="22" rx="5"/>
+  </g>
+  <rect x="690" y="248" width="210" height="30" rx="15" fill="#8A8A8A"/>
+  <text x="795" y="268" text-anchor="middle" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="800" fill="#fff">Talk to someone at Cogent</text>
+  <rect x="720" y="300" width="150" height="32" rx="16" fill="#D6D6D6" stroke="#555" stroke-width="1.5"/>
+  <text x="795" y="320" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#333" letter-spacing=".5">SAVED TO HUBSPOT</text>
+
+  <!-- arrows -->
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M292 220 H353"/>
+    <path d="M607 220 H668"/>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" role="img" aria-labelledby="t">
+  <title id="t">Lead flow: a campaign drives the owner to a tool on Cogent's website, the Business Valuation Calculator or the Business Assessment, then results for the owner, then the owner asks to be contacted, then a lead in HubSpot</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="360" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">LEAD FLOW</text>
+
+  <!-- nodes -->
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="30" y="150" width="140" height="64" rx="10"/>
+    <rect x="430" y="150" width="140" height="64" rx="10"/>
+    <rect x="610" y="150" width="140" height="64" rx="10"/>
+  </g>
+  <!-- tools group -->
+  <rect x="210" y="80" width="180" height="204" rx="12" fill="#E2E2E2" stroke="#8A8A8A" stroke-width="1.5"/>
+  <g fill="#fff" stroke="#A0A0A0">
+    <rect x="226" y="128" width="148" height="58" rx="8"/>
+    <rect x="226" y="206" width="148" height="58" rx="8"/>
+  </g>
+  <!-- HubSpot -->
+  <rect x="790" y="150" width="140" height="64" rx="10" fill="#D6D6D6" stroke="#555" stroke-width="1.5"/>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="100" y="187">Campaign</text>
+    <text x="500" y="179">Results for</text>
+    <text x="500" y="197">the owner</text>
+    <text x="680" y="179">Owner asks to</text>
+    <text x="680" y="197">be contacted</text>
+    <text x="860" y="179">Lead in</text>
+    <text x="860" y="197">HubSpot</text>
+  </g>
+  <text x="300" y="108" text-anchor="middle" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#555" letter-spacing=".5">TOOL ON COGENT'S WEBSITE</text>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" fill="#333" text-anchor="middle">
+    <text x="300" y="153">Business Valuation</text>
+    <text x="300" y="170">Calculator</text>
+    <text x="300" y="231">Business</text>
+    <text x="300" y="248">Assessment</text>
+  </g>
+
+  <!-- arrows -->
+  <g fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M170 182 H208"/>
+    <path d="M390 182 H428"/>
+    <path d="M570 182 H608"/>
+    <path d="M750 182 H788"/>
+  </g>
+</svg>

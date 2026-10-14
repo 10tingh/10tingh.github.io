@@ -203,7 +203,7 @@ once a case study's copy is approved and it's ported into the template.
 
 | # | Slug | Company | Project | Status |
 |---|------|---------|---------|--------|
-| 1 | `cogent-analytics` | SeeSaw Labs + Slide UX | Cogent Analytics — Marketing Website & Custom Tools | Draft v2 ready for Tyler's review (4 optional follow-ups) |
+| 1 | `cogent-analytics` | SeeSaw Labs + Slide UX | Cogent Analytics — Marketing Website & Custom Tools | Approved; page built, waiting on Tyler's push |
 | 2 | `cfbdepth` | SeeSaw Labs | CFBDepth.com — AI-powered chatbot | **Live** |
 | 3 | `rendevor` | SeeSaw Labs | Rendevor — Audit Center | **Live** |
 | 4 | `huddl` | SeeSaw Labs + Slide UX | Huddl — Streamlining Pharmacy Workflows | **Live** |

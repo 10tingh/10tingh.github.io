@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t">
+  <title id="t">Process timeline: visual language, then tool inputs and outputs defined with Cogent's stakeholders, then build (WordPress site, two tools, HubSpot), then usability testing, then launch</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">PROCESS TIMELINE</text>
+
+  <!-- spine -->
+  <line x1="60" y1="150" x2="900" y2="150" stroke="#8A8A8A" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- step dots -->
+  <g fill="#F2F2F2" stroke="#555" stroke-width="2">
+    <circle cx="110" cy="150" r="10"/>
+    <circle cx="290" cy="150" r="10"/>
+    <circle cx="480" cy="150" r="10"/>
+    <circle cx="670" cy="150" r="10"/>
+  </g>
+  <circle cx="850" cy="150" r="12" fill="#555"/>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5" text-anchor="middle">
+    <text x="110" y="120">STEP 1</text>
+    <text x="290" y="120">STEP 2</text>
+    <text x="480" y="120">STEP 3</text>
+    <text x="670" y="120">STEP 4</text>
+    <text x="850" y="120">STEP 5</text>
+  </g>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="110" y="192">Visual language</text>
+    <text x="290" y="192">Tool inputs</text>
+    <text x="290" y="211">and outputs</text>
+    <text x="480" y="192">Build</text>
+    <text x="670" y="192">Usability testing</text>
+    <text x="850" y="192">Launch</text>
+  </g>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    <text x="110" y="214">Designed in Figma</text>
+    <text x="290" y="232">Defined with</text>
+    <text x="290" y="248">Cogent's stakeholders</text>
+    <text x="480" y="214">WordPress site</text>
+    <text x="480" y="230">Two tools</text>
+    <text x="480" y="246">HubSpot</text>
+    <text x="670" y="214">On both tools</text>
+  </g>
+</svg>
