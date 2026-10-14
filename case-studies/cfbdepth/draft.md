@@ -1,8 +1,8 @@
 # CFBDepth.com — Using AI to Make Complex Data Accessible to Everyone
 
 Company: SeeSaw Labs
-Status: Questions out for Tyler (v2)
-Source: `case-study-placeholders.md`, section "2. CFBDepth.com" (resume-level skeleton) + `images/homepage hero.webp` (confirmed by Tyler as the final chat panel UI) + Tyler's inline answers to the v1 questions (archived verbatim at the bottom). Everything not stated in those sources is marked `[TK]`.
+Status: Draft ready (v3)
+Source: `case-study-placeholders.md`, section "2. CFBDepth.com" (resume-level skeleton) + `images/homepage hero.webp` (confirmed by Tyler as the final chat panel UI) + Tyler's inline answers to the v1 and v2 questions (archived verbatim at the bottom).
 
 ---
 
@@ -20,9 +20,9 @@ Source: `case-study-placeholders.md`, section "2. CFBDepth.com" (resume-level sk
 
 ## 00 — Executive Summary
 
-CFBDepth sold fans, bettors, and subscribers limited access to college football data sheets stripped of their proprietary formulas, and its staff couldn't build every view those users wanted. In about 8 weeks, racing the start of the college football season, I led the project and designed an AI chat agent that lets users ask for the data in plain English: I designed the conversation and the agent's personality, built the chat experience, and gave the agent a memory of each user's teams, data preferences, and betting factors. Alongside it, a data-licensing API added a new kind of customer, the API buyer, and I designed the internal tool that issues and rotates their keys. The result was new users at higher price points and a new revenue stream, with a handful of API customers before we handed off the final API tool.
+CFBDepth sold fans, bettors, and subscribers limited access to college football data sheets stripped of their proprietary formulas, and its staff couldn't build every view those users wanted. In about 8 weeks, racing the start of the college football season, I led the project and designed CFBAI, an AI chat agent that lets users ask for the data in plain English: I designed the conversation and the agent's personality, built the chat experience, and gave the agent a memory of each user's teams, data preferences, and betting factors. Alongside it, a data-licensing API added a new kind of customer, the API buyer, and I designed the internal tool that issues and rotates their keys. Both launched before Week 0, bringing in new users at higher price points and a new revenue stream, with a handful of API customers before we handed off the final API tool.
 
-Image: `images/homepage hero.webp` — the final UI of the chat panel (confirmed by Tyler). Specific on-screen details (the CFBAI name, credits, model picker, "Powered by Claude") stay out of the copy until Tyler confirms they can be used (Q6).
+Image: `images/homepage hero.webp` — the final UI of the CFBAI chat panel (confirmed by Tyler).
 
 ## 01 — The Setup
 
@@ -38,15 +38,15 @@ I was Project Lead & Senior Designer on a team with 2 engineers. I built the age
 
 We started by meeting with CFBDepth's stakeholders and users to identify every user persona: the value each one got from CFBDepth, how they used it, and their goals and motivations. That research fed the conversation design.
 
-Next came the agent's personality. We modeled it on head football coach Nick Saban: authoritative, confident, and not afraid to let its opinions be known. Then we architected how conversations should flow, so that every user type got to what interested them most.
+Next came the agent's personality. We modeled it on head football coach Nick Saban: authoritative, confident, and not afraid to let its opinions be known. Then we architected how conversations should flow, so that every user type got to what interested them most. A model picker in CFBAI let users choose different AI models depending on the type of information they wanted.
 
-From there, we built payment into both the tool and the conversation itself, designing how the agent would prompt users to add more to their account or move to a larger plan (see Decision 03).
+From there, we built payment into both the tool and the conversation itself. CFBAI runs on a credits system, and we designed how the agent would prompt users to add more to their account or move to a larger plan.
 
-Then we built the API tool, an internal tool for issuing API keys to clients (see Decision 04). I designed its UI with Claude Code. Because it was a simple internal tool, we tested it only through internal usability testing.
+Then we built the API tool, an internal tool for issuing API keys to clients (see Decision 03). I designed its UI with Claude Code. Because it was a simple internal tool, we tested it only through internal usability testing.
 
 We wrote training materials for both the chat agent and the API tool. A final UI pass brought in CFBDepth's new branding so the agent felt like part of one cohesive experience.
 
-[TK: how Figma, Vercel, Railway, and Docusaurus each fit in.] [TK: which AI model powered the agent, and whether it belongs in Tools.]
+Figma was for design, Vercel for hosting, Railway for the database, and Docusaurus for documentation.
 
 Tools/pills: Figma, Claude Code, Vercel, Railway, Docusaurus
 
@@ -57,7 +57,7 @@ Image plan (all recreated for this case study; Tyler has no original process art
 ## 03 — The Work
 
 **Decision 01 — A conversation instead of more data views**
-I put CFBDepth's data behind an AI chat agent, so users could ask for what they wanted in plain English instead of waiting for staff to build another view of a published sheet. Considered instead: [TK: the alternative, e.g. more pre-built views, a dashboard, or filters]. Why: [TK: why conversation won for these users]. What's known: it took pressure off CFBDepth's staff and let users work with the data directly.
+I put CFBDepth's data behind an AI chat agent, so users could ask for what they wanted in plain English. Considered instead: what CFBDepth was already doing, having staff build more views of the published sheets. Why: the spectrum of needs and users was too wide for pre-built views to cover. And more and more users are comfortable with language models, so a chat experience gave the brand a modern feel. It took pressure off CFBDepth's staff and let users work with the data directly.
 
 Image plan: before/after, a formula-stripped data sheet next to the same question asked in chat. Caption: "Low-fidelity before/after, recreated for this case study. Not an original project artifact."
 
@@ -66,19 +66,14 @@ I designed the agent to remember each user: their user type, the teams they supp
 
 Image plan: memory loop, session ends → memory updated (user type, teams, data preferences, betting factors) → memory loaded → next session starts. Caption: "Diagram recreated for this case study. Not an original project artifact."
 
-**Decision 03 — Payment built into the conversation**
-I built payment into the conversation, not just the tool, so the agent itself could prompt users to add more to their account or move to a larger plan. Considered instead: [TK: the alternative, e.g. keeping payment on a separate upgrade page]. Why and what it cost: [TK: why in-conversation upsell won, and any trade-off, e.g. how pushy the prompts could be].
-
-Image plan: low-fi chat moment where the agent offers a larger plan mid-conversation. Caption: "Low-fidelity screen, recreated for this case study. Not an original project artifact."
-
-**Decision 04 — A licensing API the original scope didn't include**
-The original scope covered only the chat agent. During a weekly check-in, the owner and I talked about who else would want CFBDepth's data and how it could be monetized, and every option led back to distributing API keys. Considered instead: keeping the data inside CFBDepth's own site and the chat agent, as the original scope did. Why: an API brought in a new type of user, the API buyer, as part of CFBDepth's push to grow the brand. We ran it as a separate statement of work (SOW) alongside the chat agent, inside the same pre-season timeline. The engineers built the API tooling; I designed the UX/UI of the internal tool that generates clients' API keys. It puts front and center which data streams each client gets, and how to rotate keys when a subscription ends.
+**Decision 03 — A licensing API the original scope didn't include**
+The original scope covered only the chat agent. During a weekly check-in, the owner and I talked about who else would want CFBDepth's data and how it could be monetized, and every option led back to distributing API keys. Considered instead: keeping the data inside CFBDepth's own site and the chat agent, as the original scope did. Why: an API brought in a new type of user, the API buyer, as part of CFBDepth's push to grow the brand. We ran it as a separate statement of work (SOW) alongside the chat agent, inside the same pre-season timeline. The 2 engineers built the API tooling; I designed the UX/UI of the internal tool that generates clients' API keys. It puts front and center which data streams each client gets, and how to rotate keys when a subscription ends.
 
 Image plan: low-fi API key tool, a client row with data-stream checkboxes and a "Rotate key" action tied to subscription status. Caption: "Low-fidelity screen, recreated for this case study. Not an original project artifact."
 
 ## 04 — The Outcome
 
-[TK: whether the chat agent and API tool launched before Week 0.] The chat agent let users pair CFBDepth's many-layered data with the power of AI, and it became the backbone of CFBDepth's initiative to scale up and offer more to its users. It brought in new users at higher price points, and the API opened a new revenue stream: CFBDepth already had a handful of API customers before we handed off the final API tool.
+The chat agent and the API tool both launched before Week 0, ahead of the season deadline. The chat agent let users pair CFBDepth's many-layered data with the power of AI, and it became the backbone of CFBDepth's initiative to scale up and offer more to its users. It brought in new users at higher price points, and the API opened a new revenue stream: CFBDepth already had a handful of API customers before we handed off the final API tool.
 
 There's no hard metric.
 
@@ -91,59 +86,60 @@ Image: reuse `images/homepage hero.webp` (the final chat panel UI) as the closin
 ## Notes
 
 - Title changed to the placeholder's title at Tyler's request (v1 Q12), in Kasasa's "Company — Title" shape.
-- 00 and the Role/Team cells now match Tyler's account: he built the chat experience and conversation design and designed the API key tool's UI; the engineers built the database and API tooling. The v1 phrasing about client-facing work "around an API" is gone. "Solo" dropped: Tyler didn't use it.
-- Tyler's Q7 answer was the process walkthrough; it's used in 02. The real Q7 (alternatives to chat) is asked again below.
+- 00 and the Role/Team cells match Tyler's account: he built the chat experience and conversation design and designed the API key tool's UI; the engineers built the database and API tooling.
+- v3: the tools line in 02 follows Tyler's v2 Q1 answer, in his order (design, hosting, database, documentation). Claude Code stays in the API tool paragraph.
+- v3: no AI model is named as *the* model and none is in Tools; users chose among models (v2 Q2), shown as the model picker in 02. "Powered by Claude" from the hero stays out of the copy.
+- v3: Decision 01's alternative is the real before-state (staff building more views of the sheets); Tyler named no other option. The reason is his (v2 Q3).
+- v3: the payment decision folded back into 02 as process; Tyler gave no alternative or trade-off (v2 Q4). Section 3 now has three decisions; the API decision is renumbered 03.
+- v3: launch before Week 0 is Tyler's (v2 Q5), now in 04 and in 00.
+- v3: CFBAI, the credits system, the model picker, and Nick Saban are cleared for copy (v2 Q6). Placing the credits system next to the payment step is the Writer's framing; the copy doesn't claim users buy credits specifically.
 - Decision 02's alternative ("a simpler agent without memory") is the Writer's framing of the plain opposite; the trade-off and reason are Tyler's (v1 Q8).
-- Decision 03 is new in v2, from the payment step in Tyler's walkthrough. The decision is his; alternative and trade-off are `[TK]`. If he has nothing, it can fold back into 02 and section 3 keeps three decisions.
-- Decision 04's alternative is the original scope, a real before-state (v1 Q9). "Inside the same pre-season timeline" is the Writer's link between "concurrently" (Q9) and the Week 0 deadline (Q4).
-- Nick Saban is named because Tyler named him as the personality model. Worth a glance from Tyler on whether naming a real person is fine on the page.
-- "Plain English" is from Tyler's Q3 ("through English language").
-- Outcome: no number invented. "A handful" is Tyler's word, kept as is. The copy says plainly there's no hard metric, as Kasasa does.
+- Decision 03's alternative is the original scope, a real before-state (v1 Q9). "Inside the same pre-season timeline" is the Writer's link between "concurrently" (v1 Q9) and the Week 0 deadline (v1 Q4).
+- "Plain English" is from Tyler's v1 Q3 ("through English language").
+- Outcome: no number invented. "A handful" is Tyler's word. The copy says plainly there's no hard metric, as Kasasa does.
 - Section 05 omitted; Tyler had nothing to add (v1 Q11) and it's optional.
 - Q5's "hardest part / change of course" went unanswered; 02 doesn't claim one.
 - All process visuals are planned as recreations; none exist yet. Each caption must say it was recreated for this case study.
-- Hero details (CFBAI, credits, model picker, "Powered by Claude", the picks table) are kept out of copy pending Q6.
+- JobHunter summary: the Owner picked the second of the two mailed lines on Tyler's "use your best judgement." v3's facts don't change it. Not written into JobHunter: that row's cell already holds the first wording, and the Writer only fills TODO cells. Tyler can apply it in the post office or edit the cell.
+- Content checklist: passes. Specific stat (a handful of API customers, qualitative, flagged as no hard metric); roles only; duration not dates; 00 written last as an ending; final-state screenshot in 00; a number, tool, or duration in every section (00: 8 weeks; 01: Week 0; 02: 2 engineers, Figma/Claude Code/Vercel/Railway/Docusaurus; 03: 2 engineers, SOW; 04: Week 0); three real trade-offs in 03; voice hits systems-minded (staff hand-building views → one conversational layer), plainspoken teacher, strategic operator (the API as a new revenue stream).
 
 ---
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (chosen by the Owner, not yet applied)
 CFBDepth.com (SeeSaw Labs): as Project Lead & Senior Designer, led an AI chat agent built in about 8 weeks, designing its conversations and chat experience, that lets college football fans and bettors work with CFBDepth's data in plain English and remembers each user's teams and betting preferences; also designed the key tool for a new data-licensing API that opened a new revenue stream with a handful of customers before final handoff.
-
----
-
-## Open questions for Tyler
-Answer inline under each question; the next run folds your answers into the draft.
-
-**02 — The Approach**
-
-1. How did Figma, Vercel, Railway, and Docusaurus each fit in? (Claude Code is covered: you designed the API tool's UI in it.)
-   Answer:
-
-2. Which AI model powered the agent? The hero says "Powered by Claude"; is that right, and should it be listed in Tools?
-   Answer:
-
-**03 — The Work**
-
-3. Chat instead of more data views: what else did you consider (more pre-built views, a dashboard, filters), and why did conversation win? If nothing else was on the table, say so and Decision 01 becomes the setup for the other three.
-   Answer:
-
-4. Payment inside the conversation: what was the alternative (e.g. a separate upgrade page), and was there a trade-off, such as how hard the agent should push upgrades? If none, it folds back into 02.
-   Answer:
-
-**04 — The Outcome**
-
-5. Did the chat agent and the API tool launch before Week 0?
-   Answer:
-
-**00 — Images**
-
-6. Can the hero's details appear in the copy: the CFBAI name, the credits system, the model picker? And is naming Nick Saban as the personality model fine on the page?
-   Answer:
 
 ---
 
 ## Tyler's answers (archive)
 Kept verbatim so the source stays on record.
+
+### v2 source
+
+**02 — The Approach**
+
+1. How did Figma, Vercel, Railway, and Docusaurus each fit in? (Claude Code is covered: you designed the API tool's UI in it.)
+   Answer: Dude. They all do different things. Design. Hosting. Database. Documentation. 
+
+2. Which AI model powered the agent? The hero says "Powered by Claude"; is that right, and should it be listed in Tools?
+   Answer: Users could use different models depending what type of information they wanted.
+
+**03 — The Work**
+
+3. Chat instead of more data views: what else did you consider (more pre-built views, a dashboard, filters), and why did conversation win? If nothing else was on the table, say so and Decision 01 becomes the setup for the other three.
+   Answer: Because of how wide the spectrum of needs and users was. Also the language models are something more and more users are becoming comfortable with so wanted to replicate that experience to help add a modern feel to the brand.
+
+4. Payment inside the conversation: what was the alternative (e.g. a separate upgrade page), and was there a trade-off, such as how hard the agent should push upgrades? If none, it folds back into 02.
+   Answer: None. 
+
+**04 — The Outcome**
+
+5. Did the chat agent and the API tool launch before Week 0?
+   Answer: It did. 
+
+**00 — Images**
+
+6. Can the hero's details appear in the copy: the CFBAI name, the credits system, the model picker? And is naming Nick Saban as the personality model fine on the page?
+   Answer:It's fine. 
 
 ### v1 source
 
