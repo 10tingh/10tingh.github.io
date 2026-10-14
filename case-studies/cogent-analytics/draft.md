@@ -1,8 +1,8 @@
-# Cogent Analytics — Marketing Website & Custom Tools
+# Cogent Analytics — Enhancing Lead Generation through Custom Web Tools
 
-Company: SeeSaw Labs + Slide UX [TK: confirm which company this ran under, and why]
-Status: Questions out for Tyler (v1)
-Source: `case-study-placeholders.md`, section "1. Cogent Analytics" (resume-level skeleton) + `images/Website Hero.webp` (contents not yet confirmed by Tyler). Everything not stated in the placeholder is marked `[TK]`.
+Company: Slide UX
+Status: Draft ready for Tyler's review (v2), with 4 short follow-ups to confirm (0 `[TK]` in the copy)
+Source: `case-study-placeholders.md`, section "1. Cogent Analytics" (resume-level skeleton) + `images/Website Hero.webp` (confirmed by Tyler as the hero of the finished, live site) + Tyler's inline answers to the v1 questions (archived verbatim at the bottom).
 
 ---
 
@@ -10,101 +10,129 @@ Source: `case-study-placeholders.md`, section "1. Cogent Analytics" (resume-leve
 
 | Field | Value |
 |---|---|
-| Role | Client-facing Project Lead [TK: confirm exact title] |
-| Timeline | [TK: duration, e.g. "N weeks"] |
-| Team | Project Lead (me), 1 Designer, 1 Developer, [TK: any other roles, e.g. on the client side or on the tools] |
-| Tools | Figma, Figma Make, WordPress, Claude Code |
-| Outcome stat | [TK: one outcome, stated as a single stat or fact, e.g. leads captured or tool completions] |
+| Role | Client-facing Project Lead, Designer & Developer |
+| Timeline | About 16 weeks |
+| Team | Project Lead, Designer & Developer (me), 1 Designer, 1 Developer |
+| Tools | Figma, Figma Make, WordPress, Claude Code, HubSpot |
+| Outcome stat | Qualified leads up more than 100% in the first quarter |
 
 ---
 
 ## 00 — Executive Summary
 
-Cogent Analytics had a dated website that wasn't working as a marketing or lead-capture tool. [TK: what "dated" meant in practice.] As client-facing project lead, I led a full redesign and rebuild, directing a designer and a developer on the core site, and designed and built two custom tools myself, including a business valuation calculator, that let visitors evaluate their own business and get matched with resources for their biggest needs. [TK: what happened: launch, leads, tool usage, or the closest proof it worked.]
+Cogent Analytics, a consultancy for small business owners, had a dated website on an old platform and an immature CRM, while its executive suite was pushing marketing for better qualified leads. Over about 16 weeks at Slide UX, I led the website redesign and rebuild on WordPress and designed and built the two tools marketing wanted at the center of its new-client campaigns: an ungated Business Valuation Calculator that shows owners what their business is worth right away, and an 80+ question Business Assessment that turns an owner's answers into a custom playbook from Cogent's resource library. I also built a new HubSpot environment to capture the leads the tools brought in. In the first quarter after launch, Cogent's qualified leads rose by more than 100%.
 
-Image: `images/Website Hero.webp` — [TK: Tyler to confirm this is the finished, live site]. It appears to show the Cogent Analytics homepage hero: the headline "Your American dream is worth fighting for," nav links (Who we serve, How we help, Our story, Resources), and calls to action including "Book your Discovery," "Get business advice," and "Get your business health score." None of that is described in the copy until Tyler confirms it (see Q12).
+Image: `images/Website Hero.webp` — the homepage hero of the finished, live site (confirmed by Tyler), headline "Your American dream is worth fighting for." The hero's buttons are not named as tools anywhere in the copy (see follow-up 4).
 
 ## 01 — The Setup
 
-Cogent Analytics' website was dated, and it needed to become a marketing and lead-capture engine. [TK: what was concretely wrong with the old site: look, content, platform, how leads came in (or didn't), anything the client complained about.]
+Cogent Analytics serves small business owners. It's a consultancy that works as more than that: it integrates itself into a business and helps drive outcomes toward the owner's goals.
 
-[TK: who Cogent Analytics serves and what it sells, in one or two plain sentences, so the reader knows who the site's visitors are.]
+Everything about its web presence was dated: the look of the site, the old platform it ran on, and how mature its CRM was. The site wasn't working as a marketing or lead-capture tool.
 
-[TK: who at Cogent asked for this, why then, and whether there was a deadline or outside pressure.]
+The request came from Cogent's marketing department, with pressure from the executive suite to start generating better qualified leads. Marketing already had the idea: new tools that put something tangible and useful in the hands of small business owners, living on the website, with campaigns driving traffic to them. Those tools were a big part of Cogent's new-client acquisition campaigns. Their job was to start building trust with owners and earn their business for the consultancy.
 
-[TK: whether the custom tools were part of the original ask or came up during the project.]
+Cogent came to an agency because it had a very specific outcome in mind. The project ran about 16 weeks.
 
 ## 02 — The Approach
 
-I ran point as the client-facing project lead. On the core website build, I directed a designer and a developer. Beyond the site, I designed and built two custom tools myself.
+I ran point as the client-facing project lead at Slide UX, and I designed and developed as well.
 
-[TK: what I did, roughly in order: the first move, any research (client interviews, analytics, competitor review, talking to Cogent's customers), how the site structure was defined, the hardest part, and any change of course.]
+The first move was deciding on the visual language of the new website. We designed the site in Figma, which kept collaboration open between Cogent's stakeholders and our team. I also made animations for the site using Figma Make and Claude Code together.
 
-[TK: how each tool fit in: Figma, Figma Make, WordPress, Claude Code. For example, which tool the site was designed in, whether the site was built on WordPress, and whether the two custom tools were built with Claude Code.]
+Next, we defined the inputs and outputs of the two tools with Cogent's stakeholders, who had very firm ideas about how each tool should work. I concepted the tools in Claude Code and implemented the output in WordPress. Alongside the tools, I built a new HubSpot environment so Cogent could capture the leads they brought in, a step up from the CRM it had before.
 
-Tools/pills: Figma, Figma Make, WordPress, Claude Code
+The hardest part was the Business Assessment. It had more than 80 questions and many different outcomes, and every score had to tie to exact resources in Cogent's resource library. It also had to stay dynamic and easy for Cogent to manage, so the client could update those resources later on its own (see Decision 03).
 
-Image plan: [TK: image — any process artifacts (sitemap, wireframes, old-site screenshots for a before/after), or recreate low-fi visuals as on huddl and Kasasa?]
+Before launch, we ran usability testing on both tools to validate that owners could use them.
+
+Tools/pills: Figma, Figma Make, WordPress, Claude Code, HubSpot
+
+Image plan (all recreated for this case study; no original process artifacts were supplied):
+- **Process timeline** — visual language → tool inputs and outputs defined with Cogent's stakeholders → build (WordPress site, two tools, HubSpot) → usability testing → launch. No dates or week counts on it. Caption: "Process timeline, recreated for this case study. Not an original project artifact."
+- **Lead flow** — campaign → tool on Cogent's website (Business Valuation Calculator or Business Assessment) → results for the owner → owner asks to be contacted → lead in HubSpot. Caption: "Lead flow, recreated for this case study. Not an original project artifact."
 
 ## 03 — The Work
 
-**Decision 01 — Custom tools instead of a standard contact form**
-Beyond the redesigned site, I designed and built two custom tools that let visitors evaluate their own business, rather than relying only on [TK: the alternative, e.g. a standard contact form or a generic "request a consultation" lead capture]. Why: [TK: why a tool that gives visitors something back was the better way to capture leads for Cogent, and whose idea it was].
+**Decision 01 — Custom-built tools instead of out-of-the-box plugins**
+I built both tools custom. Considered instead: off-the-shelf WordPress plugins. We tried many of them before landing on a custom build. Why: Cogent had a very specific outcome in mind, and its stakeholders had firm ideas about what each tool should take in and give back. The plugins couldn't deliver that, so building custom was the trade we made: more to design and build on our side, in exchange for tools that worked the way Cogent needed.
 
-Image plan: [TK: image]
+Image plan: none of its own; the lead flow in 02 shows where the tools sit.
 
-**Decision 02 — Designing the business valuation calculator**
-One of the two tools was a business valuation calculator. [TK: what visitors put in, what they got back, and whether results were gated behind contact details.] Considered instead: [TK: the alternative, e.g. a simpler or longer version, showing a range instead of a number, or asking for contact details up front versus after the result]. Why: [TK: the reasoning, and any trade-off between accuracy, effort for the visitor, and lead capture].
+**Decision 02 — An ungated Business Valuation Calculator**
+I left the calculator's results ungated: owners got a sense of what their business is currently worth without handing over contact details first. Once they had their results, owners could ask to be put in touch with someone at Cogent, and their information was saved to HubSpot. Considered instead: putting the results behind a contact form, the usual lead-capture move. Why: the tool's purpose was to put value in owners' hands and demonstrate Cogent's value right away. A valuation kicks off plenty of conversation, especially with owners looking to exit their business, so the contact request came after the value, not before it. The calculator itself was simple to build; the decision was about where to ask for the lead.
 
-Image plan: [TK: image — a screen of the calculator, if one exists]
+Image plan: low-fi calculator flow, three steps: owner answers the calculator's questions (fields shown as unlabeled placeholder bars) → estimated value shown with no form in the way → optional "Talk to someone at Cogent" request, marked as saved to HubSpot. Caption: "Low-fidelity flow, recreated for this case study. Not an original project artifact."
 
-**Decision 03 — Matching visitors to resources by their biggest need**
-The tools matched visitors with resources for their biggest needs. [TK: the second tool's name and purpose, how "biggest need" was determined, and what the resources were (articles, services, a call with Cogent?).] Considered instead: [TK: the alternative, e.g. one generic resources page for everyone]. Why: [TK: the reasoning].
+**Decision 03 — An assessment Cogent can keep updating itself**
+The Business Assessment helps owners see what they're doing well and where there's room to improve. Cogent uses it as the foundation of a playbook toward the owner's goals, across areas like technology initiatives, sales, financial health, and the owner's work-life balance. With more than 80 questions and many possible outcomes, I tied the scores to exact resources in Cogent's resource library, so each owner got a custom-made playbook. I built that mapping to be dynamic, so Cogent could update its resources down the road without coming back to us. Considered instead: fixing each outcome to the resources that existed at launch. Why: Cogent produces a large and growing library of resources for small business owners, and an assessment wired to a frozen set of them would go stale. Keeping it dynamic and easy to manage made this the hardest part of the project, and we took that on.
 
-Image plan: [TK: image]
+Image plan: low-fi scoring map, 80+ questions → scores by area (technology, sales, financial health, work-life balance, "and more") → matched resources from Cogent's library → the owner's custom playbook, with a small "Cogent can swap resources here" callout on the resource step. Caption: "Scoring map, recreated for this case study. Not an original project artifact."
 
-**Decision 04 — Directing the core build, building the tools myself**
-I split the work: I directed a designer and a developer on the core website build and designed and built the two custom tools myself. Considered instead: [TK: the alternative, e.g. handing the tools to the developer too, or building everything myself]. Why: [TK: the reasoning, e.g. timeline, budget, skills, or how much the tools needed to change during the project].
+**Decision 04 — Taking on the tools myself**
+The designer and developer focused primarily on the website, so I picked up the tools that would live on it: I designed and built both tools and the new HubSpot environment, and did development on the WordPress site as well. Considered instead: having the designer and developer take on the tools after the website. Why: splitting the work this way made the most of our resources and the timeline.
 
 Image plan: none of its own.
 
-[TK: any disagreement with Cogent or the team worth replacing one of these slots.]
-
 ## 04 — The Outcome
 
-[TK: what shipped, and when relative to the project's start.]
+The redesigned WordPress site launched with both tools live on it and a new HubSpot environment capturing the leads they brought in, about 16 weeks after the project started. Cogent's marketing team now had tools that give small business owners something useful up front, from a valuation to a custom playbook, and campaigns to drive owners to them.
 
-[TK: what happened next: leads, tool completions, traffic, booked calls, or the closest proof the site works as a lead-capture engine. Any number, even a rough one. No figure is used until Tyler gives one.]
+In the first quarter after launch, Cogent's qualified leads increased by more than 100%.
 
-Stat card: [TK: single stat or fact]
+Stat card: 100%+ — increase in qualified leads in the first quarter
 
-Image: [TK: image — reuse `images/Website Hero.webp` as the closing shot once confirmed, as Rendevor, huddl, and Kasasa do]
-
-## 05 — The Takeaway
-
-[TK: what I'd do differently or what this project taught me that shows up in later work. Optional; cut if nothing real.]
+Image: reuse `images/Website Hero.webp` (the live site's hero) as the closing shot, as Rendevor, huddl, Kasasa, and CFBDepth do.
 
 ---
 
 ## Notes
 
-- Title kept as the guide's "Cogent Analytics — Marketing Website & Custom Tools" until Tyler picks (see Q12). The placeholder's working title is "Enhancing Lead Generation through Custom Web Tools".
-- Company cell keeps the guide's "SeeSaw Labs + Slide UX" with a `[TK]`; Tyler to confirm which company and why (Q1).
-- "Designed and built" is used only for the two custom tools, where the placeholder says it. For the core website, the copy says "led" and "directed", because a designer and a developer did that build.
-- The hero image is not described as fact anywhere in the copy. The "Get your business health score" button may be one of the tools (perhaps the second one); that's a guess, so it's only in Q8 and Q12.
-- No tool was assigned a role (e.g. WordPress for the site, Claude Code for the tools); that's for Tyler to confirm (Q6).
-- Decision alternatives are left `[TK]`; the examples in brackets are prompts, not claims. Decisions 01, 03, and 04 are slots implied by the placeholder; Decision 02 assumes the calculator involved real design choices.
-- 00 is kept short and ends on a `[TK]` because the outcome is unknown.
+- Title changed to the placeholder's title at Tyler's request (v1 Q12), in the "Company — Title" shape used by huddl, Kasasa, and CFBDepth.
+- Company is Slide UX only (v1 Q1). The guide's table still says "SeeSaw Labs + Slide UX" and "Draft v1"; the Writer doesn't edit the guide, so that row needs syncing by whoever owns it.
+- Role: Tyler gave no exact title. "Client-facing Project Lead" is the placeholder's; "Designer & Developer" is from v1 Q1 ("I did both design and development"). Follow-up 1 asks him to confirm.
+- Team reconciliation: the placeholder says he directed a designer and a developer on the core build; v1 Q9 says he did all development, including the WordPress site; v1 Q10 says the designer and developer focused primarily on the website and he picked up the tools. The copy says only what holds under all three: he led, designed and built the tools and HubSpot, and did development on the site; the designer and developer worked primarily on the site. It doesn't claim he built the whole site alone, and it drops "directed" since Q10 doesn't use it. Follow-up 1 asks him to confirm.
+- "Led the website redesign and rebuild" (00) is from the placeholder's description.
+- Decision 01's alternative (WordPress plugins) and reason are Tyler's (v1 Q7). "More to design and build on our side" is the Writer's plain statement of what choosing custom over plugins costs; no other cost was given.
+- Decision 02: "nothing gated," the reason, the exit-planning conversations, the contact request, and the CRM save are Tyler's (v1 Q9). "Putting the results behind a contact form" is the Writer's framing of the opposite of "nothing gated." "Saved to HubSpot" follows from Q9's "saved to the CRM" plus the new HubSpot environment. The calculator's inputs, and whether it returns a number or a range, aren't known, so the copy says only "a sense of what their business is currently worth" (follow-up 2).
+- Decision 03's alternative ("fixing each outcome to the resources that existed at launch") is the Writer's framing of the opposite of Tyler's "dynamic... for the client to be able to update resources later." The four named areas are Tyler's list, framed per his "go with what makes the most sense"; "and more" covers his "various other factors."
+- Decision 04's reason is Tyler's (v1 Q10). The alternative is the Writer's framing; Tyler named none.
+- "Designed and built both tools" is the placeholder's wording; Q6 and Q9 confirm the build (Claude Code concepts, WordPress implementation, all development).
+- Usability testing: no tester count or findings given, so 02 says only that it happened (follow-up 3).
+- "In the first quarter after launch" reads Tyler's "in the first quarter" (v1 Q11, answering "what happened after launch") as the first quarter after launch.
+- The hero's "Get your business health score" button is not called the Business Assessment anywhere; that's follow-up 4.
+- Section 05 omitted; Tyler gave no takeaway (v1 Q12) and it's optional.
+- All process visuals are planned as recreations; none exist yet. Each caption must say it was recreated for this case study, and no visual shows text beyond what's in this draft.
+- Content checklist: passes. Specific stat (100%+ qualified leads in the first quarter); roles only; duration not dates; 00 written last as an ending; final-state screenshot in 00; a number, tool, or duration in every section (01: 16 weeks; 02: 80+ questions, Figma/Figma Make/Claude Code/WordPress/HubSpot; 03: 80+ questions, WordPress, HubSpot; 04: 16 weeks, 100%); four real trade-offs in 03; voice hits systems-minded (a dated site and immature CRM → tools feeding one HubSpot environment, and an assessment Cogent can maintain itself), plainspoken teacher, and strategic operator (executive pressure for qualified leads as the driver, ungated value as the trust play).
 
 ---
 
 ## JobHunter summary (pending Tyler's approval)
-Cogent Analytics ([TK: SeeSaw Labs, Slide UX, or both]): as client-facing project lead, led a full website redesign and rebuild that turned a dated site into a marketing and lead-capture engine, directing a designer and a developer on the core build, and designed and built two custom tools, including a business valuation calculator, that match visitors with resources for their biggest needs; [TK: outcome or metric].
+Cogent Analytics (Slide UX): as client-facing project lead, designer, and developer, led a WordPress website rebuild over about 16 weeks and designed and built two custom lead-generation tools, a Business Valuation Calculator and an 80+ question Business Assessment, plus a new HubSpot environment to capture their leads; qualified leads rose more than 100% in the first quarter.
 
 ---
 
-## Open questions for Tyler
-Answer inline under each question; the next run folds your answers into the draft.
+## Follow-ups for Tyler (v2)
+Answer inline under each question; the next run folds your answers into the draft. The copy stands as written if you just confirm.
+
+1. Team split and title: the Role now reads "Client-facing Project Lead, Designer & Developer" and Decision 04 says the designer and developer focused primarily on the WordPress site, while you designed and built both tools and the HubSpot environment and also did development on the site. Is that split right, and is that the title you want?
+   Answer:
+
+2. The valuation calculator: what did owners enter (e.g. revenue, profit, industry), and did they get a single number or a range? This would sharpen Decision 02 and its visual. Skip if you'd rather keep it general.
+   Answer:
+
+3. Usability testing on the tools: roughly how many people tested them, who were they (Cogent staff, small business owners), and did anything change because of it?
+   Answer:
+
+4. Is the hero's "Get your business health score" button the entry point to the Business Assessment? If yes, the hero caption can say so.
+   Answer:
+
+---
+
+## Tyler's answers (archive)
+Kept verbatim so the source stays on record.
+
+### v1 source
 
 **At-a-glance**
 
