@@ -1,7 +1,7 @@
 # EcoProducts — Enhancing eCommerce through Information Architecture
 
 Company: Slide UX
-Status: Draft ready for Tyler's review (v2)
+Status: Approved by Tyler (v2, mail #77); ported to `index.html`, awaiting Tyler's push
 Source: Tyler's inline answers to the v1 questions (archived verbatim at the bottom) + `case-study-placeholders.md`, section "6. EcoProducts" (title, description, tools list) + the guide's table (company: Slide UX) + `images/hero image.webp` (the store's "Shop All" page; Tyler says it's the only real image he has).
 
 ---
@@ -92,7 +92,7 @@ Talking to users and testing with them early turned up a lot of easy wins, probl
 - Images (Q9): only `images/hero image.webp` is real. Four low-fi grayscale SVGs are planned for the port, each captioned as a recreation, with no real product names or data. The hero's category names (e.g. "Cups - Lids - Accessories") weren't used in copy because it's unconfirmed whether that page reflects the redesign.
 - Removed "drove measurable improvements in conversions and revenue" from the placeholder: Tyler gave a conversion number only, no revenue figure.
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved, applied)
 EcoProducts (Slide UX): as Senior UX Designer, owned the information architecture and conversion flow for a compostable food-service products company's online store after a product expansion and reorganization cut conversions 10%, using user interviews and open and closed card sorts over about 2 months, and conversions rose 12% three months after launch.
 
 Sources: role and duration = At-a-glance; "owned the information architecture and conversion flow" = 02; company description = 01; the 10% drop = 01; interviews and card sorts = 02; 12% at 3 months = 04 and the stat card.

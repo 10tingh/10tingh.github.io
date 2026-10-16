@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" role="img" aria-labelledby="t">
+  <title id="t">Side by side: in the open card sort, users group blank product cards and write their own labels; in the closed card sort, users sort the same cards under pre-made labels</title>
+  <rect width="960" height="380" fill="#fff"/>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
+    <text x="40" y="44">OPEN CARD SORT</text>
+    <text x="510" y="44">CLOSED CARD SORT</text>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="800" fill="#333">
+    <text x="40" y="70">Users write their own labels</text>
+    <text x="510" y="70">Users sort under pre-made labels</text>
+  </g>
+
+  <line x1="480" y1="30" x2="480" y2="350" stroke="#DDD" stroke-width="2"/>
+
+  <!-- open sort: blank label slots, user-written (scribble lines) -->
+  <g fill="none" stroke="#8A8A8A" stroke-width="2" stroke-dasharray="6 5">
+    <rect x="40" y="100" width="120" height="40" rx="6"/>
+    <rect x="180" y="100" width="120" height="40" rx="6"/>
+    <rect x="320" y="100" width="120" height="40" rx="6"/>
+  </g>
+  <g fill="none" stroke="#555" stroke-width="2" stroke-linecap="round">
+    <path d="M58 122 q10 -8 20 0 t20 0 t20 0 t20 0"/>
+    <path d="M198 122 q10 -8 20 0 t20 0 t20 0"/>
+    <path d="M338 122 q10 -8 20 0 t20 0 t20 0 t20 0 t10 0"/>
+  </g>
+
+  <!-- closed sort: pre-made label headers -->
+  <g fill="#555">
+    <rect x="510" y="100" width="120" height="40" rx="6"/>
+    <rect x="650" y="100" width="120" height="40" rx="6"/>
+    <rect x="790" y="100" width="120" height="40" rx="6"/>
+  </g>
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#fff" text-anchor="middle" letter-spacing=".5">
+    <text x="570" y="124">PRE-MADE LABEL</text>
+    <text x="710" y="124">PRE-MADE LABEL</text>
+    <text x="850" y="124">PRE-MADE LABEL</text>
+  </g>
+
+  <!-- blank grey product cards -->
+  <g fill="#E6E6E6" stroke="#BBB" stroke-width="1.5">
+    <rect x="50" y="160" width="100" height="44" rx="6"/>
+    <rect x="50" y="214" width="100" height="44" rx="6"/>
+    <rect x="50" y="268" width="100" height="44" rx="6"/>
+    <rect x="190" y="160" width="100" height="44" rx="6"/>
+    <rect x="190" y="214" width="100" height="44" rx="6"/>
+    <rect x="330" y="160" width="100" height="44" rx="6"/>
+    <rect x="330" y="214" width="100" height="44" rx="6"/>
+    <rect x="330" y="268" width="100" height="44" rx="6"/>
+
+    <rect x="520" y="160" width="100" height="44" rx="6"/>
+    <rect x="520" y="214" width="100" height="44" rx="6"/>
+    <rect x="660" y="160" width="100" height="44" rx="6"/>
+    <rect x="660" y="214" width="100" height="44" rx="6"/>
+    <rect x="660" y="268" width="100" height="44" rx="6"/>
+    <rect x="800" y="160" width="100" height="44" rx="6"/>
+    <rect x="800" y="214" width="100" height="44" rx="6"/>
+    <rect x="800" y="268" width="100" height="44" rx="6"/>
+  </g>
+</svg>
