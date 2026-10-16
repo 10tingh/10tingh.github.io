@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" role="img" aria-labelledby="t">
+  <title id="t">Left: static screens shown with no connection between them, with question marks in the gaps. Right: the same screens linked by arrows into two labeled flows, Flow 1 and Flow 2</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+    <g id="s">
+      <rect width="140" height="100" rx="8" fill="#FAFAFA" stroke="#8A8A8A" stroke-width="1.5"/>
+      <rect width="140" height="18" rx="8" fill="#E2E2E2"/>
+      <rect y="10" width="140" height="8" fill="#E2E2E2"/>
+      <rect x="14" y="34" width="90" height="7" rx="3" fill="#BDBDBD"/>
+      <rect x="14" y="50" width="110" height="7" rx="3" fill="#D0D0D0"/>
+      <rect x="14" y="66" width="70" height="7" rx="3" fill="#D0D0D0"/>
+    </g>
+  </defs>
+  <rect width="960" height="460" fill="#fff"/>
+  <line x1="480" y1="30" x2="480" y2="430" stroke="#DDD" stroke-width="1.5"/>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">
+    <text x="40" y="44">STATIC SCREENS</text>
+    <text x="520" y="44">CLICKABLE PROTOTYPE</text>
+  </g>
+
+  <!-- left: disconnected -->
+  <use href="#s" x="56" y="90"/>
+  <use href="#s" x="284" y="120"/>
+  <use href="#s" x="76" y="290"/>
+  <use href="#s" x="270" y="300"/>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="800" fill="#9A9A9A" text-anchor="middle">
+    <text x="240" y="180">?</text>
+    <text x="150" y="252">?</text>
+    <text x="242" y="360">?</text>
+  </g>
+
+  <!-- right: linked flows -->
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#555" letter-spacing=".8">
+    <text x="540" y="96">FLOW 1</text>
+    <text x="540" y="286">FLOW 2</text>
+  </g>
+  <use href="#s" x="540" y="110"/>
+  <use href="#s" x="760" y="110"/>
+  <use href="#s" x="540" y="300"/>
+  <use href="#s" x="760" y="300"/>
+  <g stroke="#555" stroke-width="2" fill="none" marker-end="url(#a)">
+    <line x1="684" y1="160" x2="754" y2="160"/>
+    <line x1="684" y1="350" x2="754" y2="350"/>
+  </g>
+</svg>

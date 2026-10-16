@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t">
+  <title id="t">Workshop timeline: discovery, then personas, then synthesis and priorities, then problem and ideas, then 5 prototypes in 1.5 days, then concept validation with users, then handoff to the board</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">WORKSHOP TIMELINE</text>
+
+  <!-- spine -->
+  <line x1="40" y1="150" x2="930" y2="150" stroke="#8A8A8A" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- step dots -->
+  <g fill="#F2F2F2" stroke="#555" stroke-width="2">
+    <circle cx="80" cy="150" r="10"/>
+    <circle cx="213" cy="150" r="10"/>
+    <circle cx="346" cy="150" r="10"/>
+    <circle cx="480" cy="150" r="10"/>
+    <circle cx="613" cy="150" r="10"/>
+    <circle cx="746" cy="150" r="10"/>
+  </g>
+  <circle cx="880" cy="150" r="12" fill="#555"/>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5" text-anchor="middle">
+    <text x="80" y="120">STEP 1</text>
+    <text x="213" y="120">STEP 2</text>
+    <text x="346" y="120">STEP 3</text>
+    <text x="480" y="120">STEP 4</text>
+    <text x="613" y="120">STEP 5</text>
+    <text x="746" y="120">STEP 6</text>
+    <text x="880" y="120">STEP 7</text>
+  </g>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="80" y="192">Discovery</text>
+    <text x="213" y="192">Personas</text>
+    <text x="346" y="192">Synthesis</text>
+    <text x="346" y="210">and priorities</text>
+    <text x="480" y="192">Problem</text>
+    <text x="480" y="210">and ideas</text>
+    <text x="613" y="192">5 prototypes</text>
+    <text x="613" y="210">in 1.5 days</text>
+    <text x="746" y="192">Concept</text>
+    <text x="746" y="210">validation</text>
+    <text x="746" y="228">with users</text>
+    <text x="880" y="192">Handoff to</text>
+    <text x="880" y="210">the board</text>
+  </g>
+</svg>

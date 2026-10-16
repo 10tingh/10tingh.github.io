@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" role="img" aria-labelledby="t">
+  <title id="t">Five concepts, Concept 1 to Concept 5, each passing its strongest piece down into one platform, drawn as separate feature sets linked by dotted lines that share information when it makes sense</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+    <g id="c">
+      <rect width="160" height="90" rx="10" fill="#FAFAFA" stroke="#8A8A8A" stroke-width="1.5"/>
+      <rect x="14" y="36" width="100" height="7" rx="3" fill="#D0D0D0"/>
+      <rect x="14" y="50" width="80" height="7" rx="3" fill="#D0D0D0"/>
+      <rect x="14" y="64" width="132" height="14" rx="4" fill="#9A9A9A"/>
+    </g>
+  </defs>
+  <rect width="960" height="500" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">CONVERGING THE CONCEPTS</text>
+
+  <use href="#c" x="40" y="70"/>
+  <use href="#c" x="220" y="70"/>
+  <use href="#c" x="400" y="70"/>
+  <use href="#c" x="580" y="70"/>
+  <use href="#c" x="760" y="70"/>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="800" fill="#333">
+    <text x="54" y="96">Concept 1</text>
+    <text x="234" y="96">Concept 2</text>
+    <text x="414" y="96">Concept 3</text>
+    <text x="594" y="96">Concept 4</text>
+    <text x="774" y="96">Concept 5</text>
+  </g>
+
+  <g stroke="#555" stroke-width="2" marker-end="url(#a)">
+    <line x1="120" y1="164" x2="120" y2="244"/>
+    <line x1="300" y1="164" x2="300" y2="244"/>
+    <line x1="480" y1="164" x2="480" y2="244"/>
+    <line x1="660" y1="164" x2="660" y2="244"/>
+    <line x1="840" y1="164" x2="840" y2="244"/>
+  </g>
+
+  <!-- platform -->
+  <rect x="30" y="250" width="900" height="210" rx="16" fill="#F2F2F2" stroke="#555" stroke-width="2"/>
+  <text x="50" y="276" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#555" letter-spacing=".8">ONE PLATFORM</text>
+
+  <g fill="#fff" stroke="#8A8A8A" stroke-width="1.5">
+    <rect x="50" y="320" width="140" height="70" rx="10"/>
+    <rect x="230" y="320" width="140" height="70" rx="10"/>
+    <rect x="410" y="320" width="140" height="70" rx="10"/>
+    <rect x="590" y="320" width="140" height="70" rx="10"/>
+    <rect x="770" y="320" width="140" height="70" rx="10"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="120" y="360">Feature set</text>
+    <text x="300" y="360">Feature set</text>
+    <text x="480" y="360">Feature set</text>
+    <text x="660" y="360">Feature set</text>
+    <text x="840" y="360">Feature set</text>
+  </g>
+
+  <g stroke="#8A8A8A" stroke-width="2" stroke-dasharray="4 4" fill="none">
+    <line x1="190" y1="355" x2="230" y2="355"/>
+    <line x1="370" y1="355" x2="410" y2="355"/>
+    <line x1="550" y1="355" x2="590" y2="355"/>
+    <line x1="730" y1="355" x2="770" y2="355"/>
+    <line x1="340" y1="434" x2="380" y2="434"/>
+  </g>
+  <text x="392" y="438" font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#555" letter-spacing=".5">shares information when it makes sense</text>
+</svg>

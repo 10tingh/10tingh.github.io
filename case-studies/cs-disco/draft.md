@@ -1,7 +1,7 @@
 # CS DISCO — Using AI to Transform the Legal Sector
 
 Company: SeeSaw Labs
-Status: Draft v2, ready for Tyler's review
+Status: Approved by Tyler (v2, 2026-10-16); ported, awaiting Tyler's push
 Source: `case-study-placeholders.md`, section "8. CS DISCO" (resume-level skeleton) + `images/platform hero.webp` (confirmed by Tyler as the one image DISCO gave us that can be shown) + Tyler's inline answers to the v1 questions (archived verbatim at the bottom).
 
 ---
@@ -106,7 +106,7 @@ Image: reuse `images/platform hero.webp` as the closing shot, as Rendevor, huddl
 
 ---
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved, applied)
 CS DISCO (SeeSaw Labs): as Senior Designer, turned a week-long workshop to pick DISCO's AI big bet for the legal sector into 5 clickable mid-fidelity prototypes in a day and a half, built in Claude Code from Figma designs, which converged into a new platform concept; DISCO's Chief Product Officer took our handoff to the board and secured additional funding, and the concept is now in build for a 2027 release.
 
 ---

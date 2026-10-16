@@ -210,4 +210,4 @@ once a case study's copy is approved and it's ported into the template.
 | 5 | `mystique-productions` | SeeSaw Labs | Mystique Productions — Content-Rich Marketing Website | Not started |
 | 6 | `ecoproducts` | Slide UX | EcoProducts — Enhancing eCommerce through Information Architecture | Not started |
 | 7 | `kasasa` | SeeSaw Labs | Kasasa — Sales Demonstration Tool | **Live** |
-| 8 | `cs-disco` | SeeSaw Labs | CS DISCO — Using AI to Transform the Legal Sector | Draft v2, ready for Tyler's review |
+| 8 | `cs-disco` | SeeSaw Labs | CS DISCO — Using AI to Transform the Legal Sector | Approved and ported, waiting on push |
