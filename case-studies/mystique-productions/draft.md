@@ -60,7 +60,7 @@ Image (as ported): none. A screenshot of a live service page from https://www.my
 **Decision 02 — A design system for a marketing site, not one-off pages**
 Defined design guidelines and a design system before building the pages, instead of designing each page on its own. Mystique has a lot of different offerings and a lot of marketing channels, and unity across all of them is what makes the brand read as one strong company instead of a dozen separate acts. The system also lets Mystique scale the site by themselves: when they add a page or a service, the visual decisions are already made, which keeps the site flexible and usable for the client long after handoff.
 
-Image (as ported): `images/service-grid.svg`, a recreated grayscale grid of the eight service names (from the `_ServiceSquare.png` file names in `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Tiles\`) in one shared tile layout, grey blocks in place of photos, captioned as a recreation. The real tiles would replace it if Tyler copies them into `images/`.
+Image (as ported): `images/service tiles.PNG`, a screenshot of two real service tiles from the live site (Interactive Greeters and Dazzling Showgirls), used at Tyler's request (mail #83). Caption: "Service tiles from the live site, built from the design system." It replaced the earlier recreated grid, `images/service-grid.svg`, which stays in the folder but is no longer used on the page.
 
 ## 04 — The Outcome
 
