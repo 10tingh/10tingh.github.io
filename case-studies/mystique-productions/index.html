@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystique Productions: Growing Traffic Through a Full Website Rebuild — Case Study — Tyler Entingh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    CASE STUDY PAGE TEMPLATE — Tyler Entingh
+    Built from the "Entingh Brand Standards" system (same tokens, same
+    component patterns: numbered plates, mono kickers, rounded cards,
+    pill chips). Duplicate this file per case study; only the content
+    inside <body> needs to change — the CSS is meant to stay identical
+    across all 8 so the site reads as one system.
+
+    Sections map 1:1 to case-study-guide.md:
+      Cover        -> At-a-glance (role / timeline / team / tools)
+      Plate 00     -> Executive Summary (write this LAST + final screenshot)
+      Plate 01     -> The Setup (context & problem)
+      Plate 02     -> The Approach (role & process)
+      Plate 03     -> The Work (key decisions)
+      Plate 04     -> The Outcome (impact)
+      Plate 05     -> The Takeaway (optional)
+      Footer nav   -> prev / next case study + back to index
+
+    Section headers use the mono kicker only (no serif h2 below it) —
+    keep it that way across all 8, one line of hierarchy per plate.
+  */
+  :root{
+    --paper:      #FFFFFF;
+    --paper-2:    #FAF3E7;
+    --paper-3:    #F1E1BF;
+    --ink:        #33210F;
+    --ink-soft:   #5C4530;
+    --rust:       #B84A28;
+    --rust-dark:  #7A2E1C;
+    --gold:       #D69A3C;
+    --gold-dark:  #A6721F;
+    --line:       rgba(51,33,15,.16);
+    --line-soft:  rgba(51,33,15,.10);
+    --shadow-sm:  0 1px 2px rgba(51,33,15,.05), 0 6px 16px -12px rgba(51,33,15,.16);
+
+    --radius:     18px;
+    --radius-sm:  10px;
+    --radius-pill:999px;
+
+    --f-display:  'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    --f-body:     'Nunito', 'Segoe UI', system-ui, sans-serif;
+    --f-mono:     'Space Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:16px;
+    line-height:1.6;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+
+  img{max-width:100%; display:block; border-radius:var(--radius);}
+  h1,h2,h3,h4{text-wrap:balance; margin:0; font-weight:600;}
+  p{margin:0;}
+  ::selection{background:var(--rust); color:#fff;}
+  a{color:var(--rust-dark);}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px 120px;}
+
+  /* ---------- top index bar ---------- */
+  .indexbar{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,.92);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .indexbar-inner{
+    max-width:920px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  .indexbar-mark{font-family:var(--f-display); font-weight:700; font-size:1.05rem;}
+  .indexbar-back{
+    font-family:var(--f-mono); font-size:.7rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-soft); text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .indexbar-back:hover, .indexbar-back:focus-visible{color:var(--rust-dark); border-bottom-color:var(--rust);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--rust-dark); outline-offset:3px;}
+
+  /* ---------- cover ---------- */
+  .cover{padding:76px 28px 0;}
+  .cover-inner{max-width:920px; margin:0 auto;}
+  .eyebrow{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--rust-dark);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--rust); display:inline-block;}
+  .cover h1{
+    font-family:var(--f-display); font-weight:900;
+    font-size:clamp(2.4rem, 7vw, 4.6rem);
+    line-height:.98; margin-top:18px; color:var(--ink);
+  }
+  .cover .position{
+    font-family:var(--f-display); font-style:italic; font-weight:600;
+    font-size:clamp(1.1rem, 2.4vw, 1.5rem);
+    color:var(--rust-dark); margin-top:14px; max-width:46ch;
+  }
+
+  /* at-a-glance meta strip */
+  .meta-strip{
+    margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .meta-cell{padding:16px 20px 16px 0; border-right:1px solid var(--line-soft);}
+  .meta-cell:nth-child(3n){border-right:none;}
+  .meta-cell:nth-child(-n+3){border-bottom:1px solid var(--line-soft);}
+  .meta-label{
+    font-family:var(--f-mono); font-size:.64rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:6px;
+  }
+  .meta-value{font-family:var(--f-body); font-weight:700; font-size:.92rem; color:var(--ink);}
+  @media (max-width:700px){
+    .meta-strip{grid-template-columns:repeat(2,1fr);}
+    .meta-cell{border-bottom:1px solid var(--line-soft); padding:14px 16px 14px 0;}
+    .meta-cell:nth-child(3n){border-right:1px solid var(--line-soft);}
+    .meta-cell:nth-child(2n){border-right:none;}
+  }
+
+  .cover-wave{margin:28px -28px 0; width:calc(100% + 56px); line-height:0; overflow:hidden;}
+  .cover-wave svg{display:block; width:100%; height:auto; overflow:hidden;}
+
+  /* reusable image block — executive-summary screenshot, process visuals, etc. */
+  .figure{margin-top:24px; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--line-soft);}
+  .figure img{border-radius:0;}
+  .figure .caption{
+    font-family:var(--f-mono); font-size:.68rem; color:var(--ink-soft);
+    padding:10px 16px; border-top:1px solid var(--line-soft); background:var(--paper-2);
+  }
+
+  /* ---------- plate scaffolding ---------- */
+  .plate{padding:64px 0 8px; border-bottom:1px solid var(--line-soft); scroll-margin-top:80px;}
+  .plate:last-of-type{border-bottom:none;}
+  .plate-head{display:grid; grid-template-columns:auto 1fr; gap:20px 26px; align-items:baseline; margin-bottom:34px;}
+  .plate-num{
+    font-family:var(--f-display); font-weight:600; font-style:italic;
+    font-size:clamp(2.6rem, 6vw, 4.2rem); color:var(--rust); opacity:.24; line-height:1;
+  }
+  .plate-title-group .kicker{
+    font-family:var(--f-mono); font-weight:700; font-size:.95rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--rust-dark); display:block;
+  }
+  .plate-body{max-width:66ch; font-size:1.05rem; color:var(--ink);}
+  .plate-body p{margin-bottom:16px;}
+  .plate-body p:last-child{margin-bottom:0;}
+  .plate-body strong{color:var(--ink);}
+
+  .subhead{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft);
+    border-top:1px solid var(--line-soft); padding-top:8px; margin:36px 0 16px;
+  }
+  .subhead:first-of-type{margin-top:0;}
+
+  /* ---------- decision cards (Plate 03) ---------- */
+  .decisions{display:flex; flex-direction:column; gap:16px;}
+  .decision{
+    background:var(--paper-2); border:1px solid var(--line-soft); border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .decision-num{font-family:var(--f-mono); font-size:.7rem; color:var(--rust-dark); letter-spacing:.08em;}
+  .decision h3{font-family:var(--f-display); font-size:1.2rem; font-weight:600; margin:8px 0 10px;}
+  .decision p{color:var(--ink-soft); font-size:.95rem; margin-bottom:8px;}
+  .decision p:last-child{margin-bottom:0;}
+  .decision .alt{
+    font-size:.85rem; color:var(--ink-soft); border-left:2px solid var(--line);
+    padding-left:12px; margin-top:10px; font-style:italic;
+  }
+
+  /* ---------- outcome stat cards (Plate 04) ---------- */
+  .statgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px;}
+  .stat{
+    background:var(--rust-dark); color:#fff; border-radius:var(--radius);
+    padding:22px 20px; box-shadow:var(--shadow-sm);
+  }
+  .stat .num{font-family:var(--f-display); font-weight:900; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1;}
+  .stat .lbl{font-family:var(--f-mono); font-size:.68rem; letter-spacing:.04em; color:var(--paper-3); margin-top:8px; display:block;}
+  @media (max-width:700px){ .statgrid{grid-template-columns:1fr;} }
+
+  /* pill tags — tools, skills */
+  .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+  .pill{
+    font-family:var(--f-mono); font-size:.7rem; color:var(--ink);
+    background:var(--paper-2); padding:7px 14px; border-radius:var(--radius-pill);
+    border:1px solid var(--line-soft);
+  }
+
+  /* pull quote */
+  .pullquote{
+    font-family:var(--f-display); font-style:italic; font-weight:500;
+    font-size:clamp(1.3rem, 2.6vw, 1.7rem); color:var(--rust-dark);
+    max-width:36ch; margin:8px 0 32px; line-height:1.3;
+  }
+
+  .rulecard{
+    border:1px solid var(--line-soft); background:var(--paper-2); border-radius:var(--radius);
+    padding:22px 24px; margin-top:20px;
+  }
+  .rulecard .subhead{border-top:none; margin:0 0 10px; padding-top:0;}
+  .rulecard p{color:var(--ink-soft); font-size:.95rem;}
+
+  /* ---------- footer / prev-next nav ---------- */
+  .colophon{
+    padding:40px 0 0; margin-top:40px;
+    font-family:var(--f-mono); font-size:.72rem; color:var(--ink-soft);
+  }
+  .nextnav{
+    display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    padding:28px 0; border-top:1px solid var(--line-soft); margin-top:40px;
+  }
+  .nextnav a{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.06em;
+    text-transform:uppercase; text-decoration:none; color:var(--ink-soft);
+  }
+  .nextnav a:hover, .nextnav a:focus-visible{color:var(--rust-dark);}
+  .nextnav .to{display:block; font-family:var(--f-display); font-style:italic; font-size:1.1rem; color:var(--ink); margin-top:6px; text-transform:none; letter-spacing:0;}
+</style>
+</head>
+<body>
+
+<div class="indexbar">
+  <div class="indexbar-inner">
+    <div class="indexbar-mark">TE</div>
+    <a class="indexbar-back" href="/#work">← All case studies</a>
+  </div>
+</div>
+
+<!-- ============ COVER / AT-A-GLANCE ============ -->
+<header class="cover">
+  <div class="cover-inner">
+    <p class="eyebrow">Case Study</p>
+
+    <h1>Mystique Productions: Growing Traffic Through a Full Website Rebuild</h1>
+
+    <p class="position">More than 12 concepts, a custom video for every service page, and 40%+ more site traffic in the first 6 months after launch.</p>
+
+    <div class="meta-strip">
+      <div class="meta-cell">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Designer &amp; Developer</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Timeline</span>
+        <span class="meta-value">About 2 months</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Team</span>
+        <span class="meta-value">Designer &amp; Developer (me), working directly with Mystique's stakeholders</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">Figma, Photoshop, Movavi Video Editor, Squarespace, custom HTML/CSS, Google Search Console</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Company</span>
+        <span class="meta-value">SeeSaw Labs</span>
+      </div>
+      <div class="meta-cell">
+        <span class="meta-label">Outcome</span>
+        <span class="meta-value">Site traffic up more than 40% over the old site's benchmarks in the first 6 months after launch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave motif — signature graphic, use once per page. The final-state
+       screenshot lives in Plate 00 below, not up here, so this motif is
+       the only visual in the cover. -->
+  <div class="cover-wave" aria-hidden="true">
+    <svg viewBox="0 25 1200 275" preserveAspectRatio="none">
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--ink)" stroke-width="30" stroke-linecap="butt"/>
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--rust)" stroke-width="30" stroke-linecap="butt" transform="translate(0,24)"/>
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--gold)" stroke-width="30" stroke-linecap="butt" transform="translate(0,48)"/>
+      <path d="M -160 100 L 30 100 C 160 100 200 200 350 200 C 500 200 540 50 700 50 C 860 50 900 170 1170 170 L 1380 170"
+            fill="none" stroke="var(--paper-3)" stroke-width="30" stroke-linecap="butt" transform="translate(0,72)"/>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ 00 — EXECUTIVE SUMMARY ============ -->
+  <section class="plate" id="summary">
+    <div class="plate-head">
+      <div class="plate-num">00</div>
+      <div class="plate-title-group">
+        <span class="kicker">Executive Summary</span>
+      </div>
+    </div>
+    <div class="plate-body">
+      <p>Mystique Productions books dancers, showgirls, magicians, and other entertainers for high-end corporate events, but its old website looked dated and didn't give the company the credibility its client list deserved. As the only designer and developer on the project, I explored more than 12 visual concepts with the client, built a design system, cut a custom video for every service page from a couple hundred hours of event footage, and launched the new site on Squarespace with SEO and accessibility built in and a team trained to run it themselves. In the first 6 months after launch, traffic rose more than 40% over the old site's benchmarks, and contact-form requests rose about 20%.</p>
+    </div>
+
+    <div class="figure">
+      <img src="images/website%20hero.webp" alt="The live Mystique Productions homepage hero video, mid-play: the Mystique Productions title card over a performer in a pearl-and-white floral costume, with the navigation (Services, Gallery, About, Contact) above it.">
+      <div class="caption">Live homepage hero, a frame of the hero video mid-play</div>
+    </div>
+  </section>
+
+  <!-- ============ 01 — THE SETUP ============ -->
+  <section class="plate" id="setup">
+    <div class="plate-head">
+      <div class="plate-num">01</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Setup</span>
+      </div>
+    </div>
+    <div class="plate-body">
+      <p>Mystique Productions is a Chicago entertainment company. It supplies the people who make a corporate event feel like an occasion: dancers, greeters, servers, jugglers, magicians, impersonators, and showgirls. Its clients are high-end corporate events, and it regularly provides entertainment for partners like Jewel-Osco and the Chicago White Sox.</p>
+      <p>The website didn't match that work. It looked dated, and the team felt it wasn't giving them enough credibility online. Mystique wanted the opposite: a site that, the moment someone landed on it, made them look high end and legitimate.</p>
+      <p>Nothing was broken in an emergency sense. It was just time for a face-lift, and Mystique came to SeeSaw Labs for it.</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 — THE APPROACH ============ -->
+  <section class="plate" id="approach">
+    <div class="plate-head">
+      <div class="plate-num">02</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Approach</span>
+      </div>
+    </div>
+    <div class="plate-body">
+      <p>I was the only person on the project outside Mystique's own stakeholders, so I carried it from the first concept to launch and handoff over about 2 months.</p>
+      <p>The first move was going wide on visual and art direction. I explored more than 12 different concepts before we landed on the one that resonated most with Mystique's business and its clients. The hard part wasn't producing concepts; it was getting the client's ideas out of their heads. They knew the feeling they wanted, so it took a lot of workshopping, concept by concept, to find the direction that visually landed on it.</p>
+      <p>From that direction I defined design guidelines and a design system for the site, then moved into the media. Mystique had thousands of photos and a couple hundred hours of video from past events. I edited the photos in Photoshop and cut a custom video for each service page in Movavi Video Editor, eight in all, from greeters and servers to showgirls and specialty entertainment. That video work was the most time-consuming part of the project: each one went through about 3 rounds of revisions with the client before final approval.</p>
+      <p>I built the front end in Squarespace's visual editor and wrote my own HTML and CSS injections wherever the design needed more than Squarespace's default blocks could give.</p>
+      <p>That much media turned SEO from a checklist into a real opportunity. Every page had more photos and footage than it needed, which meant every image and every video was another way for the right search to find Mystique. I did the keyword research up front, then carried it through every page: page titles and meta descriptions, a clean URL structure, a heading structure that reads in order, and descriptive alt text on the images. That same alt text and heading structure did double duty for accessibility, along with color contrast and captions on video, so the site works for people using screen readers, not just for search engines.</p>
+      <p>Launch covered the details that usually get skipped: indexing the new site in Google Search Console, redirecting the old site's pages so existing links still landed somewhere, and training Mystique's team on the Squarespace editor so they could update photos, videos, and service offerings themselves.</p>
+    </div>
+
+    <div class="figure">
+      <img src="images/process-timeline.svg" alt="Recreated project timeline over about 2 months, left to right: 12+ visual concepts, design guidelines and system, photos and 8 service videos, the Squarespace build with custom HTML/CSS, and SEO, launch, and team training.">
+      <div class="caption">Project timeline, recreated for this case study. Not an original project artifact.</div>
+    </div>
+
+    <div class="pillrow">
+      <span class="pill">Figma</span>
+      <span class="pill">Photoshop</span>
+      <span class="pill">Movavi Video Editor</span>
+      <span class="pill">Squarespace</span>
+      <span class="pill">HTML/CSS</span>
+      <span class="pill">Google Search Console</span>
+    </div>
+  </section>
+
+  <!-- ============ 03 — THE WORK (key decisions) ============ -->
+  <section class="plate" id="work">
+    <div class="plate-head">
+      <div class="plate-num">03</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Work</span>
+      </div>
+    </div>
+    <div class="decisions">
+      <div class="decision">
+        <span class="decision-num">Decision 01</span>
+        <h3>Squarespace, extended with custom code, so the client keeps control</h3>
+        <p>Built the site on Squarespace and trained Mystique's team to run it.</p>
+        <p class="alt">Considered instead: a platform that would need a developer for every update.</p>
+        <p>The client wanted full control after handoff: swapping photos, changing service offerings, updating videos. The people making those changes aren't tech-savvy, so the tool had to be approachable enough that they felt confident using it, and Squarespace gave them that confidence. The trade-off was Squarespace's default blocks, which couldn't carry the whole design on their own. Instead of leaving the platform over it, I wrote my own HTML and CSS injections to push past those defaults, so the client got the custom look and still kept the editor they could use.</p>
+      </div>
+
+      <div class="decision">
+        <span class="decision-num">Decision 02</span>
+        <h3>A design system for a marketing site, not one-off pages</h3>
+        <p>Defined design guidelines and a design system before building the pages.</p>
+        <p class="alt">Considered instead: designing each page on its own.</p>
+        <p>Mystique has a lot of different offerings and a lot of marketing channels, and unity across all of them is what makes the brand read as one strong company instead of a dozen separate acts. The system also lets Mystique scale the site by themselves: when they add a page or a service, the visual decisions are already made, which keeps the site flexible and usable for the client long after handoff.</p>
+      </div>
+
+      <div class="figure">
+        <img src="images/service-grid.svg" alt="Recreated grid of eight service tiles sharing one layout: Greeters, Servers, Dancers, Showgirls, ChiTown, Florals, Holiday, and Specialty Entertainment. Grey blocks stand in for the photos.">
+        <div class="caption">Service tiles, recreated for this case study. Not an original project artifact; grey blocks stand in for the photos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — THE OUTCOME ============ -->
+  <section class="plate" id="outcome">
+    <div class="plate-head">
+      <div class="plate-num">04</div>
+      <div class="plate-title-group">
+        <span class="kicker">The Outcome</span>
+      </div>
+    </div>
+
+    <p class="pullquote">"The new site wasn't just being found more often, it was getting more people to reach out."</p>
+
+    <div class="statgrid">
+      <div class="stat">
+        <span class="num">40%+</span>
+        <span class="lbl">more site traffic in the first 6 months after launch</span>
+      </div>
+    </div>
+
+    <div class="plate-body">
+      <p>In the first 6 months after launch, traffic to the site rose more than 40% over the old site's benchmarks, measured in Google Search Console.</p>
+      <p>More visitors turned into conversations, too. Requests through the site's contact form rose about 20%, which I tracked in Squarespace's own tools. That's the number closest to booked work: the new site wasn't just being found more often, it was getting more people to reach out.</p>
+    </div>
+
+    <div class="figure">
+      <img src="images/website%20hero.webp" alt="The live Mystique Productions homepage hero video, mid-play: the Mystique Productions title card over a performer in a pearl-and-white floral costume.">
+      <div class="caption">Live homepage hero, a frame of the hero video mid-play</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PREV / NEXT + BACK ============ -->
+<!-- Mirrors rendevor/index.html: a single back-link for now. Restore the
+     two-link prev/next pattern from case-study-template.html once the
+     case studies link to each other. -->
+<div class="wrap">
+  <div class="nextnav">
+    <a href="/#work">← All case studies</a>
+  </div>
+  <div class="colophon">
+    <span>Tyler Entingh · Case Studies · tylerentingh.com</span>
+  </div>
+</div>
+
+</body>
+</html>

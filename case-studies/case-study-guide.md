@@ -207,7 +207,7 @@ once a case study's copy is approved and it's ported into the template.
 | 2 | `cfbdepth` | SeeSaw Labs | CFBDepth.com — AI-powered chatbot | **Live** |
 | 3 | `rendevor` | SeeSaw Labs | Rendevor — Audit Center | **Live** |
 | 4 | `huddl` | SeeSaw Labs + Slide UX | Huddl — Streamlining Pharmacy Workflows | **Live** |
-| 5 | `mystique-productions` | SeeSaw Labs | Mystique Productions — Content-Rich Marketing Website | Draft v2, ready for Tyler's review |
+| 5 | `mystique-productions` | SeeSaw Labs | Mystique Productions — Content-Rich Marketing Website | Ported, awaiting Tyler's push |
 | 6 | `ecoproducts` | Slide UX | EcoProducts — Enhancing eCommerce through Information Architecture | Not started |
 | 7 | `kasasa` | SeeSaw Labs | Kasasa — Sales Demonstration Tool | **Live** |
 | 8 | `cs-disco` | SeeSaw Labs | CS DISCO — Using AI to Transform the Legal Sector | **Live** |

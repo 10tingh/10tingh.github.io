@@ -1,7 +1,7 @@
-# Mystique Productions — Growing Traffic and Closing Contracts Through a Full Website Rebuild
+# Mystique Productions — Growing Traffic Through a Full Website Rebuild
 
 Company: SeeSaw Labs
-Status: Draft ready for Tyler's review (v2)
+Status: Ported, awaiting Tyler's push (v2 approved by Tyler, mail #68)
 Source: Tyler's inline answers to the v1 questions (archived verbatim at the bottom) + `case-study-placeholders.md`, section "5. Mystique Productions" + `images/website hero.webp` (confirmed by Tyler as a frame of the live homepage hero video) + the file list of `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets` (used for the count of service videos and for image picks).
 
 ---
@@ -48,19 +48,19 @@ Launch covered the details that usually get skipped: indexing the new site in Go
 
 Tools/pills: Figma, Photoshop, Movavi Video Editor, Squarespace, HTML/CSS, Google Search Console
 
-Images: a still frame from one of the eight finished service videos, e.g. `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Videos\Showgirls_FINAL.mp4` (export a frame at port time; the other seven are Greeters, Servers, Dancers, Chitown, Florals, Holiday, and SpecialtyEntertainment `_FINAL.mp4` in the same folder). No concept or Figma files are in the asset folder, so the 12-concept exploration has no visual yet (see follow-up 2).
+Image (as ported): `images/process-timeline.svg`, a recreated grayscale timeline (concept, system, media, build, launch) using only words from this section, captioned as a recreation. A still from a service video (e.g. `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Videos\Showgirls_FINAL.mp4`) would be a stronger visual if Tyler exports one later.
 
 ## 03 — The Work
 
 **Decision 01 — Squarespace, extended with custom code, so the client keeps control**
 Built the site on Squarespace and trained Mystique's team to run it, rather than a platform that would need a developer for every update. The client wanted full control after handoff: swapping photos, changing service offerings, updating videos. The people making those changes aren't tech-savvy, so the tool had to be approachable enough that they felt confident using it, and Squarespace gave them that confidence. The trade-off was Squarespace's default blocks, which couldn't carry the whole design on their own. Instead of leaving the platform over it, I wrote my own HTML and CSS injections to push past those defaults, so the client got the custom look and still kept the editor they could use.
 
-Image: a screenshot of one live service page showing the video and a section built with custom HTML/CSS, captured from https://www.mystiqueproductions.com at port time (not fetched in this run; see follow-up 2). Fallback from the asset folder: `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Contact Forms\HomePage_FINAL.png` (a cut-out performer image prepared for the site's contact form).
+Image (as ported): none. A screenshot of a live service page from https://www.mystiqueproductions.com would fit here if Tyler captures one later.
 
 **Decision 02 — A design system for a marketing site, not one-off pages**
 Defined design guidelines and a design system before building the pages, instead of designing each page on its own. Mystique has a lot of different offerings and a lot of marketing channels, and unity across all of them is what makes the brand read as one strong company instead of a dozen separate acts. The system also lets Mystique scale the site by themselves: when they add a page or a service, the visual decisions are already made, which keeps the site flexible and usable for the client long after handoff.
 
-Image: the eight service tiles side by side as a grid, from `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Tiles\` (Greeter, Showgirl, Dancers, Servers, ChiTown, Florals, Holiday, Specialty `_ServiceSquare.png`), showing one consistent treatment across every offering.
+Image (as ported): `images/service-grid.svg`, a recreated grayscale grid of the eight service names (from the `_ServiceSquare.png` file names in `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Tiles\`) in one shared tile layout, grey blocks in place of photos, captioned as a recreation. The real tiles would replace it if Tyler copies them into `images/`.
 
 ## 04 — The Outcome
 
@@ -70,13 +70,15 @@ More visitors turned into conversations, too. Requests through the site's contac
 
 Stat card: 40%+ — more site traffic in the first 6 months after launch
 
-Image: `images/website hero.webp` again as the closing shot, or the Decision 02 service-tile grid if the page needs variety.
+Image (as ported): `images/website hero.webp` again as the closing shot.
 
 ---
 
 ## Notes
 
-- Title: Tyler picked "Growing Traffic and Closing Contracts Through a Full Website Rebuild" (question 1), now in the header.
+- Title: Tyler first picked "Growing Traffic and Closing Contracts Through a Full Website Rebuild" (v1 question 1), then dropped "Closing Contracts" (v2 follow-up 1). Now "Growing Traffic Through a Full Website Rebuild" in the header, the page, and the Work card.
+- "Captions on video" kept as written; Tyler confirmed the whole SEO/accessibility list in v1 question 8.
+- Images (v2 follow-up 2, "use your best judgement"): only `images/website hero.webp` is a real project image; the two SVGs are recreations, captioned as such, with text taken only from draft words.
 - Spelling: Tyler wrote "Jewel Oscoe"; the draft uses the brand's spelling, "Jewel-Osco".
 - "Chicago" in 01 comes from the live homepage copy visible in `images/website hero.webp` ("Chicago's premier corporate entertainment company"), not from Tyler's answers.
 - "Eight" service videos is inferred from the eight `_FINAL.mp4` files (and eight service tiles) in `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Videos\`. The named examples in that sentence (greeters, servers, showgirls, specialty entertainment) are file names from that folder.
@@ -85,18 +87,17 @@ Image: `images/website hero.webp` again as the closing shot, or the Decision 02 
 - The contact-form figure has no time window in Tyler's answer, so the copy doesn't attach "6 months" to it.
 - Section 03 has two decisions (the guide allows 2 to 4). The v1 redirect decision was dropped as a decision because question 10's answer covered only the design system; the redirects stay in 02 as launch work.
 - 05 — The Takeaway was dropped: question 12 got no answer, and the guide says skip it rather than force one. The v1 "closed X contracts" line was also left out of the copy; the 20% contact-form rise is the proof used instead.
-- No index.html or Work card changes; the draft isn't approved yet.
+- Ported to `case-studies/mystique-productions/index.html`; the Work card in the site's `index.html` now links to it, with copy rewritten from v2 and tags matching v2's tools.
 
-## Open questions for Tyler
-Answer inline under each question; the next run folds your answers into the draft.
+## Follow-up questions for Tyler (both answered and folded in)
 
 1. The title you picked says "Closing Contracts," but the copy only shows the 20% rise in contact-form requests. Can you say roughly how many of those turned into booked contracts, or should the title drop "Closing Contracts"? (Also: is "captions on video" right? You said yes to the whole list, but the service videos may have no speech.)
-   Answer:
+   Answer: Eh just keep it to growing traffic then. Exclude contracts from the title
 
 2. Images: OK to use a still from `Showgirls_FINAL.mp4` (02), the eight service tiles as a grid (Decision 02), and a service-page screenshot captured from https://www.mystiqueproductions.com (Decision 01)? Any concept boards or Figma exports from the 12+ concepts you'd like shown?
-   Answer:
+   Answer: Nah just use your best judgement
 
-## JobHunter summary (pending Tyler's approval)
+## JobHunter summary (approved, applied)
 Mystique Productions (SeeSaw Labs): as Designer and Developer, designed and built a Chicago corporate entertainment company's new Squarespace marketing website in about 2 months, including a custom video for every service page, and traffic rose more than 40% over the old site's benchmarks in the first 6 months after launch, with contact-form requests up about 20%.
 
 Sources: role = At-a-glance; "Chicago corporate entertainment company" = 01; "Squarespace marketing website" = 02 and Decision 01; "about 2 months" = At-a-glance Timeline; "a custom video for every service page" = 02; traffic and contact-form figures = 04 and the stat card.

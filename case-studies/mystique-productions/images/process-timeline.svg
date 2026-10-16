@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t">
+  <title id="t">Project timeline over about 2 months: 12+ visual concepts, then design guidelines and system, then photos and 8 service videos, then the Squarespace build with custom HTML/CSS, then SEO, launch, and team training</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">PROJECT TIMELINE · ABOUT 2 MONTHS</text>
+
+  <!-- spine -->
+  <line x1="40" y1="150" x2="930" y2="150" stroke="#8A8A8A" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- step dots -->
+  <g fill="#F2F2F2" stroke="#555" stroke-width="2">
+    <circle cx="110" cy="150" r="10"/>
+    <circle cx="285" cy="150" r="10"/>
+    <circle cx="460" cy="150" r="10"/>
+    <circle cx="635" cy="150" r="10"/>
+  </g>
+  <circle cx="810" cy="150" r="12" fill="#555"/>
+
+  <g font-family="'Space Mono', Consolas, monospace" font-size="10" fill="#777" letter-spacing=".5" text-anchor="middle">
+    <text x="110" y="120">CONCEPT</text>
+    <text x="285" y="120">SYSTEM</text>
+    <text x="460" y="120">MEDIA</text>
+    <text x="635" y="120">BUILD</text>
+    <text x="810" y="120">LAUNCH</text>
+  </g>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="110" y="192">12+ visual</text>
+    <text x="110" y="210">concepts</text>
+    <text x="285" y="192">Design guidelines</text>
+    <text x="285" y="210">and system</text>
+    <text x="460" y="192">Photos and</text>
+    <text x="460" y="210">8 service videos</text>
+    <text x="635" y="192">Squarespace build</text>
+    <text x="635" y="210">+ custom HTML/CSS</text>
+    <text x="810" y="192">SEO, launch, and</text>
+    <text x="810" y="210">team training</text>
+  </g>
+</svg>

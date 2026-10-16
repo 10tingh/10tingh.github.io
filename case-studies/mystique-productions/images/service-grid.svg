@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="t">
+  <title id="t">Grid of eight service tiles with one shared layout: Greeters, Servers, Dancers, Showgirls, ChiTown, Florals, Holiday, and Specialty Entertainment. Grey blocks stand in for the photos.</title>
+  <rect width="960" height="520" fill="#fff"/>
+  <text x="40" y="44" font-family="'Space Mono', Consolas, monospace" font-size="11" fill="#777" letter-spacing="1">ONE TREATMENT ACROSS EVERY SERVICE</text>
+
+  <!-- tiles: same frame, same photo block, same label bar -->
+  <g fill="#F2F2F2" stroke="#8A8A8A" stroke-width="2">
+    <rect x="40"  y="70"  width="200" height="200" rx="10"/>
+    <rect x="260" y="70"  width="200" height="200" rx="10"/>
+    <rect x="480" y="70"  width="200" height="200" rx="10"/>
+    <rect x="700" y="70"  width="200" height="200" rx="10"/>
+    <rect x="40"  y="290" width="200" height="200" rx="10"/>
+    <rect x="260" y="290" width="200" height="200" rx="10"/>
+    <rect x="480" y="290" width="200" height="200" rx="10"/>
+    <rect x="700" y="290" width="200" height="200" rx="10"/>
+  </g>
+  <g fill="#D6D6D6">
+    <rect x="56"  y="86"  width="168" height="128" rx="6"/>
+    <rect x="276" y="86"  width="168" height="128" rx="6"/>
+    <rect x="496" y="86"  width="168" height="128" rx="6"/>
+    <rect x="716" y="86"  width="168" height="128" rx="6"/>
+    <rect x="56"  y="306" width="168" height="128" rx="6"/>
+    <rect x="276" y="306" width="168" height="128" rx="6"/>
+    <rect x="496" y="306" width="168" height="128" rx="6"/>
+    <rect x="716" y="306" width="168" height="128" rx="6"/>
+  </g>
+
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="800" fill="#333" text-anchor="middle">
+    <text x="140" y="248">Greeters</text>
+    <text x="360" y="248">Servers</text>
+    <text x="580" y="248">Dancers</text>
+    <text x="800" y="248">Showgirls</text>
+    <text x="140" y="468">ChiTown</text>
+    <text x="360" y="468">Florals</text>
+    <text x="580" y="468">Holiday</text>
+    <text x="800" y="468">Specialty Entertainment</text>
+  </g>
+</svg>
