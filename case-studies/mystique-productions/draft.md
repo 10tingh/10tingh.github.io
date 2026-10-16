@@ -70,7 +70,7 @@ More visitors turned into conversations, too. Requests through the site's contac
 
 Stat card: 40%+ — more site traffic in the first 6 months after launch
 
-Image (as ported): `images/website hero.webp` again as the closing shot.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ---
 

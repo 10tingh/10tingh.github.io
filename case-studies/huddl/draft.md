@@ -85,7 +85,7 @@ Huddl cut the administrative hours spent managing REMS prescriptions by up to 80
 
 Stat card: Up to 80% — reduction in administrative hours managing REMS prescriptions, measured against existing benchmarks and in usability testing
 
-Image: reuse `images/app hero.webp` as the closing shot (the finished app on TestFlight), as Rendevor does with its outcome image.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ---
 

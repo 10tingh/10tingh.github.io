@@ -80,7 +80,7 @@ There's no metric; the product hasn't released yet.
 
 Stat card: Board-approved funding — DISCO's CPO took our handoff to the board and secured additional funding; the concept is now in build for a 2027 release (no usage metric yet)
 
-Image: reuse `images/platform hero.webp` as the closing shot, as Rendevor, huddl, Kasasa, and CFBDepth do with their outcome images.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ---
 

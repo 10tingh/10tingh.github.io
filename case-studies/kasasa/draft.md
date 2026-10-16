@@ -80,7 +80,7 @@ There's no metric. A follow-up to collect measurables was planned for 3 months a
 
 Stat card: 4 products — SureLock, Kasasa Cash, Everyday Rewards, and Take-Back Loans in one connected demo, rolled out to Kasasa's sales team (no usage metrics were collected before Tyler left the agency)
 
-Image: reuse `images/surelock-phone.webp` as the closing shot (a screen from the finished demo), as Rendevor and huddl do with their outcome images.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ---
 

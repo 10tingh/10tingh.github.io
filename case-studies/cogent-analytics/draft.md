@@ -82,7 +82,7 @@ In the first quarter after launch, Cogent's qualified leads increased by more th
 
 Stat card: 100%+ — increase in qualified leads in the first quarter
 
-Image: reuse `images/Website Hero.webp` (the live site's hero) as the closing shot, as Rendevor, huddl, Kasasa, and CFBDepth do.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ---
 

@@ -79,7 +79,7 @@ There's no hard metric.
 
 Stat card: New revenue stream — a handful of API customers before the final API tool handoff (no usage or revenue numbers)
 
-Image: reuse `images/homepage hero.webp` (the final chat panel UI) as the closing shot, as Rendevor, huddl, and Kasasa do.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ---
 

@@ -71,7 +71,7 @@ The new architecture and the product-page changes launched together, and three m
 
 Stat card: 12% — increase in conversions, measured 3 months after launch
 
-Image: `images/hero image.webp` again as the closing shot, or no image.
+Image: none. 04 has no image (the hero appears only in 00; Tyler, mail #85: no image used twice).
 
 ## 05 — The Takeaway
 
