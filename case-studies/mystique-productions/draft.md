@@ -1,8 +1,8 @@
-# Mystique Productions — Content-Rich Marketing Website
+# Mystique Productions — Growing Traffic and Closing Contracts Through a Full Website Rebuild
 
 Company: SeeSaw Labs
-Status: Draft v1, questions out for Tyler
-Source: `case-study-placeholders.md`, section "5. Mystique Productions" (resume-level skeleton) + `images/website hero.webp` (content not yet confirmed by Tyler, so nothing from it is used in the copy) + the guide's "The 8" table (company: SeeSaw Labs). Everything else is `[TK]`.
+Status: Draft ready for Tyler's review (v2)
+Source: Tyler's inline answers to the v1 questions (archived verbatim at the bottom) + `case-study-placeholders.md`, section "5. Mystique Productions" + `images/website hero.webp` (confirmed by Tyler as a frame of the live homepage hero video) + the file list of `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets` (used for the count of service videos and for image picks).
 
 ---
 
@@ -10,135 +10,110 @@ Source: `case-study-placeholders.md`, section "5. Mystique Productions" (resume-
 
 | Field | Value |
 |---|---|
-| Role | [TK: title on this project] (sole designer and developer) |
-| Timeline | [TK: duration, e.g. "X weeks"] |
-| Team | Designer and developer (me), [TK: any other roles, e.g. an account lead at SeeSaw Labs, a client-side contact] |
-| Tools | Figma, Photoshop, Movavi Video Editor, Squarespace, Claude Code |
-| Outcome stat | [TK: traffic increase as a real figure, and/or number of contracts closed through the site] |
+| Role | Designer & Developer |
+| Timeline | About 2 months |
+| Team | Designer & Developer (me), working directly with Mystique's stakeholders |
+| Tools | Figma, Photoshop, Movavi Video Editor, Squarespace, custom HTML/CSS, Google Search Console |
+| Outcome stat | Site traffic up more than 40% over the old site's benchmarks in the first 6 months after launch |
 
 ---
 
 ## 00 — Executive Summary
 
-Mystique Productions needed [TK: what the old site wasn't doing for them, in one phrase], so I designed, built, and launched a new marketing website to attract and engage prospective clients, as the only designer and developer on the project. I owned it end to end: the design guidelines and design system, the photo and video editing, SEO throughout, and the launch work of indexing in Google Search Console, redirecting the old site's pages, accessibility, and training the client to run the site in its CMS. Since launch, traffic is up [TK: real figure and time window], and Mystique Productions has closed [TK: number] contracts through the site.
+Mystique Productions books dancers, showgirls, magicians, and other entertainers for high-end corporate events, but its old website looked dated and didn't give the company the credibility its client list deserved. As the only designer and developer on the project, I explored more than 12 visual concepts with the client, built a design system, cut a custom video for every service page from a couple hundred hours of event footage, and launched the new site on Squarespace with SEO and accessibility built in and a team trained to run it themselves. In the first 6 months after launch, traffic rose more than 40% over the old site's benchmarks, and contact-form requests rose about 20%.
 
-Image: `images/website hero.webp` — candidate final-state screenshot. [TK: confirm what it shows (the live homepage hero?) and that it's the current, shipped site.]
+Image: `images/website hero.webp` — a frame of the live homepage hero video, mid-play: the Mystique Productions title card over a performer in a pearl-and-white floral costume, with the shipped navigation (Services, Gallery, About, Contact) above it.
 
 ## 01 — The Setup
 
-Mystique Productions [TK: what the company does and who its clients are, in one or two plain sentences] came to SeeSaw Labs for a new marketing website, one built to attract and engage prospective clients.
+Mystique Productions is a Chicago entertainment company. It supplies the people who make a corporate event feel like an occasion: dancers, greeters, servers, jugglers, magicians, impersonators, and showgirls. Its clients are high-end corporate events, and it regularly provides entertainment for partners like Jewel-Osco and the Chicago White Sox.
 
-There was an existing site, with pages that needed redirecting at launch. [TK: what was wrong with it: outdated look, hard for the client to update, not showing up in search, not producing inquiries? Name the concrete problem.]
+The website didn't match that work. It looked dated, and the team felt it wasn't giving them enough credibility online. Mystique wanted the opposite: a site that, the moment someone landed on it, made them look high end and legitimate.
 
-[TK: who asked for the project and why then: a deadline, a season, a slow pipeline?]
+Nothing was broken in an emergency sense. It was just time for a face-lift, and Mystique came to SeeSaw Labs for it.
 
 ## 02 — The Approach
 
-I was the sole designer and developer, so the process ran from first design decisions to launch and handoff without a handoff in the middle.
+I was the only person on the project outside Mystique's own stakeholders, so I carried it from the first concept to launch and handoff over about 2 months.
 
-[TK: the first move: an audit of the old site, a discovery call with the client, a content inventory?]
+The first move was going wide on visual and art direction. I explored more than 12 different concepts before we landed on the one that resonated most with Mystique's business and its clients. The hard part wasn't producing concepts; it was getting the client's ideas out of their heads. They knew the feeling they wanted, so it took a lot of workshopping, concept by concept, to find the direction that visually landed on it.
 
-I defined the design guidelines and a design system for the site in Figma [TK: what the system covered: type, color, components, page templates?]. I edited the site's photos in Photoshop and its video in Movavi Video Editor [TK: where the source media came from, and roughly how much there was; this is the "content-rich" part of the title].
+From that direction I defined design guidelines and a design system for the site, then moved into the media. Mystique had thousands of photos and a couple hundred hours of video from past events. I edited the photos in Photoshop and cut a custom video for each service page in Movavi Video Editor, eight in all, from greeters and servers to showgirls and specialty entertainment. That video work was the most time-consuming part of the project: each one went through about 3 rounds of revisions with the client before final approval.
 
-I built the site on Squarespace [TK: how Claude Code fit in: custom code blocks, CSS, scripts, something else?] and applied SEO throughout the build rather than at the end [TK: what that meant in practice: page titles and descriptions, image alt text, URL structure, keyword research?].
+I built the front end in Squarespace's visual editor and wrote my own HTML and CSS injections wherever the design needed more than Squarespace's default blocks could give.
 
-Launch covered the details that usually get skipped: indexing the site in Google Search Console, redirecting the old site's pages, accessibility [TK: what specifically: alt text, contrast, heading structure, captions on video?], and training the client on the Squarespace CMS so they could update the site themselves [TK: how the training was done: a live session, a recording, a written guide?].
+That much media turned SEO from a checklist into a real opportunity. Every page had more photos and footage than it needed, which meant every image and every video was another way for the right search to find Mystique. I did the keyword research up front, then carried it through every page: page titles and meta descriptions, a clean URL structure, a heading structure that reads in order, and descriptive alt text on the images. That same alt text and heading structure did double duty for accessibility, along with color contrast and captions on video, so the site works for people using screen readers, not just for search engines.
 
-[TK: the hardest part to figure out, or a moment you changed course.]
+Launch covered the details that usually get skipped: indexing the new site in Google Search Console, redirecting the old site's pages so existing links still landed somewhere, and training Mystique's team on the Squarespace editor so they could update photos, videos, and service offerings themselves.
 
-Tools/pills: Figma, Photoshop, Movavi Video Editor, Squarespace, Claude Code
+Tools/pills: Figma, Photoshop, Movavi Video Editor, Squarespace, HTML/CSS, Google Search Console
 
-Images: [TK: image] — any process visual (a Figma design-system page, an early layout, a before shot of the old site).
+Images: a still frame from one of the eight finished service videos, e.g. `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Videos\Showgirls_FINAL.mp4` (export a frame at port time; the other seven are Greeters, Servers, Dancers, Chitown, Florals, Holiday, and SpecialtyEntertainment `_FINAL.mp4` in the same folder). No concept or Figma files are in the asset folder, so the 12-concept exploration has no visual yet (see follow-up 2).
 
 ## 03 — The Work
 
-**Decision 01 — Squarespace, with the client trained to run it**
-Built the site on Squarespace and trained the client on its CMS. Considered instead: [TK: the alternative, e.g. a fully custom-coded site, or staying on the old platform]. Why: [TK: the reason, e.g. the client needed to update content without a developer?].
+**Decision 01 — Squarespace, extended with custom code, so the client keeps control**
+Built the site on Squarespace and trained Mystique's team to run it, rather than a platform that would need a developer for every update. The client wanted full control after handoff: swapping photos, changing service offerings, updating videos. The people making those changes aren't tech-savvy, so the tool had to be approachable enough that they felt confident using it, and Squarespace gave them that confidence. The trade-off was Squarespace's default blocks, which couldn't carry the whole design on their own. Instead of leaving the platform over it, I wrote my own HTML and CSS injections to push past those defaults, so the client got the custom look and still kept the editor they could use.
 
-Image: [TK: image]
+Image: a screenshot of one live service page showing the video and a section built with custom HTML/CSS, captured from https://www.mystiqueproductions.com at port time (not fetched in this run; see follow-up 2). Fallback from the asset folder: `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Contact Forms\HomePage_FINAL.png` (a cut-out performer image prepared for the site's contact form).
 
-**Decision 02 — A design system for a marketing site**
-Defined design guidelines and a design system before building the pages. Considered instead: [TK: e.g. designing each page one-off]. Why: [TK: the reason, e.g. keeping a content-heavy site consistent as the client adds to it themselves?].
+**Decision 02 — A design system for a marketing site, not one-off pages**
+Defined design guidelines and a design system before building the pages, instead of designing each page on its own. Mystique has a lot of different offerings and a lot of marketing channels, and unity across all of them is what makes the brand read as one strong company instead of a dozen separate acts. The system also lets Mystique scale the site by themselves: when they add a page or a service, the visual decisions are already made, which keeps the site flexible and usable for the client long after handoff.
 
-Image: [TK: image]
-
-**Decision 03 — Protecting the old site's search presence at launch**
-Redirected the old site's pages and indexed the new site in Google Search Console as part of launch. Considered instead: [TK: e.g. launching the new site and letting old URLs break]. Why: [TK: the reason, e.g. the old pages had existing search traffic or inbound links worth keeping?].
-
-[TK: a fourth decision if there was one, e.g. a stakeholder disagreement, or a call about how much photo and video to put on the site.]
+Image: the eight service tiles side by side as a grid, from `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Tiles\` (Greeter, Showgirl, Dancers, Servers, ChiTown, Florals, Holiday, Specialty `_ServiceSquare.png`), showing one consistent treatment across every offering.
 
 ## 04 — The Outcome
 
-[TK: the site launched in X; the single stat from the at-a-glance strip.]
+In the first 6 months after launch, traffic to the site rose more than 40% over the old site's benchmarks, measured in Google Search Console.
 
-Since launch, Mystique Productions has seen traffic increase [TK: real figure, compared to what, over what time window, and the source, e.g. Squarespace Analytics or Search Console] and has closed contracts through the site [TK: how many, or the closest proof, e.g. inquiries from the contact form that became booked work].
+More visitors turned into conversations, too. Requests through the site's contact form rose about 20%, which I tracked in Squarespace's own tools. That's the number closest to booked work: the new site wasn't just being found more often, it was getting more people to reach out.
 
-[TK: whether the client is updating the site themselves since the CMS training.]
+Stat card: 40%+ — more site traffic in the first 6 months after launch
 
-Stat card: [TK: number] — [TK: label]
-
-Image: [TK: image]
-
-## 05 — The Takeaway
-
-[TK: optional. What being the only designer and developer, end to end, taught you, or what you'd do differently. Skip if it feels forced.]
+Image: `images/website hero.webp` again as the closing shot, or the Decision 02 service-tile grid if the page needs variety.
 
 ---
 
 ## Notes
 
-- Title: the guide's table calls this "Content-Rich Marketing Website"; the placeholder's case-study title is "Growing Traffic and Closing Contracts Through a Full Website Rebuild". The header keeps the guide's name until Tyler picks (question 1).
-- The placeholder says "brand new marketing website" but also mentions "redirecting old pages", so the draft treats it as a replacement for an existing site. Confirm in question 4.
-- "Significant increase in traffic" is kept out of the copy until there's a real figure.
-- No JobHunter summary yet, per the brief.
+- Title: Tyler picked "Growing Traffic and Closing Contracts Through a Full Website Rebuild" (question 1), now in the header.
+- Spelling: Tyler wrote "Jewel Oscoe"; the draft uses the brand's spelling, "Jewel-Osco".
+- "Chicago" in 01 comes from the live homepage copy visible in `images/website hero.webp` ("Chicago's premier corporate entertainment company"), not from Tyler's answers.
+- "Eight" service videos is inferred from the eight `_FINAL.mp4` files (and eight service tiles) in `C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets\Service Videos\`. The named examples in that sentence (greeters, servers, showgirls, specialty entertainment) are file names from that folder.
+- SEO and accessibility practices (keyword research, titles and meta descriptions, URL structure, headings, alt text, contrast, video captions) are the ones listed in question 8, which Tyler answered "Yeah all of this." The "every image was another way to be found" framing is the dressing-up he asked for; it adds no new facts.
+- Claude Code removed from Tools per Tyler: the build was Squarespace's visual editor plus his own HTML/CSS. Google Search Console added (he used it for indexing and measurement).
+- The contact-form figure has no time window in Tyler's answer, so the copy doesn't attach "6 months" to it.
+- Section 03 has two decisions (the guide allows 2 to 4). The v1 redirect decision was dropped as a decision because question 10's answer covered only the design system; the redirects stay in 02 as launch work.
+- 05 — The Takeaway was dropped: question 12 got no answer, and the guide says skip it rather than force one. The v1 "closed X contracts" line was also left out of the copy; the 20% contact-form rise is the proof used instead.
+- No index.html or Work card changes; the draft isn't approved yet.
 
 ## Open questions for Tyler
 Answer inline under each question; the next run folds your answers into the draft.
 
-**At-a-glance and title**
-
-1. Which title do you want: "Mystique Productions — Content-Rich Marketing Website" (the guide's name) or "Growing Traffic and Closing Contracts Through a Full Website Rebuild" (from the placeholder), or something else?
+1. The title you picked says "Closing Contracts," but the copy only shows the 20% rise in contact-form requests. Can you say roughly how many of those turned into booked contracts, or should the title drop "Closing Contracts"? (Also: is "captions on video" right? You said yes to the whole list, but the service videos may have no speech.)
    Answer:
 
-2. What was your title on this project, how long did it run (a duration, not dates), and was anyone else involved by role (an account lead, a PM at SeeSaw Labs, a contact at Mystique)?
+2. Images: OK to use a still from `Showgirls_FINAL.mp4` (02), the eight service tiles as a grid (Decision 02), and a service-page screenshot captured from https://www.mystiqueproductions.com (Decision 01)? Any concept boards or Figma exports from the 12+ concepts you'd like shown?
    Answer:
 
-**Outcome (04 and the stat)**
+## JobHunter summary (pending Tyler's approval)
+Mystique Productions (SeeSaw Labs): as Designer and Developer, designed and built a Chicago corporate entertainment company's new Squarespace marketing website in about 2 months, including a custom video for every service page, and traffic rose more than 40% over the old site's benchmarks in the first 6 months after launch, with contact-form requests up about 20%.
 
-3. What's the real traffic number behind "significant increase"? Compared to what (the old site, a launch month), over what time window, and from which tool (Squarespace Analytics, Search Console)? And how many contracts closed through the site, or what's the closest proof (contact-form inquiries that became bookings)? Is the client updating the site themselves now?
-   Answer:
+Sources: role = At-a-glance; "Chicago corporate entertainment company" = 01; "Squarespace marketing website" = 02 and Decision 01; "about 2 months" = At-a-glance Timeline; "a custom video for every service page" = 02; traffic and contact-form figures = 04 and the stat card.
 
-**Setup (01)**
+---
 
-4. In a sentence or two, what does Mystique Productions do and who hires them? What was wrong with the old site, concretely, and what kicked the project off (a deadline, a slow pipeline, the client asking)?
-   Answer:
+## Archive: Tyler's v1 answers (verbatim, draft only)
 
-**Approach (02)**
-
-5. What was your first move, and what was the hardest part to figure out? Was there a moment you changed course?
-   Answer:
-
-6. What did the design guidelines and design system cover (type, color, components, page templates)? Is there a Figma page or export we can show?
-   Answer:
-
-7. Where did the photos and video come from, roughly how much was there, and what did editing them involve? How did Claude Code fit in on a Squarespace build?
-   Answer:
-
-8. What did "SEO throughout" and "accessibility" mean in practice here (page titles, alt text, contrast, heading structure, video captions)? And how did you train the client on the CMS (live session, recording, written guide)?
-   Answer:
-
-**Decisions (03)**
-
-9. Why Squarespace? What did you consider instead (custom code, staying on the old platform), and why didn't you take it?
-   Answer:
-
-10. Why build a design system for a marketing site instead of designing pages one-off? And why the redirects and Search Console work: did the old site have search traffic or links worth keeping? Was there a fourth decision or a disagreement with the client worth telling?
-    Answer:
-
-**Images and summary (00)**
-
-11. What does `images/website hero.webp` show: the live homepage hero of the shipped site? Is it current, and is it OK to show? Do you have any other visuals (a before shot of the old site, Figma screens, other pages)?
-    Answer:
-
-12. If someone only read three sentences of this case study, what should they walk away knowing? And anything you'd do differently, or that this project taught you (for 05)?
-    Answer:
+1. Title — I like the latter
+2. Role, duration, team — I was Designer and Developer for this project. It actually took roughly 2 months beginning to end and involved a lot of video editing as I needed to create videos for each of the service pages on the site. That was the most time consuming part. Each video went through roughly 3 rounds of iterations before getting final approval. I was the only person on this project outside the Mystique stakeholders.
+3. Outcome — Traffic increased over 40% from old benchmarks compared to the first 6 months post launch. We measured this in Google Console. They also saw an uptick in requests on their contact form by roughly 20% that I was able to monitor from Squarespace's tooling.
+4. Setup — Mystique provides entertainment such as dancers, greeters, servers, jugglers, magicians, impersonators and showgirls for high end corporate events. They partner with Jewel Oscoe and the Chicago White Sox regularly to provide entertainment at events. The old website looked dated and they felt like the website didn't give them enough credability online. They wanted something that when people landed on it, it made them look high end and legitimate. It was just time for a face-lift.
+5. First move, hardest part — First thing was exploring all the visual and art directions of concepts. We went very far and wide exploring over 12 different concepts before landing on the one that resonated most with their business and clients. It took lots of workshopping to get all of their ideas out of their heads and find something that visual landed on that.
+6. Design system assets — I have some assets stored here (C:\Users\Admin\Documents\Client Work\Mystique\FINAL Mystique Assets) and we can also pull from their website www.mystiqueproductions.com
+7. Media, Claude Code — There were thousands of photos and a couple hundred hours total of video from past events. Claude Code was not really used at all. This was old school edit videos in a video editor and build the website front end using the squarespace visual editor. I wrote a lot of my own html/css injections as well to expand beyond the scope of their default offerings.
+8. SEO, accessibility, training — Yeah all of this. Really dress is up too. Because there was so much media, we were really able to sink our teeth into maximizing the SEO portion of this project.
+9. Why Squarespace — The client wanted full control of the website after handoff to make updates to photos, service offerings, videos, etc. so they needed something that was incredibly approachable and usable for folks who are non-tech savvy. This gave them a lot of confidence that they could use this tool.
+10. Why a design system — Because they have a ton of different offerings and marketing channels so having unity would help promote their overall brand strength. It also allows them to scale their existing site by themselves without having to make many visual design decisions. It keeps the most flexibility and usability for the clients after handoff.
+11. Hero image — The screenshot is of the live homepage hero which is a video so this frame is capturing the hero video in mid flight. Use the folder and the actual website itself to generate more.
+12. Three-sentence summary, takeaway — No answer.
