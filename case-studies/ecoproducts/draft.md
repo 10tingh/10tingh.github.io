@@ -1,8 +1,8 @@
 # EcoProducts — Enhancing eCommerce through Information Architecture
 
 Company: Slide UX
-Status: Questions out for Tyler (v1)
-Source: `case-study-placeholders.md`, section "6. EcoProducts" (resume-level skeleton: title, one-paragraph description, tools list) + the guide's table (company: Slide UX) + `images/hero image.webp` (contents and stage not yet confirmed by Tyler; see question 9). Nothing else. Every gap is marked [TK].
+Status: Draft ready for Tyler's review (v2)
+Source: Tyler's inline answers to the v1 questions (archived verbatim at the bottom) + `case-study-placeholders.md`, section "6. EcoProducts" (title, description, tools list) + the guide's table (company: Slide UX) + `images/hero image.webp` (the store's "Shop All" page; Tyler says it's the only real image he has).
 
 ---
 
@@ -10,129 +10,104 @@ Source: `case-study-placeholders.md`, section "6. EcoProducts" (resume-level ske
 
 | Field | Value |
 |---|---|
-| Role | [TK: your title on this project; the source only says you "led UX design"] |
-| Timeline | [TK: duration, e.g. "about 3 months"] |
-| Team | [TK: e.g. "UX Designer (me), 1 Developer, 1 Account Lead", roles only] |
+| Role | Senior UX Designer |
+| Timeline | About 2 months |
+| Team | Senior UX Designer (me), 1 Designer, 1 Product Manager |
 | Tools | Figma, FigJam, Hotjar, BigCommerce |
-| Outcome stat | [TK: one number, e.g. conversion rate or revenue change, and over what period] |
+| Outcome stat | Conversions up 12%, measured 3 months after launch |
 
 ---
 
 ## 00 — Executive Summary
 
-EcoProducts' customers couldn't find the products they wanted, and once they had something in their cart, they had no clear path to the next item they needed. Analytics and user research showed it, and [TK: what the data showed, e.g. a drop-off point or a Hotjar finding]. Leading UX design for Slide UX, I proposed a new information architecture and menu layout for the store, plus changes to the product pages that pointed shoppers to the right next step: adding another item or moving on to checkout. [TK: the result, with the number, e.g. "Conversion rate rose X% and revenue Y% in the Z months after launch."]
+After a product expansion forced EcoProducts to reorganize its online store, conversions dropped 10%, and the company came to Slide UX to get back to its baseline. As Senior UX Designer, I owned the information architecture and conversion flow: I watched user sessions, interviewed users, and ran open and closed card sorts to find the gap between where shoppers expected products to be and where they actually lived, then rebuilt the structure around what they told us. Three months after launch, conversions were up 12%, past the baseline EcoProducts had asked us to get back to.
 
-Image: `images/hero image.webp` — [TK: image. Not yet confirmed what this shows or whether it's the shipped, post-redesign state; caption waits on question 9. The guide needs a final-state screenshot here, or a flagged substitute.]
+Image: `images/hero image.webp` — the EcoProducts store's "Shop All" page: the top navigation (Products, Learn, Company, Stories), a product-category list down the left, and category tiles with photos. This is the only real screenshot Tyler has; whether it shows the store exactly as we shipped it is not confirmed, so the caption should say "the EcoProducts store" rather than "the final design" (see Notes).
 
 ## 01 — The Setup
 
-EcoProducts sells [TK: one line on what EcoProducts sells and to whom] through an online store [TK: confirm the store runs on BigCommerce]. Slide UX took on the project when [TK: who asked for it, and what kicked it off: a client request, a revenue dip, a planned replatform?].
+EcoProducts makes compostable, eco-friendly food service products: containers, plates, boxes, utensils, napkins, and to-go materials, with a different product for nearly every use. It's a big company, and it partners with large arenas and conference spaces across the US.
 
-The problem showed up in two places. Analytics and user research revealed that customers couldn't find the products they wanted, and that they couldn't get from one item to the next while building a cart. [TK: what that looked like concretely before the project, e.g. how many top-level menu items, how products were grouped, what shoppers did instead (searched, bounced, called sales).]
+The trouble started with growth. EcoProducts expanded its product line, and the new products didn't fit the store's existing structure, so the company reorganized its information architecture to make room for them. After that change went live, conversions dropped 10%.
 
-[TK: any deadline or outside pressure, e.g. a season, a catalog launch, a contract renewal.]
+EcoProducts came to Slide UX with that problem and one clear goal: get conversions back to where they were before the reorganization.
 
 ## 02 — The Approach
 
-[TK: how long the project ran and who else was on it, by role.]
+The project ran about 2 months. I worked with one other designer and a product manager. I owned the information architecture and the conversion flow; the other designer focused on specific product pages, improving how shoppers moved to related products and how they started checkout.
 
-The first move was [TK: the first step. Did you start from the analytics, from Hotjar recordings and heatmaps, from user interviews, or from an audit of the existing menu?]. The research pointed to two problems: findability (customers couldn't locate products) and flow (customers couldn't move to additional items while building a cart). [TK: the research methods you used, how many users or sessions, and what each tool did. For example: Hotjar for heatmaps and session recordings, FigJam for mapping the current and proposed site structure, a card sort or tree test?]
+The first move was watching. I went through a lot of user sessions in EcoProducts' analytics tool to see where people got stuck. Then I mapped the existing architecture end to end, including every product and where it sat, so we could see the whole store at once instead of one menu at a time.
 
-From there I proposed a new information architecture and menu layout. [TK: what changed. How products were regrouped, what the new top-level categories were, and how you decided on the category names.]
+Next came the users themselves. I ran user interviews and card sorting sessions to learn how people would actually organize the products and where they expected to find specific items. I ran the card sorts in two rounds. In the open sort, users grouped the products and wrote their own labels for each group. In the closed sort, they sorted the same products under pre-made labels we had written from our own assumptions, which showed us where those assumptions held and where they didn't.
 
-I also worked on the product pages themselves, so each one pointed shoppers to the right next action, whether that was adding more items or moving through checkout. [TK: what you changed on the product pages, e.g. related or "frequently bought with" items, add-to-cart placement, a cart path.]
+Two findings shaped everything after. Users had their own way of referring to the new line of products, different from what the store called them. And there was a gap between where users expected to find products and where those products actually lived on the site.
 
-[TK: how the design moved from FigJam to Figma, and how it got built in BigCommerce. Did you hand off to a developer, or build it in BigCommerce yourself?]
-
-[TK: the hardest part, or a moment you changed course.]
+With the card sort results in hand, I mapped the new architecture in FigJam: new top-level categories, products regrouped, and category names drawn from how users described things.
 
 Tools/pills: Figma, FigJam, Hotjar, BigCommerce
 
-Image: [TK: image. A before/after sitemap or menu, a FigJam IA map, or a Hotjar heatmap would fit here. Nothing in `images/` yet.]
+Image (planned, recreated): a low-fi grayscale timeline of the process in order (watch sessions, map the existing architecture, interviews, open card sort, closed card sort, new architecture in FigJam), using only words from this section, captioned as a recreation.
 
 ## 03 — The Work
 
-**Decision 01 — Restructure the information architecture, not just patch the menu**
-Proposed a new IA and menu layout to fix findability, instead of [TK: the alternative you didn't take, e.g. relying on search, adding filters, or renaming a few menu labels]. [TK: why. What in the research told you the structure itself was the problem?]
+**Decision 01 — Let the card sorts, not our assumptions, set the new structure**
+Rebuilt the categories and their names from what users did in the open and closed card sorts, instead of from the labels we had assumed would work. The closed sort was a direct test of those assumptions, and it showed a gap between where users expected products and where they actually were. The structure that had cost EcoProducts 10% of its conversions had been organized around how the company thought about its products; the new one is organized around how its customers look for them.
 
-Image: [TK: image, e.g. the old and new menu or sitemap side by side.]
+Image (planned, recreated): a low-fi side-by-side of an open card sort (users write their own group labels) and a closed card sort (users sort under pre-made labels), with blank grey cards and no real product names, captioned as a recreation.
 
-**Decision 02 — Product pages that steer toward the next action, both ways**
-Optimized the product pages to guide shoppers to the right next action, whether that was adding more items or moving through checkout, rather than [TK: the alternative, e.g. pushing only upsells, or only a faster checkout]. [TK: why. How did you balance getting people to add more against getting out of the way of people ready to buy?]
+**Decision 02 — Show shoppers that recommended products fit, so they don't leave to check**
+Grouped related products the way users actually shopped and built logic to show that the recommended items were compatible, rather than leaving shoppers to find and verify matching pieces on their own. This was the biggest change to the product pages. A common pattern: a shopper adds cups or soup containers, then has to separately find lids and make sure the sizes and quantities line up. People were dropping off after spending time trying to confirm the lids fit what they were buying. Now the recommended products show they're compatible, so shoppers can add them right there without going anywhere else on the site.
 
-Image: [TK: image, e.g. a product page before and after.]
+Image (planned, recreated): a low-fi product card for a cup with a "recommended lid" beside it marked as a compatible fit and an add button, grey blocks in place of photos, captioned as a recreation.
 
-**Decision 03 — [TK: a third trade-off, if there was one]**
-[TK: e.g. a constraint from BigCommerce that shaped the design, a scoping call, or a disagreement with the client and how you resolved it. Skip if there isn't a real one; the guide allows 2 to 4 decisions.]
+**Decision 03 — Keep users' product names in search when renaming was off the table**
+The card sorts showed that users called some products by different names than EcoProducts did, so we proposed new names for them. But changing product names outright was out of scope for this eCommerce project. Instead of dropping what we'd learned, we added the users' names to the products as labels on the backend. The store still shows EcoProducts' names, but a shopper who searches for a product by the name they'd use still finds it easily.
+
+Image (planned, recreated): a low-fi diagram of one product with its displayed name and the user's name attached as a hidden search label, and a search box finding it by the user's name, captioned as a recreation.
 
 ## 04 — The Outcome
 
-[TK: what shipped, and when, relative to the project start.]
+The new architecture and the product-page changes launched together, and three months after launch, conversions were up 12%. EcoProducts had come to us to recover a 10% drop and get back to baseline; the redesign went past it.
 
-[TK: the conversion and revenue results, with numbers and the time window, and where they were measured (BigCommerce analytics, Google Analytics, Hotjar?). The source says the changes improved conversions and revenue but gives no figures; this section stays empty until there are numbers or a specific qualitative result.]
+Stat card: 12% — increase in conversions, measured 3 months after launch
 
-Stat card: [TK: number — what it measures]
-
-Image: [TK: image. The final-state screenshot again, or a second shipped page.]
+Image: `images/hero image.webp` again as the closing shot, or no image.
 
 ## 05 — The Takeaway
 
-[TK: optional. What this project taught you, or what you'd do differently. Skip if it feels forced.]
+Talking to users and testing with them early turned up a lot of easy wins, problems that were quietly costing EcoProducts sales. None of the fixes were dramatic: a structure that matched how people looked, lids that clearly fit, a search that knew what customers called things. It was cool to see a few small changes have a big impact on the company.
 
 ---
 
 ## Notes
 
-- Source is thin: one paragraph and a tools list. Everything specific (role, timeline, team, numbers, research details, decision alternatives) is [TK].
-- "Measurable improvements in conversions and revenue" from the placeholder is deliberately not in the copy as a result. It needs real figures (question 2).
-- Tools are listed in the at-a-glance table as given, but the copy doesn't yet say what each tool was used for; that waits on question 5.
-- Decisions 01 and 02 come straight from the two things the placeholder says you proposed (the new IA and menu; the product-page optimizations). Their alternatives and reasons are [TK].
-- The hero image isn't described in the copy. It's unconfirmed whether it shows the post-redesign store, the old store, or the live site today.
+- Team: "1 other designer" is listed as "1 Designer" and "a PM" as "1 Product Manager". Tyler didn't say whether the PM was at Slide UX or EcoProducts, so the copy doesn't say.
+- "Their analytics tool" (Q5) isn't named in the copy. Hotjar and BigCommerce stay in Tools from the placeholder, but no sentence says Hotjar was the session tool or that the store runs on BigCommerce (Q3's BigCommerce question and Q7's "who built it" went unanswered). If Hotjar was the session tool, 02 can name it.
+- "Launched together" in 04 is a light inference: Tyler gave one launch ("3 months after product launch") for the whole project. Fix it if the IA and the product pages went live separately.
+- "Past the baseline" comes from Tyler's Q4 ("getting back to their baseline which we after exceeded"). The copy doesn't compute how far past.
+- Decision 02 says "we" and "built logic": Tyler wrote "we built in logic," and the other designer owned product pages, so it's framed as team work in my conversion flow, not as mine alone.
+- Decision 01's alternative (our assumed labels) comes from the closed card sort Tyler described in Q5. Q8 didn't give a "restructure vs. improve search" reason, so that framing from v1 was dropped.
+- No specific product examples from the card sorts are used (Tyler: "I don't remember specific examples so don't ask"). The only product example is Q7's cups, soup containers, and lids.
+- The 05 takeaway's middle sentence lists the three changes from 03 as a recap; it adds no new facts.
+- Images (Q9): only `images/hero image.webp` is real. Four low-fi grayscale SVGs are planned for the port, each captioned as a recreation, with no real product names or data. The hero's category names (e.g. "Cups - Lids - Accessories") weren't used in copy because it's unconfirmed whether that page reflects the redesign.
+- Removed "drove measurable improvements in conversions and revenue" from the placeholder: Tyler gave a conversion number only, no revenue figure.
 
-## JobHunter summary (proposed, not final; not yet sent to Tyler)
-EcoProducts (Slide UX): as [TK: role], led UX design on an information architecture overhaul of an eCommerce store in [TK: duration], proposing a new menu structure and product-page changes after analytics and user research showed customers couldn't find products or add more items to their carts, [TK: result with the real number].
+## JobHunter summary (pending Tyler's approval)
+EcoProducts (Slide UX): as Senior UX Designer, owned the information architecture and conversion flow for a compostable food-service products company's online store after a product expansion and reorganization cut conversions 10%, using user interviews and open and closed card sorts over about 2 months, and conversions rose 12% three months after launch.
 
-## Open questions for Tyler
-Answer inline under each question; the next run folds your answers into the draft.
+Sources: role and duration = At-a-glance; "owned the information architecture and conversion flow" = 02; company description = 01; the 10% drop = 01; interviews and card sorts = 02; 12% at 3 months = 04 and the stat card.
 
-**At-a-glance and Outcome**
+---
 
-1. What was your title on this project, how long did it run (a duration, not dates), and who else was on it, by role only (e.g. "1 developer, 1 account lead at Slide UX, EcoProducts' marketing manager")?
-   Answer:
+## Archive: Tyler's v1 answers (verbatim, draft only)
 
-2. The placeholder says the changes "drove measurable improvements in conversions and revenue." What were the numbers (e.g. conversion rate up X%, revenue up Y%), over what time window, and where were they measured? If you don't have exact figures, what's the closest specific proof that it worked?
-   Answer:
-
-**01 — The Setup**
-
-3. What does EcoProducts sell, and to whom (businesses, consumers, both)? Was the store on BigCommerce before you started, or was it part of this project?
-   Answer:
-
-4. What kicked the project off: did EcoProducts come to Slide UX with a problem, or did you spot it? And what did "couldn't find products" look like before the redesign: how was the old menu organized, and what did shoppers do instead (search, leave, call sales)? Any deadline or outside pressure?
-   Answer:
-
-**02 — The Approach**
-
-5. Walk me through the research, in order. What did the analytics show, what did you use Hotjar for (heatmaps, recordings, surveys?), and what was the "user research" (interviews, a card sort, usability tests)? Roughly how many users or sessions?
-   Answer:
-
-6. What did the new IA actually change: the old vs. new top-level categories, how products were regrouped, and how you landed on the names? Did you map it in FigJam?
-   Answer:
-
-7. What did you change on the product pages to steer people to their next action (related products, add-to-cart placement, a cart or checkout path)? And who built it in BigCommerce, you or a developer?
-   Answer:
-
-**03 — The Work**
-
-8. For each decision, what did you consider and reject, and why? (a) The new IA: why restructure instead of, say, improving search or renaming a few menu items? (b) The product pages: how did you balance "add more items" against "get to checkout"? (c) Was there a third trade-off, like a BigCommerce limitation or a disagreement with EcoProducts you had to resolve?
-   Answer:
-
-**Images**
-
-9. `images/hero image.webp` shows a "Shop All" page with a category list down the left and product-category tiles. Is that the store after your redesign (the final state), the old store, or the live site as it looks today? Can I use it as the Executive Summary's final-state screenshot? Do you have any before/after menus, sitemaps, FigJam boards, or Hotjar heatmaps you can share?
-   Answer:
-
-**00 and 05**
-
-10. If someone only read three sentences of this case study, what should they walk away knowing? And is there a takeaway, something you learned or would do differently? (Fine to skip the takeaway.)
-    Answer:
+1. Role, duration, team — Senior UX Designer, 2 months, 1 other designer and a PM. My job was focused on the actual information architecture and conversion flow. The other designer focused on specific product pages to optimize navigation to other related products and initiating checkout.
+2. Outcome — Helped increase conversions by 12% which was measured 3 months after product launch.
+3. What EcoProducts sells — The sell compostable and eco friendly food containers. They have tons of different products for different uses from utensils, plate, boxes, container, to-go materials, napkins. They are a huge company and partner with large arenas and conference spaces around the US.
+4. Kickoff — EcoProducts did some product expansions which required reorganizaztion of their information architecture. After implementing this change, they noticed a 10% dropoff in conversions so they came to Slide UX with this problerm and goal of getting back to their baseline which we after exceeded.
+5. Research — Watched a lot of user sessions through their analytics tool, mapped out the existing architecture and all the products in that architecture. Then did user interviews and card sorting sessions to see how users would actually organize the products and where they would expect to find certain items. I ran both an open card sort and a closed card sort. At first I had users create their own labels and then had them organize under pre-made labels based on our assumptions. We made some new discoveries with how users were referring to the new line of products and found their was a gap in where users expected to find products versus where they actually existed. I don't remember specific examples so don't ask.
+6. New IA — Yes it changed all these things and we did map in Figjam after conducting open and closed card sorts.
+7. Product pages — The related products was the biggest change. We needed to group like things together in a way that matched user behaviors. One big pain point was users often would add things like cups and soup containers but also needed to separately add lids and be assured that the size and quantities were aligned. USers were dropping off after spending time trying to make sure the lids fit the products they were buying. So we built in logic to show and assure users that the recommended products were compatible and they didn't need to go anywhere else on the site to find and add those products if needed.
+8. Trade-offs — We ended up proposing new names for some products because that's what our card sorting exercise uncovered but unfortunately entire product name changes were out of scope for this ecommerce project. We did add those names to labels on the backend so users who searched for those products were still able to find them easily.
+9. Images — This is all I got so everything else needs sourced and created by you.
+10. Three-sentence summary, takeaway — Talking and testing with users helped uncover a lot of easy wins early on that was ultimately impacting the bottom line. It was cool to see a few small changes have a big impact on the company.
